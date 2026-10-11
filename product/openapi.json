@@ -3,7 +3,7 @@
   "info": {
     "title": "Агрегатор ИТ-вакансий ФСП",
     "description": "Кабинеты соискателя и работодателя, API и один файл SQLite.",
-    "version": "1.4.1"
+    "version": "1.4.2"
   },
   "paths": {
     "/api/auth/register": {
