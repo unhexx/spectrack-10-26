@@ -360,3 +360,147 @@ def test_login_locks_after_five_wrong_passwords(client):
     with sqlite3.connect(client.db_path) as db:
         left = db.execute("select count(*) from login_throttle where email = 'brute@example.com'").fetchone()[0]
     assert left == 0
+
+
+def test_visibility_flags_round_trip_without_copying_into_processing(client, capsys):
+    register_and_confirm(client)
+    created = client.put("/api/candidate/profile", json=_PROFILE)
+    assert created.status_code == 200, created.text
+    assert created.json()["show_name"] is True
+    assert created.json()["show_experience"] is True
+    assert created.json()["show_achievements"] is True
+    assert created.json()["full_name"] == "Иван Синтетиков"
+    assert created.json()["experience"] == "3 года"
+    capsys.readouterr()
+    hidden = client.put(
+        "/api/candidate/profile",
+        json={
+            **_PROFILE,
+            "full_name": "Иван Тайный",
+            "experience": "закрытый стаж",
+            "publication": False,
+            "show_name": True,
+            "show_experience": False,
+            "show_achievements": True,
+        },
+    )
+    assert hidden.status_code == 200, hidden.text
+    own = client.get("/api/candidate/profile").json()
+    assert own["full_name"] == "Иван Тайный"
+    assert own["experience"] == "закрытый стаж"
+    assert own["show_name"] is True
+    assert own["show_experience"] is False
+    assert own["publication"] is False
+    line = [row for row in capsys.readouterr().out.splitlines() if "visibility_flag" in row][-1]
+    assert line.endswith("visibility_flag 1 0 1")
+    assert "Иван" not in line
+    assert "закрытый" not in line
+    assert "@" not in line
+    with sqlite3.connect(client.db_path) as db:
+        stored = db.execute(
+            "select processing, publication, show_name, show_experience, show_achievements from consents"
+        ).fetchone()
+    assert stored == (0, 0, 1, 0, 1)
+    again = client.put(
+        "/api/candidate/profile",
+        json={**_PROFILE, "full_name": "Иван Тайный", "experience": "закрытый стаж", "publication": True, "show_name": False},
+    )
+    assert again.status_code == 200, again.text
+    assert again.json()["show_name"] is False
+    assert again.json()["show_experience"] is False
+    assert again.json()["show_achievements"] is True
+    with sqlite3.connect(client.db_path) as db:
+        stored = db.execute(
+            "select processing, publication, show_name, show_experience, show_achievements from consents"
+        ).fetchone()
+    assert stored == (1, 1, 0, 0, 1)
+    for key, value in (("show_name", "yes"), ("show_experience", 1), ("show_achievements", "false")):
+        rejected = client.put("/api/candidate/profile", json={**_PROFILE, "full_name": "Иван Тайный", key: value})
+        assert rejected.status_code == 422, rejected.text
+        assert rejected.json()["error"] == "visibility_flag"
+    assert client.get("/api/candidate/profile").json()["show_name"] is False
+    kept_null = client.put(
+        "/api/candidate/profile",
+        json={**_PROFILE, "full_name": "Иван Тайный", "experience": "закрытый стаж", "show_name": None},
+    )
+    assert kept_null.status_code == 200, kept_null.text
+    assert kept_null.json()["show_name"] is False
+    omitted = {key: value for key, value in _PROFILE.items() if key != "publication"}
+    omitted["full_name"] = "Иван Тайный"
+    omitted["experience"] = "закрытый стаж"
+    kept = client.put("/api/candidate/profile", json=omitted)
+    assert kept.status_code == 200, kept.text
+    assert kept.json()["show_name"] is False
+    assert kept.json()["show_experience"] is False
+    assert kept.json()["show_achievements"] is True
+    assert kept.json()["publication"] is True
+    assert kept.json()["full_name"] == "Иван Тайный"
+
+
+def test_cabinet_unchecked_visibility_boxes_save_zero(client):
+    register_and_confirm(client, email="boxes@example.com")
+    page = client.get("/candidate")
+    assert page.status_code == 200
+    assert "Согласие на обработку персональных данных дано при регистрации." in page.text
+    for label in (
+        "Показывать работодателю ФИО",
+        "Показывать работодателю стаж",
+        "Показывать работодателю достижения ФСП",
+    ):
+        assert label in page.text
+    assert 'name="show_name" value="1" checked' in page.text
+    assert 'name="show_experience" value="1" checked' in page.text
+    assert 'name="show_achievements" value="1" checked' in page.text
+    token = _csrf(page.text)
+    saved = client.post(
+        "/candidate/profile",
+        data={
+            "csrf": token,
+            "full_name": "Иван Синтетиков",
+            "industry": "it",
+            "specialization": "backend",
+            "grade": "middle",
+            "team_role": "разработчик",
+            "work_format": "удалённо",
+            "experience": "3 года",
+            "external_id": "",
+            "publication": "1",
+        },
+        follow_redirects=False,
+    )
+    assert saved.status_code == 303, saved.text
+    body = client.get("/api/candidate/profile").json()
+    assert body["show_name"] is False
+    assert body["show_experience"] is False
+    assert body["show_achievements"] is False
+    assert body["full_name"] == "Иван Синтетиков"
+    assert body["publication"] is True
+    again = client.get("/candidate")
+    assert 'name="show_name" value="1" checked' not in again.text
+    assert 'name="show_experience" value="1" checked' not in again.text
+    assert 'name="show_achievements" value="1" checked' not in again.text
+    token = _csrf(again.text)
+    restored = client.post(
+        "/candidate/profile",
+        data={
+            "csrf": token,
+            "full_name": "Иван Синтетиков",
+            "industry": "it",
+            "specialization": "backend",
+            "grade": "middle",
+            "team_role": "разработчик",
+            "work_format": "удалённо",
+            "experience": "3 года",
+            "external_id": "",
+            "publication": "1",
+            "show_name": "1",
+            "show_experience": "on",
+            "show_achievements": "true",
+        },
+        follow_redirects=False,
+    )
+    assert restored.status_code == 303, restored.text
+    body = client.get("/api/candidate/profile").json()
+    assert body["show_name"] is True
+    assert body["show_experience"] is True
+    assert body["show_achievements"] is True

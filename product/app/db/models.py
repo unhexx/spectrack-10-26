@@ -112,6 +112,9 @@ class Consent(Base):
     profile_id: Mapped[int] = mapped_column(ForeignKey("profiles.id"), unique=True, nullable=False)
     processing: Mapped[int] = mapped_column(Integer, nullable=False)
     publication: Mapped[int] = mapped_column(Integer, nullable=False)
+    show_name: Mapped[int] = mapped_column(Integer, nullable=False, default=1, server_default="1")
+    show_experience: Mapped[int] = mapped_column(Integer, nullable=False, default=1, server_default="1")
+    show_achievements: Mapped[int] = mapped_column(Integer, nullable=False, default=1, server_default="1")
     accepted_at: Mapped[str] = mapped_column(String(40), nullable=False)
 
 

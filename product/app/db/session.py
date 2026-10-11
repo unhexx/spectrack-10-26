@@ -82,9 +82,14 @@ def session_scope() -> Iterator[Session]:
 
 # Колонки, добавленные после первой версии схемы. create_all не меняет
 # существующие таблицы, поэтому старый том SQLite догоняем ALTER TABLE ADD COLUMN.
-# Только добавление nullable-колонок: данные тома не трогаются.
+# У test_attempts колонки nullable. У consents — NOT NULL DEFAULT 1.
 _ADDED_COLUMNS: dict[str, dict[str, str]] = {
     "test_attempts": {"form_json": "TEXT", "result_json": "TEXT"},
+    "consents": {
+        "show_name": "INTEGER NOT NULL DEFAULT 1",
+        "show_experience": "INTEGER NOT NULL DEFAULT 1",
+        "show_achievements": "INTEGER NOT NULL DEFAULT 1",
+    },
 }
 
 

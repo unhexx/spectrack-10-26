@@ -14,6 +14,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from product.app.db.models import Consent, Profile, SurveyAttempt, User
+from product.app.log import log_event
 from product.app.services.categories import latest_assignment, recompute
 from product.app.services.clock import utc_now
 from product.app.services.errors import hint as catalog_hint, fail
@@ -58,10 +59,21 @@ def _integrity_code(exc: IntegrityError) -> str:
     return "conflict"
 
 
+def _visibility(payload: dict, key: str, current: int) -> int:
+    if key not in payload or payload[key] is None:
+        return current
+    if not isinstance(payload[key], bool):
+        fail(422, "visibility_flag")
+    return 1 if payload[key] else 0
+
+
 def profile_payload(db: Session, user: User, profile: Profile) -> dict:
     consent = db.scalar(select(Consent).where(Consent.profile_id == profile.id))
     assignment = latest_assignment(db, profile.id)
     publication = bool(consent.publication) if consent is not None else False
+    show_name = True if consent is None else bool(consent.show_name)
+    show_experience = True if consent is None else bool(consent.show_experience)
+    show_achievements = True if consent is None else bool(consent.show_achievements)
     return {
         "profile_id": profile.id,
         "full_name": profile.full_name,
@@ -76,6 +88,9 @@ def profile_payload(db: Session, user: User, profile: Profile) -> dict:
         "soft_skills": json.loads(profile.soft_skills_json or "[]"),
         "external_id": profile.external_id,
         "publication": publication,
+        "show_name": show_name,
+        "show_experience": show_experience,
+        "show_achievements": show_achievements,
         "category_id": assignment.category_id if assignment else None,
         "explanation": assignment.explanation if assignment else None,
         "field_sources": json.loads(profile.field_sources_json or "{}"),
@@ -111,6 +126,12 @@ def cabinet_payload(db: Session, user: User) -> dict:
     has_offers = bool(list_candidate_offers(db, user)) if profile is not None else False
     test_done = any(row["status"] == "submitted" for row in history)
     publication = bool(user.consent_publication) if body is None else body["publication"]
+    if body is None:
+        show_name = show_experience = show_achievements = True
+    else:
+        show_name = body["show_name"]
+        show_experience = body["show_experience"]
+        show_achievements = body["show_achievements"]
     assignment = None if body is None or not body["category_id"] else body
     if profile is None:
         hint = catalog_hint("hint_no_profile")
@@ -138,6 +159,9 @@ def cabinet_payload(db: Session, user: User) -> dict:
         "soft": [] if body is None else body["soft_skills"],
         "field_sources": {} if body is None else body["field_sources"],
         "publication": publication,
+        "show_name": show_name,
+        "show_experience": show_experience,
+        "show_achievements": show_achievements,
         "hint": hint,
         "offers_hint": offers_hint,
     }
@@ -186,6 +210,14 @@ def save_profile(db: Session, user: User, payload: dict) -> dict:
     profile = db.scalar(select(Profile).where(Profile.user_id == user.id))
     if profile is not None and profile.grade != grade:
         fail(409, "grade_via_test")
+    consent = None
+    if profile is not None:
+        consent = db.scalar(select(Consent).where(Consent.profile_id == profile.id))
+    show_name = _visibility(payload, "show_name", 1 if consent is None else consent.show_name)
+    show_experience = _visibility(payload, "show_experience", 1 if consent is None else consent.show_experience)
+    show_achievements = _visibility(
+        payload, "show_achievements", 1 if consent is None else consent.show_achievements
+    )
 
     now = utc_now()
     stack_json = json.dumps(stack, ensure_ascii=False)
@@ -218,6 +250,9 @@ def save_profile(db: Session, user: User, payload: dict) -> dict:
                 processing=consent_flag,
                 publication=consent_flag,
                 accepted_at=now,
+                show_name=show_name,
+                show_experience=show_experience,
+                show_achievements=show_achievements,
             )
         )
     else:
@@ -238,20 +273,22 @@ def save_profile(db: Session, user: User, payload: dict) -> dict:
         profile.field_sources_json = json.dumps(sources, ensure_ascii=False)
         profile.updated_at = now
         if publication_given:
-            consent = db.scalar(select(Consent).where(Consent.profile_id == profile.id))
             if consent is None:
-                db.add(
-                    Consent(
-                        profile_id=profile.id,
-                        processing=flag,
-                        publication=flag,
-                        accepted_at=now,
-                    )
+                consent = Consent(
+                    profile_id=profile.id,
+                    processing=flag,
+                    publication=flag,
+                    accepted_at=now,
                 )
+                db.add(consent)
             else:
                 consent.processing = flag
                 consent.publication = flag
                 consent.accepted_at = now
+        if consent is not None:
+            consent.show_name = show_name
+            consent.show_experience = show_experience
+            consent.show_achievements = show_achievements
 
     db.add(
         SurveyAttempt(
@@ -279,5 +316,6 @@ def save_profile(db: Session, user: User, payload: dict) -> dict:
         if _integrity_code(exc) == "external_id":
             fail(409, "external_id", "external_id_taken")
         fail(409, "conflict")
+    log_event("visibility_flag", f"{show_name} {show_experience} {show_achievements}")
     db.refresh(profile)
     return profile_payload(db, user, profile)

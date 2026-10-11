@@ -55,6 +55,9 @@ def save_cabinet(
     external_id: str = Form(""),
     csrf: str = Form(""),
     publication: str | None = Form(None),
+    show_name: str | None = Form(None),
+    show_experience: str | None = Form(None),
+    show_achievements: str | None = Form(None),
     stack: list[str] = Form(default=[]),
     soft_skills: list[str] = Form(default=[]),
     db: Session = Depends(db_session),
@@ -74,6 +77,9 @@ def save_cabinet(
         "stack": stack,
         "soft_skills": soft_skills,
         "publication": publication in {"1", "on", "true", "True"},
+        "show_name": show_name in {"1", "on", "true", "True"},
+        "show_experience": show_experience in {"1", "on", "true", "True"},
+        "show_achievements": show_achievements in {"1", "on", "true", "True"},
     }
     try:
         assert_csrf(request, csrf)

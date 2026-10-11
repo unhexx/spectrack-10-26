@@ -8,6 +8,7 @@
 from __future__ import annotations
 
 import json
+import re
 
 from sqlalchemy import select
 from sqlalchemy.orm import Session
@@ -255,7 +256,7 @@ def employer_candidates(
         _closed(team_role, rules["team_roles"], "closed_list")
     if work_format:
         _closed(work_format, rules["work_formats"], "closed_list")
-    ranked: list[tuple[tuple[int, int, int, int, int, str], dict]] = []
+    ranked: list[tuple[tuple[int, int, int, int, int, str], dict, int]] = []
     profiles = session.scalars(select(Profile)).all()
     for profile in profiles:
         consent = session.scalar(select(Consent).where(Consent.profile_id == profile.id))
@@ -280,16 +281,18 @@ def employer_candidates(
         fit, labels, achievements, rank = _profile_matches(session, profile, assignment, need)
         if not fit.matched:
             continue
-        card = _card(profile, assignment, labels, achievements, rank, reason=fit.reason)
+        card = _card(profile, assignment, labels, achievements, rank, consent, reason=fit.reason)
         card.update(_test_view(session, assignment.test_attempt_id))
-        ranked.append((fit.sort_key, card))
+        ranked.append((fit.sort_key, card, consent.show_achievements))
     ranked.sort(key=lambda item: item[0], reverse=True)
     cards = []
-    for index, (key, card) in enumerate(ranked):
+    for index, (key, card, show_achievements) in enumerate(ranked):
         nxt = ranked[index + 1][0] if index + 1 < len(ranked) else None
         phrase = neighbor_phrase(key, nxt)
         if phrase:
             card["list_reason"] = f"{card['list_reason']} {phrase}".strip()
+        if not show_achievements:
+            card["list_reason"] = _without_hidden_achievements(card["list_reason"])
         cards.append(card)
     return cards
 
@@ -321,18 +324,44 @@ def _test_view(session: Session, attempt_id: int | None) -> dict:
     }
 
 
+def _without_hidden_achievements(reason: str) -> str:
+    # Число в причине выдаёт скрытый список: пустой список и «нет» неразличимы.
+    kept: list[str] = []
+    for sentence in re.split(r"(?<=\.)\s+", reason.strip()):
+        sentence = re.sub(r", число достижений \d+ против \d+", "", sentence)
+        sentence = sentence.replace(", число достижений и ", " и ")
+        sentence = re.sub(r"\s{2,}", " ", sentence).strip()
+        if not sentence or "достижен" in sentence:
+            continue
+        kept.append(sentence)
+    return " ".join(kept)
+
+
 def _card(
     profile: Profile,
     assignment: StoredCategory,
     labels: list[str],
     achievements: list[FspAchievement],
     rank: str,
+    consent: Consent,
     *,
     reason: str,
 ) -> dict:
+    listed = [
+        {
+            "discipline": row.discipline,
+            "role_in_team": row.role_in_team,
+            "place": row.place,
+        }
+        for row in achievements
+    ]
+    full_name = profile.full_name if consent.show_name else ""
+    experience = profile.experience if consent.show_experience else ""
+    shown = listed if consent.show_achievements else []
+    fsp_rank = rank if consent.show_achievements else ""
     return {
         "profile_id": profile.id,
-        "full_name": profile.full_name,
+        "full_name": full_name,
         "industry": profile.industry,
         "category_id": assignment.category_id,
         "explanation": assignment.explanation,
@@ -343,14 +372,7 @@ def _card(
         "stack": labels,
         "team_role": profile.team_role,
         "work_format": profile.work_format,
-        "experience": profile.experience,
-        "fsp_rank": rank,
-        "achievements": [
-            {
-                "discipline": row.discipline,
-                "role_in_team": row.role_in_team,
-                "place": row.place,
-            }
-            for row in achievements
-        ],
+        "experience": experience,
+        "fsp_rank": fsp_rank,
+        "achievements": shown,
     }

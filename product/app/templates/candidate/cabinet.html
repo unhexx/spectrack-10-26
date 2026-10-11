@@ -125,6 +125,9 @@
     <p><a href="/auth/fsp/start">Связь с ID участника ФСП</a></p>
     <p>Согласие на обработку персональных данных дано при регистрации.</p>
     <label><input type="checkbox" name="publication" value="1" {% if publication %}checked{% endif %}> Публиковать профиль в подборке работодателя</label>
+    <label><input type="checkbox" name="show_name" value="1" {% if show_name %}checked{% endif %}> Показывать работодателю ФИО</label>
+    <label><input type="checkbox" name="show_experience" value="1" {% if show_experience %}checked{% endif %}> Показывать работодателю стаж</label>
+    <label><input type="checkbox" name="show_achievements" value="1" {% if show_achievements %}checked{% endif %}> Показывать работодателю достижения ФСП</label>
     <p><button type="submit">Сохранить</button></p>
   </form>
 </section>

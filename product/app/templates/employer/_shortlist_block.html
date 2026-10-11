@@ -6,7 +6,7 @@
   <ul>
     {% for card in cards %}
     <li>
-      <p>Номер профиля: {{ card.profile_id }}. {{ card.full_name }}. Отрасль: {{ card.industry }}. Категория: {{ card.category_id }}.</p>
+      <p>Номер профиля: {{ card.profile_id }}. {% if card.full_name %}{{ card.full_name }}. {% endif %}Отрасль: {{ card.industry }}. Категория: {{ card.category_id }}.</p>
       <p>{{ card.explanation }}</p>
       <p>{{ card.list_reason }}</p>
       <p>Статус грейда: {{ card.grade_status }}{% if card.test_confidence is not none %} (уверенность {{ card.test_confidence }}%{% if card.test_position %}, {{ card.test_position }} треть грейда{% endif %}){% endif %}. Верных ответов {% if card.test_score is none %}нет{% else %}{{ card.test_score }}%{% endif %}. Роль в компании: {{ card.team_role }}. Формат: {{ card.work_format }}.</p>
@@ -19,8 +19,6 @@
         {% endfor %}
       </ul>
       {% if card.fsp_rank %}<p>Разряд источника: {{ card.fsp_rank }}</p>{% endif %}
-      {% else %}
-      <p>Достижений ФСП нет.</p>
       {% endif %}
     </li>
     {% endfor %}

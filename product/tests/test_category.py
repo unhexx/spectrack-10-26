@@ -575,3 +575,190 @@ def test_need_tokens_do_not_share_a_stemmer_between_threads():
         thread.join()
     assert found["ru"] == ["дан"]
     assert found["en"] == ["develop"]
+
+
+def test_recompute_does_not_read_visibility_flags():
+    import inspect
+
+    source = inspect.getsource(recompute)
+    assert "show_" not in source
+
+
+def test_ensure_columns_adds_visibility_not_null_default(tmp_path):
+    from sqlalchemy import create_engine
+
+    from product.app.db.session import ensure_columns
+
+    engine = create_engine(f"sqlite:///{tmp_path / 'old.sqlite'}")
+    with engine.begin() as conn:
+        conn.exec_driver_sql(
+            """
+            create table consents (
+                id integer primary key,
+                profile_id integer not null,
+                processing integer not null,
+                publication integer not null,
+                accepted_at text not null
+            )
+            """
+        )
+        conn.exec_driver_sql(
+            "insert into consents (profile_id, processing, publication, accepted_at) "
+            "values (1, 1, 1, '2020-01-01T00:00:00Z')"
+        )
+    ensure_columns(engine)
+    ensure_columns(engine)
+    with engine.begin() as conn:
+        info = conn.exec_driver_sql("PRAGMA table_info(consents)").fetchall()
+        old = conn.exec_driver_sql(
+            "select show_name, show_experience, show_achievements from consents where profile_id = 1"
+        ).one()
+        conn.exec_driver_sql(
+            "insert into consents (profile_id, processing, publication, accepted_at) "
+            "values (2, 0, 0, '2020-01-02T00:00:00Z')"
+        )
+        fresh = conn.exec_driver_sql(
+            "select show_name, show_experience, show_achievements from consents where profile_id = 2"
+        ).one()
+    by_name = {row[1]: row for row in info}
+    for name in ("show_name", "show_experience", "show_achievements"):
+        column = by_name[name]
+        assert column[2].upper() == "INTEGER"
+        assert column[3] == 1
+        assert str(column[4]).strip("'") == "1"
+    assert tuple(old) == (1, 1, 1)
+    assert tuple(fresh) == (1, 1, 1)
+    assert None not in old and None not in fresh
+
+
+def test_visibility_flags_mask_the_employer_card(client):
+    from product.fsp_mock.adapter import CANONICAL_DISCIPLINES
+
+    open_name = "Тайноеимя Сокрытов"
+    experience = "платежи в контуре"
+    carrier = "Носитель Достижений"
+    single = "Носитель Одного"
+
+    def login(email: str) -> None:
+        logged = client.post("/api/auth/login", json={"email": email, "password": "password-ok"})
+        assert logged.status_code == 200, logged.text
+
+    def cards(params: dict) -> list[dict]:
+        listed = client.get("/api/employer/candidates", params=params)
+        assert listed.status_code == 200, listed.text
+        return listed.json()
+
+    visible_id = _seeker(
+        client,
+        "flags-a@example.com",
+        full_name=open_name,
+        experience=experience,
+    )
+    many_id = _seeker(
+        client,
+        "flags-b@example.com",
+        full_name=carrier,
+        external_id="fsp-synth-1",
+    )
+    rank_before = client.get("/api/candidate/category").json()["rank_key"]
+    one_id = _seeker(
+        client,
+        "flags-c@example.com",
+        full_name=single,
+        external_id="fsp-synth-3",
+        show_achievements=False,
+    )
+    register_and_confirm(client, email="flags-boss@example.com", role="employer")
+    opened = cards({"category_id": "backend:middle"})
+    visible = next(card for card in opened if card["profile_id"] == visible_id)
+    many = next(card for card in opened if card["profile_id"] == many_id)
+    assert visible["full_name"] == open_name
+    assert visible["experience"] == experience
+    assert many["fsp_rank"] == "I"
+    assert len(many["achievements"]) == 5
+    assert "Программирование алгоритмическое" in {row["discipline"] for row in many["achievements"]}
+    page = client.get("/employer/shortlist", params={"category_id": "backend:middle"})
+    assert open_name in page.text
+    assert "Программирование алгоритмическое" in page.text
+
+    login("flags-a@example.com")
+    hidden_name = client.put(
+        "/api/candidate/profile",
+        json={**_PROFILE, "full_name": open_name, "experience": experience, "show_name": False},
+    )
+    assert hidden_name.status_code == 200, hidden_name.text
+    own = client.get("/api/candidate/profile").json()
+    assert own["full_name"] == open_name
+    assert own["experience"] == experience
+    assert own["show_name"] is False
+    login("flags-boss@example.com")
+    masked = next(card for card in cards({"category_id": "backend:middle"}) if card["profile_id"] == visible_id)
+    assert masked["full_name"] == ""
+    page = client.get("/employer/shortlist", params={"category_id": "backend:middle"})
+    assert open_name not in page.text
+    assert f"Номер профиля: {visible_id}." in page.text
+
+    login("flags-a@example.com")
+    hidden_experience = client.put(
+        "/api/candidate/profile",
+        json={**_PROFILE, "full_name": open_name, "experience": experience, "show_experience": False},
+    )
+    assert hidden_experience.status_code == 200, hidden_experience.text
+    login("flags-boss@example.com")
+    found = cards({"category_id": "backend:middle", "q": "платеж"})
+    assert [card["profile_id"] for card in found] == [visible_id]
+    assert found[0]["experience"] == ""
+    assert experience not in found[0]["list_reason"]
+    assert "платеж" in found[0]["list_reason"]
+    quiet = client.get("/employer/shortlist", params={"category_id": "backend:middle", "q": "платеж"})
+    assert experience not in quiet.text
+
+    login("flags-b@example.com")
+    hidden_score = client.put(
+        "/api/candidate/profile",
+        json={
+            **_PROFILE,
+            "full_name": carrier,
+            "external_id": "fsp-synth-1",
+            "show_achievements": False,
+        },
+    )
+    assert hidden_score.status_code == 200, hidden_score.text
+    rank_after = client.get("/api/candidate/category").json()["rank_key"]
+    assert rank_after == rank_before
+    login("flags-boss@example.com")
+    hidden_cards = cards({"category_id": "backend:middle"})
+    many = next(card for card in hidden_cards if card["profile_id"] == many_id)
+    one = next(card for card in hidden_cards if card["profile_id"] == one_id)
+    assert many["rank_key"] == rank_before
+    for card in (many, one):
+        assert card["achievements"] == []
+        assert card["fsp_rank"] == ""
+        assert "достижен" not in card["list_reason"]
+        assert "5" not in card["list_reason"]
+    assert "1" not in one["list_reason"]
+    with_fsp = {card["profile_id"] for card in cards({"category_id": "backend:middle", "has_fsp": "true"})}
+    without_fsp = {card["profile_id"] for card in cards({"category_id": "backend:middle", "has_fsp": "false"})}
+    assert many_id in with_fsp and one_id in with_fsp
+    assert many_id not in without_fsp and one_id not in without_fsp
+    for card in cards({"category_id": "backend:middle", "has_fsp": "true"}):
+        if card["profile_id"] in (many_id, one_id):
+            assert "достижен" not in card["list_reason"]
+            assert "5" not in card["list_reason"]
+    page = client.get("/employer/shortlist", params={"category_id": "backend:middle"})
+    for discipline in CANONICAL_DISCIPLINES:
+        assert discipline not in page.text
+    assert "Квест выходного дня" not in page.text
+    assert "Достижений ФСП нет." not in page.text
+    assert "Разряд источника" not in page.text
+
+    login("flags-a@example.com")
+    unpublished = client.put(
+        "/api/candidate/profile",
+        json={**_PROFILE, "full_name": open_name, "experience": experience, "publication": False},
+    )
+    assert unpublished.status_code == 200, unpublished.text
+    login("flags-boss@example.com")
+    left = {card["profile_id"] for card in cards({"category_id": "backend:middle"})}
+    assert visible_id not in left
+    assert many_id in left
