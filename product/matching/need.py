@@ -46,30 +46,16 @@ def need_tokens(query: str) -> list[str]:
     ru = stemmer("russian")
     en = stemmer("english")
     stems: list[str] = []
-    seen_raw: set[str] = set()
-    seen_stem: set[str] = set()
+    seen: set[str] = set()
     for raw in str(query or "").split():
-        token = raw.strip().casefold()
-        if len(token) < 3 or token in seen_raw:
-            continue
-        seen_raw.add(token)
-        stem = _stem_token(token, ru, en)
-        if stem in seen_stem:
-            continue
-        seen_stem.add(stem)
-        stems.append(stem)
-    return stems
-
-
-def _stem_set(haystack: str) -> set[str]:
-    ru = stemmer("russian")
-    en = stemmer("english")
-    stems: set[str] = set()
-    for raw in str(haystack or "").split():
         token = raw.strip().casefold()
         if len(token) < 3:
             continue
-        stems.add(_stem_token(token, ru, en))
+        stem = _stem_token(token, ru, en)
+        if stem in seen:
+            continue
+        seen.add(stem)
+        stems.append(stem)
     return stems
 
 
@@ -111,7 +97,7 @@ def evaluate_need(
     if spec.has_fsp is False and fsp_count > 0:
         return NeedFit(False, empty, "")
     needles = need_tokens(spec.q)
-    stem_set = _stem_set(haystack)
+    stem_set = set(need_tokens(haystack))
     hit = [token for token in needles if token in stem_set]
     if needles and len(hit) != len(needles):
         return NeedFit(False, empty, "")
