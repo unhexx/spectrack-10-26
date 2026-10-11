@@ -20,9 +20,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:junior",
       "stack": [
         "python"
@@ -48,9 +48,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:junior",
       "stack": [
         "python"
@@ -76,9 +76,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:junior",
       "stack": [
         "python"
@@ -104,9 +104,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:junior",
       "stack": [
         "python"
@@ -132,9 +132,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:junior",
       "stack": [
         "python"
@@ -160,9 +160,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:junior",
       "stack": [
         "python"
@@ -188,9 +188,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:junior",
       "stack": [
         "python"
@@ -216,9 +216,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:junior",
       "stack": [
         "python"
@@ -244,9 +244,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:junior",
       "stack": [
         "python"
@@ -272,9 +272,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:lead",
       "stack": [
         "python"
@@ -300,9 +300,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:lead",
       "stack": [
         "python"
@@ -328,9 +328,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:lead",
       "stack": [
         "python"
@@ -356,9 +356,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:lead",
       "stack": [
         "python"
@@ -384,9 +384,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:lead",
       "stack": [
         "python"
@@ -412,9 +412,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:lead",
       "stack": [
         "python"
@@ -440,9 +440,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:lead",
       "stack": [
         "python"
@@ -468,9 +468,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:lead",
       "stack": [
         "python"
@@ -496,9 +496,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:lead",
       "stack": [
         "python"
@@ -524,9 +524,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:middle",
       "stack": [
         "python"
@@ -552,9 +552,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:middle",
       "stack": [
         "python"
@@ -580,9 +580,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:middle",
       "stack": [
         "python"
@@ -608,9 +608,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:middle",
       "stack": [
         "python"
@@ -636,9 +636,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:middle",
       "stack": [
         "python"
@@ -664,9 +664,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:middle",
       "stack": [
         "python"
@@ -692,9 +692,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:middle",
       "stack": [
         "python"
@@ -720,9 +720,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:middle",
       "stack": [
         "python"
@@ -748,9 +748,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:middle",
       "stack": [
         "python"
@@ -776,9 +776,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:senior",
       "stack": [
         "python"
@@ -804,9 +804,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:senior",
       "stack": [
         "python"
@@ -832,9 +832,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:senior",
       "stack": [
         "python"
@@ -860,9 +860,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:senior",
       "stack": [
         "python"
@@ -888,9 +888,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:senior",
       "stack": [
         "python"
@@ -916,9 +916,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:senior",
       "stack": [
         "python"
@@ -944,9 +944,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:senior",
       "stack": [
         "python"
@@ -972,9 +972,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:senior",
       "stack": [
         "python"
@@ -1000,9 +1000,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:senior",
       "stack": [
         "python"
@@ -1028,9 +1028,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:junior",
       "stack": [
         "python"
@@ -1056,9 +1056,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:junior",
       "stack": [
         "python"
@@ -1084,9 +1084,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:junior",
       "stack": [
         "python"
@@ -1112,9 +1112,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:junior",
       "stack": [
         "python"
@@ -1140,9 +1140,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:junior",
       "stack": [
         "python"
@@ -1168,9 +1168,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:junior",
       "stack": [
         "python"
@@ -1196,9 +1196,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:junior",
       "stack": [
         "python"
@@ -1224,9 +1224,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:junior",
       "stack": [
         "python"
@@ -1252,9 +1252,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:junior",
       "stack": [
         "python"
@@ -1280,9 +1280,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:lead",
       "stack": [
         "python"
@@ -1308,9 +1308,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:lead",
       "stack": [
         "python"
@@ -1336,9 +1336,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:lead",
       "stack": [
         "python"
@@ -1364,9 +1364,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:lead",
       "stack": [
         "python"
@@ -1392,9 +1392,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:lead",
       "stack": [
         "python"
@@ -1420,9 +1420,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:lead",
       "stack": [
         "python"
@@ -1448,9 +1448,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:lead",
       "stack": [
         "python"
@@ -1476,9 +1476,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:lead",
       "stack": [
         "python"
@@ -1504,9 +1504,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:lead",
       "stack": [
         "python"
@@ -1532,9 +1532,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:middle",
       "stack": [
         "python"
@@ -1560,9 +1560,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:middle",
       "stack": [
         "python"
@@ -1588,9 +1588,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:middle",
       "stack": [
         "python"
@@ -1616,9 +1616,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:middle",
       "stack": [
         "python"
@@ -1644,9 +1644,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:middle",
       "stack": [
         "python"
@@ -1672,9 +1672,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:middle",
       "stack": [
         "python"
@@ -1700,9 +1700,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:middle",
       "stack": [
         "python"
@@ -1728,9 +1728,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:middle",
       "stack": [
         "python"
@@ -1756,9 +1756,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:middle",
       "stack": [
         "python"
@@ -1784,9 +1784,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:senior",
       "stack": [
         "python"
@@ -1812,9 +1812,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:senior",
       "stack": [
         "python"
@@ -1840,9 +1840,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:senior",
       "stack": [
         "python"
@@ -1868,9 +1868,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:senior",
       "stack": [
         "python"
@@ -1896,9 +1896,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:senior",
       "stack": [
         "python"
@@ -1924,9 +1924,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:senior",
       "stack": [
         "python"
@@ -1952,9 +1952,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:senior",
       "stack": [
         "python"
@@ -1980,9 +1980,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:senior",
       "stack": [
         "python"
@@ -2008,9 +2008,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:senior",
       "stack": [
         "python"
@@ -2036,9 +2036,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:junior",
       "stack": [
         "linux"
@@ -2064,9 +2064,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:junior",
       "stack": [
         "linux"
@@ -2092,9 +2092,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:junior",
       "stack": [
         "linux"
@@ -2120,9 +2120,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:junior",
       "stack": [
         "linux"
@@ -2148,9 +2148,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:junior",
       "stack": [
         "linux"
@@ -2176,9 +2176,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:junior",
       "stack": [
         "linux"
@@ -2204,9 +2204,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:junior",
       "stack": [
         "linux"
@@ -2232,9 +2232,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:junior",
       "stack": [
         "linux"
@@ -2260,9 +2260,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:junior",
       "stack": [
         "linux"
@@ -2288,9 +2288,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:lead",
       "stack": [
         "linux"
@@ -2316,9 +2316,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:lead",
       "stack": [
         "linux"
@@ -2344,9 +2344,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:lead",
       "stack": [
         "linux"
@@ -2372,9 +2372,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:lead",
       "stack": [
         "linux"
@@ -2400,9 +2400,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:lead",
       "stack": [
         "linux"
@@ -2428,9 +2428,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:lead",
       "stack": [
         "linux"
@@ -2456,9 +2456,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:lead",
       "stack": [
         "linux"
@@ -2484,9 +2484,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:lead",
       "stack": [
         "linux"
@@ -2512,9 +2512,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:lead",
       "stack": [
         "linux"
@@ -2540,9 +2540,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:middle",
       "stack": [
         "linux"
@@ -2568,9 +2568,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:middle",
       "stack": [
         "linux"
@@ -2596,9 +2596,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:middle",
       "stack": [
         "linux"
@@ -2624,9 +2624,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:middle",
       "stack": [
         "linux"
@@ -2652,9 +2652,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:middle",
       "stack": [
         "linux"
@@ -2680,9 +2680,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:middle",
       "stack": [
         "linux"
@@ -2708,9 +2708,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:middle",
       "stack": [
         "linux"
@@ -2736,9 +2736,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:middle",
       "stack": [
         "linux"
@@ -2764,9 +2764,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:middle",
       "stack": [
         "linux"
@@ -2792,9 +2792,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:senior",
       "stack": [
         "linux"
@@ -2820,9 +2820,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:senior",
       "stack": [
         "linux"
@@ -2848,9 +2848,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:senior",
       "stack": [
         "linux"
@@ -2876,9 +2876,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:senior",
       "stack": [
         "linux"
@@ -2904,9 +2904,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:senior",
       "stack": [
         "linux"
@@ -2932,9 +2932,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:senior",
       "stack": [
         "linux"
@@ -2960,9 +2960,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:senior",
       "stack": [
         "linux"
@@ -2988,9 +2988,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:senior",
       "stack": [
         "linux"
@@ -3016,9 +3016,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:senior",
       "stack": [
         "linux"
@@ -3044,9 +3044,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:junior",
       "stack": [
         "javascript"
@@ -3072,9 +3072,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:junior",
       "stack": [
         "javascript"
@@ -3100,9 +3100,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:junior",
       "stack": [
         "javascript"
@@ -3128,9 +3128,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:junior",
       "stack": [
         "javascript"
@@ -3156,9 +3156,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:junior",
       "stack": [
         "javascript"
@@ -3184,9 +3184,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:junior",
       "stack": [
         "javascript"
@@ -3212,9 +3212,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:junior",
       "stack": [
         "javascript"
@@ -3240,9 +3240,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:junior",
       "stack": [
         "javascript"
@@ -3268,9 +3268,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:junior",
       "stack": [
         "javascript"
@@ -3296,9 +3296,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:lead",
       "stack": [
         "javascript"
@@ -3324,9 +3324,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:lead",
       "stack": [
         "javascript"
@@ -3352,9 +3352,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:lead",
       "stack": [
         "javascript"
@@ -3380,9 +3380,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:lead",
       "stack": [
         "javascript"
@@ -3408,9 +3408,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:lead",
       "stack": [
         "javascript"
@@ -3436,9 +3436,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:lead",
       "stack": [
         "javascript"
@@ -3464,9 +3464,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:lead",
       "stack": [
         "javascript"
@@ -3492,9 +3492,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:lead",
       "stack": [
         "javascript"
@@ -3520,9 +3520,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:lead",
       "stack": [
         "javascript"
@@ -3548,9 +3548,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:middle",
       "stack": [
         "javascript"
@@ -3576,9 +3576,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:middle",
       "stack": [
         "javascript"
@@ -3604,9 +3604,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:middle",
       "stack": [
         "javascript"
@@ -3632,9 +3632,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:middle",
       "stack": [
         "javascript"
@@ -3660,9 +3660,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:middle",
       "stack": [
         "javascript"
@@ -3688,9 +3688,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:middle",
       "stack": [
         "javascript"
@@ -3716,9 +3716,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:middle",
       "stack": [
         "javascript"
@@ -3744,9 +3744,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:middle",
       "stack": [
         "javascript"
@@ -3772,9 +3772,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:middle",
       "stack": [
         "javascript"
@@ -3800,9 +3800,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:senior",
       "stack": [
         "javascript"
@@ -3828,9 +3828,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:senior",
       "stack": [
         "javascript"
@@ -3856,9 +3856,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:senior",
       "stack": [
         "javascript"
@@ -3884,9 +3884,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:senior",
       "stack": [
         "javascript"
@@ -3912,9 +3912,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:senior",
       "stack": [
         "javascript"
@@ -3940,9 +3940,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:senior",
       "stack": [
         "javascript"
@@ -3968,9 +3968,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:senior",
       "stack": [
         "javascript"
@@ -3996,9 +3996,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:senior",
       "stack": [
         "javascript"
@@ -4024,9 +4024,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:senior",
       "stack": [
         "javascript"
@@ -4052,9 +4052,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:junior",
       "stack": [
         "kotlin"
@@ -4080,9 +4080,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:junior",
       "stack": [
         "kotlin"
@@ -4108,9 +4108,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:junior",
       "stack": [
         "kotlin"
@@ -4136,9 +4136,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:junior",
       "stack": [
         "kotlin"
@@ -4164,9 +4164,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:junior",
       "stack": [
         "kotlin"
@@ -4192,9 +4192,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:junior",
       "stack": [
         "kotlin"
@@ -4220,9 +4220,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:junior",
       "stack": [
         "kotlin"
@@ -4248,9 +4248,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:junior",
       "stack": [
         "kotlin"
@@ -4276,9 +4276,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:junior",
       "stack": [
         "kotlin"
@@ -4304,9 +4304,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:lead",
       "stack": [
         "kotlin"
@@ -4332,9 +4332,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:lead",
       "stack": [
         "kotlin"
@@ -4360,9 +4360,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:lead",
       "stack": [
         "kotlin"
@@ -4388,9 +4388,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:lead",
       "stack": [
         "kotlin"
@@ -4416,9 +4416,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:lead",
       "stack": [
         "kotlin"
@@ -4444,9 +4444,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:lead",
       "stack": [
         "kotlin"
@@ -4472,9 +4472,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:lead",
       "stack": [
         "kotlin"
@@ -4500,9 +4500,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:lead",
       "stack": [
         "kotlin"
@@ -4528,9 +4528,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:lead",
       "stack": [
         "kotlin"
@@ -4556,9 +4556,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:middle",
       "stack": [
         "kotlin"
@@ -4584,9 +4584,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:middle",
       "stack": [
         "kotlin"
@@ -4612,9 +4612,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:middle",
       "stack": [
         "kotlin"
@@ -4640,9 +4640,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:middle",
       "stack": [
         "kotlin"
@@ -4668,9 +4668,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:middle",
       "stack": [
         "kotlin"
@@ -4696,9 +4696,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:middle",
       "stack": [
         "kotlin"
@@ -4724,9 +4724,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:middle",
       "stack": [
         "kotlin"
@@ -4752,9 +4752,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:middle",
       "stack": [
         "kotlin"
@@ -4780,9 +4780,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:middle",
       "stack": [
         "kotlin"
@@ -4808,9 +4808,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:senior",
       "stack": [
         "kotlin"
@@ -4836,9 +4836,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:senior",
       "stack": [
         "kotlin"
@@ -4864,9 +4864,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:senior",
       "stack": [
         "kotlin"
@@ -4892,9 +4892,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:senior",
       "stack": [
         "kotlin"
@@ -4920,9 +4920,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:senior",
       "stack": [
         "kotlin"
@@ -4948,9 +4948,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:senior",
       "stack": [
         "kotlin"
@@ -4976,9 +4976,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:senior",
       "stack": [
         "kotlin"
@@ -5004,9 +5004,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:senior",
       "stack": [
         "kotlin"
@@ -5032,9 +5032,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:senior",
       "stack": [
         "kotlin"
@@ -5060,9 +5060,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:junior",
       "stack": [
         "linux"
@@ -5088,9 +5088,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:junior",
       "stack": [
         "linux"
@@ -5116,9 +5116,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:junior",
       "stack": [
         "linux"
@@ -5144,9 +5144,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:junior",
       "stack": [
         "linux"
@@ -5172,9 +5172,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:junior",
       "stack": [
         "linux"
@@ -5200,9 +5200,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:junior",
       "stack": [
         "linux"
@@ -5228,9 +5228,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:junior",
       "stack": [
         "linux"
@@ -5256,9 +5256,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:junior",
       "stack": [
         "linux"
@@ -5284,9 +5284,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:junior",
       "stack": [
         "linux"
@@ -5312,9 +5312,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:lead",
       "stack": [
         "linux"
@@ -5340,9 +5340,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:lead",
       "stack": [
         "linux"
@@ -5368,9 +5368,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:lead",
       "stack": [
         "linux"
@@ -5396,9 +5396,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:lead",
       "stack": [
         "linux"
@@ -5424,9 +5424,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:lead",
       "stack": [
         "linux"
@@ -5452,9 +5452,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:lead",
       "stack": [
         "linux"
@@ -5480,9 +5480,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:lead",
       "stack": [
         "linux"
@@ -5508,9 +5508,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:lead",
       "stack": [
         "linux"
@@ -5536,9 +5536,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:lead",
       "stack": [
         "linux"
@@ -5564,9 +5564,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:middle",
       "stack": [
         "linux"
@@ -5592,9 +5592,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:middle",
       "stack": [
         "linux"
@@ -5620,9 +5620,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:middle",
       "stack": [
         "linux"
@@ -5648,9 +5648,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:middle",
       "stack": [
         "linux"
@@ -5676,9 +5676,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:middle",
       "stack": [
         "linux"
@@ -5704,9 +5704,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:middle",
       "stack": [
         "linux"
@@ -5732,9 +5732,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:middle",
       "stack": [
         "linux"
@@ -5760,9 +5760,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:middle",
       "stack": [
         "linux"
@@ -5788,9 +5788,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:middle",
       "stack": [
         "linux"
@@ -5816,9 +5816,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:senior",
       "stack": [
         "linux"
@@ -5844,9 +5844,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:senior",
       "stack": [
         "linux"
@@ -5872,9 +5872,9 @@
         "c",
         "b"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:senior",
       "stack": [
         "linux"
@@ -5900,9 +5900,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:senior",
       "stack": [
         "linux"
@@ -5928,9 +5928,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:senior",
       "stack": [
         "linux"
@@ -5956,9 +5956,9 @@
         "a",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:senior",
       "stack": [
         "linux"
@@ -5984,9 +5984,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:senior",
       "stack": [
         "linux"
@@ -6012,9 +6012,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:senior",
       "stack": [
         "linux"
@@ -6040,9 +6040,9 @@
         "b",
         "a"
       ],
-      "test_score": 67,
-      "test_outcome": "confirm",
-      "expected_outcome": "confirm",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:senior",
       "stack": [
         "linux"
@@ -6068,9 +6068,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:junior",
       "stack": [
         "python"
@@ -6096,9 +6096,9 @@
         "a",
         "b"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:lead",
       "stack": [
         "python"
@@ -6124,9 +6124,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:middle",
       "stack": [
         "python"
@@ -6152,9 +6152,9 @@
         "b",
         "a"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:middle",
       "stack": [
         "python"
@@ -6180,9 +6180,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:senior",
       "stack": [
         "python"
@@ -6208,9 +6208,9 @@
         "a",
         "a"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "backend:senior",
       "stack": [
         "python"
@@ -6236,9 +6236,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:junior",
       "stack": [
         "python"
@@ -6264,9 +6264,9 @@
         "a",
         "b"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:lead",
       "stack": [
         "python"
@@ -6292,9 +6292,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:middle",
       "stack": [
         "python"
@@ -6320,9 +6320,9 @@
         "b",
         "a"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:middle",
       "stack": [
         "python"
@@ -6348,9 +6348,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:senior",
       "stack": [
         "python"
@@ -6376,9 +6376,9 @@
         "a",
         "a"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "data:senior",
       "stack": [
         "python"
@@ -6404,9 +6404,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:junior",
       "stack": [
         "linux"
@@ -6432,9 +6432,9 @@
         "a",
         "b"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:lead",
       "stack": [
         "linux"
@@ -6460,9 +6460,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:middle",
       "stack": [
         "linux"
@@ -6488,9 +6488,9 @@
         "b",
         "a"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:middle",
       "stack": [
         "linux"
@@ -6516,9 +6516,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:senior",
       "stack": [
         "linux"
@@ -6544,9 +6544,9 @@
         "a",
         "a"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "devops:senior",
       "stack": [
         "linux"
@@ -6572,9 +6572,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:junior",
       "stack": [
         "javascript"
@@ -6600,9 +6600,9 @@
         "a",
         "b"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:lead",
       "stack": [
         "javascript"
@@ -6628,9 +6628,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:middle",
       "stack": [
         "javascript"
@@ -6656,9 +6656,9 @@
         "b",
         "a"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:middle",
       "stack": [
         "javascript"
@@ -6684,9 +6684,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:senior",
       "stack": [
         "javascript"
@@ -6712,9 +6712,9 @@
         "a",
         "a"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "frontend:senior",
       "stack": [
         "javascript"
@@ -6740,9 +6740,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:junior",
       "stack": [
         "kotlin"
@@ -6768,9 +6768,9 @@
         "a",
         "b"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:lead",
       "stack": [
         "kotlin"
@@ -6796,9 +6796,9 @@
         "c",
         "a"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:middle",
       "stack": [
         "kotlin"
@@ -6824,9 +6824,9 @@
         "b",
         "a"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:middle",
       "stack": [
         "kotlin"
@@ -6852,9 +6852,9 @@
         "a",
         "b"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:senior",
       "stack": [
         "kotlin"
@@ -6880,9 +6880,9 @@
         "a",
         "a"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "mobile:senior",
       "stack": [
         "kotlin"
@@ -6908,9 +6908,9 @@
         "b",
         "c"
       ],
-      "test_score": 100,
-      "test_outcome": "suggest_higher",
-      "expected_outcome": "suggest_higher",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:junior",
       "stack": [
         "linux"
@@ -6936,9 +6936,9 @@
         "a",
         "b"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:lead",
       "stack": [
         "linux"
@@ -6964,9 +6964,9 @@
         "b",
         "a"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:middle",
       "stack": [
         "linux"
@@ -6992,9 +6992,9 @@
         "a",
         "a"
       ],
-      "test_score": 0,
-      "test_outcome": "suggest_lower",
-      "expected_outcome": "suggest_lower",
+      "test_score": null,
+      "test_outcome": null,
+      "expected_outcome": null,
       "expected_category_id": "security:senior",
       "stack": [
         "linux"

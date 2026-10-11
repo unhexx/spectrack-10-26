@@ -104,13 +104,13 @@ resume_ok 4 4
 python -m product.matching.synth_eval_run
 ```
 
-Набор в git: 1000 профилей, 4 шарда, 12 потребностей, 24 пары шаблона. Числа этого запуска, не цель. Порога нет. `outcome_match` и `template_stable` — кабинетный тест, как у золотого прогона, а не сравнение двух полей шарда. `grade_separation` считается по каталогу стемов, `sim_*` — по тесту кабинета, 24 пары × 3, не по ответам тысячи людей. График — [`synth-eval.svg`](synth-eval.svg) и [`synth-eval.png`](synth-eval.png).
+Набор в git: 1000 профилей, 4 шарда, 12 потребностей, 24 пары шаблона. Числа этого запуска, не цель. Порога нет. `outcome_match` и `template_stable` — кабинетный тест, как у золотого прогона, а не сравнение двух полей шарда. Балл теста из трёх вопросов в шард не пишется, и топ тысячи этим баллом не поднимается. `grade_separation` считается по каталогу стемов, `sim_*` — по тесту кабинета, 24 пары × 3, не по ответам тысячи людей. График — [`synth-eval.svg`](synth-eval.svg) и [`synth-eval.png`](synth-eval.png).
 
 ```text
 category_match 1000 1000
 outcome_match 72 72
 template_stable 24 24
-relevant_in_top 36 36
+relevant_in_top 30 36
 resume_ok 0 0
 grade_separation 215 216
 sim_competent 72 72

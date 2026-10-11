@@ -9,9 +9,9 @@
 <text x="16" y="128" font-size="14" font-family="JetBrains Mono" fill="#1B1C21">template_stable 24 24</text>
 <rect x="300" y="116" width="400" height="12" fill="#EDEDED"/>
 <rect x="300" y="116" width="400" height="12" fill="#402FFF"/>
-<text x="16" y="174" font-size="14" font-family="JetBrains Mono" fill="#1B1C21">relevant_in_top 36 36</text>
+<text x="16" y="174" font-size="14" font-family="JetBrains Mono" fill="#1B1C21">relevant_in_top 30 36</text>
 <rect x="300" y="162" width="400" height="12" fill="#EDEDED"/>
-<rect x="300" y="162" width="400" height="12" fill="#402FFF"/>
+<rect x="300" y="162" width="333" height="12" fill="#402FFF"/>
 <text x="16" y="220" font-size="14" font-family="JetBrains Mono" fill="#1B1C21">resume_ok 0 0</text>
 <rect x="300" y="208" width="400" height="12" fill="#EDEDED"/>
 <text x="16" y="266" font-size="14" font-family="JetBrains Mono" fill="#1B1C21">grade_separation 215 216</text>

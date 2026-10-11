@@ -168,7 +168,10 @@ def test_full_shards_report_denominators():
         for row in bundle["profiles"]
     ]
     assert collect_counts(poisoned)["outcome_match"] == counts["outcome_match"]
-    assert counts["relevant_in_top"] == (36, 36)
+    assert all(row["test_score"] is None for row in bundle["profiles"])
+    assert all(row["test_outcome"] is None for row in bundle["profiles"])
+    assert all(row["expected_outcome"] is None for row in bundle["profiles"])
+    assert counts["relevant_in_top"] == (30, 36)
     assert counts["resume_ok"] == (0, 0)
     assert counts["grade_separation"] == (215, 216)
     assert counts["sim_competent"] == (72, 72)

@@ -488,13 +488,13 @@ sim_adjacent <попало> <слотов>
 
 ### SYNTH-EVAL
 
-Критерий 25% просит процедуру на синтетике с известной разметкой, не только золотые 38. Набор — 1000 живых ФИО в `product/matching/golden/synth_eval/`, слоты и сборщик в `product/matching/synth_eval.py`, прогон `python -m product.matching.synth_eval_run`, график `product/docs/synth-eval.svg` и `synth-eval.png`. `GET /validation` по-прежнему золотой 38. PDF на тысячу не генерируем: `resume_ok 0 0`. `outcome_match` и `template_stable` — кабинетный тест, как у золотого прогона, не сравнение полей шарда. `grade_separation` — каталог стемов, `sim_*` — тест кабинета, 24 пары × 3, не ответы 1000 людей. Порога и NDCG нет. Числа этого запуска:
+Критерий 25% просит процедуру на синтетике с известной разметкой, не только золотые 38. Набор — 1000 живых ФИО в `product/matching/golden/synth_eval/`, слоты и сборщик в `product/matching/synth_eval.py`, прогон `python -m product.matching.synth_eval_run`, график `product/docs/synth-eval.svg` и `synth-eval.png`. `GET /validation` по-прежнему золотой 38. PDF на тысячу не генерируем: `resume_ok 0 0`. `outcome_match` и `template_stable` — кабинетный тест, как у золотого прогона, не сравнение полей шарда. Балл теста из трёх вопросов в шард не пишется. `grade_separation` — каталог стемов, `sim_*` — тест кабинета, 24 пары × 3, не ответы 1000 людей. Порога и NDCG нет. Числа этого запуска:
 
 ```text
 category_match 1000 1000
 outcome_match 72 72
 template_stable 24 24
-relevant_in_top 36 36
+relevant_in_top 30 36
 resume_ok 0 0
 grade_separation 215 216
 sim_competent 72 72
