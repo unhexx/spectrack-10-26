@@ -15,9 +15,9 @@
   <label for="description">Текст</label>
   <textarea id="description" name="description" rows="3" required>{% if vacancy %}{{ vacancy.description }}{% endif %}</textarea>
   <label for="company_name">Название</label>
-  <input id="company_name" name="company_name" type="text" required readonly value="{{ vacancy.company_name if vacancy else company.name }}">
+  <input id="company_name" name="company_name" type="text" required readonly value="{{ company.name }}">
   <label for="contact_channel">Способ связи компании</label>
-  <input id="contact_channel" name="contact_channel" type="text" required readonly value="{{ vacancy.contact_channel if vacancy else company.contact }}">
+  <input id="contact_channel" name="contact_channel" type="text" required readonly value="{{ company.contact }}">
   <label for="salary_min">Вилка от, руб. (до вычета НДФЛ)</label>
   <input id="salary_min" name="salary_min" type="number" required{% if vacancy %} value="{{ vacancy.salary_min }}"{% endif %}>
   <label for="salary_max">Вилка до, руб. (до вычета НДФЛ)</label>

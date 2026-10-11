@@ -437,3 +437,50 @@ def test_edit_page_fills_the_same_form_and_saves(client):
     assert ">Сохранить<" not in foreign.text
     missing = client.get(f"/employer/vacancies/{10**30}")
     assert missing.status_code == 404
+
+
+def test_edit_page_posts_live_company_after_rename(client):
+    _employer(client, email="rename-boss@example.com")
+    created = client.post("/api/employer/vacancies", json=_vacancy())
+    assert created.status_code == 201, created.text
+    vacancy_id = created.json()["id"]
+    renamed = {
+        "name": "Новая синтетика",
+        "description": "Платежи",
+        "direction": "backend",
+        "contact": "telegram: @nova",
+    }
+    saved_card = client.put("/api/employer/company", json=renamed)
+    assert saved_card.status_code == 200, saved_card.text
+    edit = client.get(f"/employer/vacancies/{vacancy_id}")
+    assert edit.status_code == 200
+    assert 'id="company_name" name="company_name" type="text" required readonly value="Новая синтетика"' in edit.text
+    assert 'id="contact_channel" name="contact_channel" type="text" required readonly value="telegram: @nova"' in edit.text
+    assert 'value="Backend middle"' in edit.text
+    assert "Платежи, без дежурств" in edit.text
+    saved = client.post(
+        f"/employer/vacancies/{vacancy_id}",
+        data={
+            "csrf": _csrf(edit.text),
+            "title": "Backend middle",
+            "description": "Платежи, без дежурств",
+            "category_id": "backend:middle",
+            "company_name": "Новая синтетика",
+            "contact_channel": "telegram: @nova",
+            "salary_min": "180000",
+            "salary_max": "250000",
+            "salary_currency": "RUB",
+            "task_prompt": "Назовите один заголовок идемпотентного POST.",
+        },
+        follow_redirects=False,
+    )
+    assert saved.status_code == 303
+    assert saved.headers["location"].endswith(f"/employer/vacancies/{vacancy_id}")
+    listed = client.get("/api/employer/vacancies")
+    assert listed.status_code == 200
+    row = listed.json()[0]
+    assert row["id"] == vacancy_id
+    assert row["company_name"] == "Новая синтетика"
+    assert row["contact_channel"] == "telegram: @nova"
+    assert row["title"] == "Backend middle"
+    assert row["status"] == "published"
