@@ -1,501 +1,501 @@
 ﻿candidate_id,specialization,theta,true_grade,declared_grade,old_final_grade,new_final_grade,live_grade,live_status,live_confidence,live_position,live_items,v2_grade,v2_status,v2_confidence,v2_position,v2_items
-sim-0001,backend,-1.197,junior,junior,junior,junior,junior,у границы,0.887,средняя,12,junior,у границы,0.859,средняя,12
-sim-0002,frontend,1.257,senior,lead,lead,senior,lead,у границы,0.711,нижняя,12,senior,уверенно,0.944,средняя,24
-sim-0003,mobile,-0.82,junior,junior,junior,middle,junior,у границы,0.798,нижняя,12,junior,уверенно,0.864,средняя,12
-sim-0004,data,-0.183,middle,middle,middle,middle,middle,у границы,0.801,верхняя,17,middle,у границы,0.828,средняя,12
-sim-0005,security,-0.249,middle,senior,lead,middle,middle,у границы,0.605,нижняя,27,junior,у границы,0.668,верхняя,36
-sim-0006,devops,-0.047,middle,middle,junior,middle,middle,у границы,0.818,нижняя,15,middle,уверенно,0.868,средняя,12
-sim-0007,backend,-0.46,middle,middle,middle,junior,middle,у границы,0.725,нижняя,25,middle,у границы,0.782,нижняя,16
-sim-0008,frontend,1.277,senior,senior,lead,senior,senior,уверенно,0.905,средняя,15,senior,у границы,0.796,нижняя,17
-sim-0009,mobile,2.428,lead,lead,lead,senior,lead,уверенно,0.954,средняя,12,lead,уверенно,0.97,верхняя,12
-sim-0010,data,2.82,lead,lead,lead,lead,lead,уверенно,0.956,средняя,12,lead,уверенно,0.912,средняя,13
-sim-0011,security,2.985,lead,lead,lead,lead,lead,уверенно,0.998,верхняя,12,lead,уверенно,0.999,верхняя,12
-sim-0012,devops,-0.025,middle,junior,junior,middle,middle,у границы,0.796,верхняя,36,middle,уверенно,0.909,нижняя,30
-sim-0013,backend,-1.62,junior,junior,junior,junior,junior,у границы,0.878,средняя,12,не подтверждён,не подтверждён,0.487,,12
-sim-0014,frontend,1.16,senior,senior,lead,senior,senior,у границы,0.845,верхняя,18,senior,уверенно,0.88,средняя,12
-sim-0015,mobile,0.374,middle,middle,middle,middle,middle,у границы,0.642,нижняя,12,middle,уверенно,0.864,средняя,18
-sim-0016,data,2.811,lead,lead,lead,lead,lead,у границы,0.688,нижняя,12,lead,уверенно,0.926,средняя,12
-sim-0017,security,-0.903,junior,junior,junior,junior,junior,у границы,0.466,верхняя,18,middle,уверенно,0.89,нижняя,29
-sim-0018,devops,-1.103,junior,middle,junior,junior,junior,уверенно,0.967,средняя,24,junior,уверенно,0.971,средняя,30
-sim-0019,backend,-1.144,junior,middle,middle,junior,junior,уверенно,0.97,средняя,24,junior,уверенно,0.867,верхняя,28
-sim-0020,frontend,0.323,middle,middle,senior,middle,middle,у границы,0.871,средняя,12,senior,у границы,0.81,нижняя,30
-sim-0021,mobile,2.851,lead,lead,lead,lead,lead,уверенно,0.998,верхняя,12,lead,уверенно,0.999,верхняя,12
-sim-0022,data,2.74,lead,senior,lead,lead,lead,уверенно,0.999,верхняя,24,lead,уверенно,0.985,средняя,30
-sim-0023,security,-0.364,middle,junior,middle,junior,junior,у границы,0.541,верхняя,18,middle,уверенно,0.9,средняя,24
-sim-0024,devops,-1.384,junior,junior,middle,junior,junior,у границы,0.84,средняя,12,junior,у границы,0.661,нижняя,14
-sim-0025,backend,1.14,senior,lead,lead,senior,middle,у границы,0.484,верхняя,36,senior,у границы,0.858,нижняя,26
-sim-0026,frontend,-1.052,junior,junior,middle,junior,junior,у границы,0.647,нижняя,12,junior,уверенно,0.892,средняя,12
-sim-0027,mobile,-0.694,junior,junior,middle,junior,junior,у границы,0.429,верхняя,27,middle,уверенно,0.889,нижняя,24
-sim-0028,data,-0.947,junior,junior,junior,junior,junior,у границы,0.737,верхняя,30,middle,уверенно,0.904,средняя,24
-sim-0029,security,1.965,lead,lead,lead,lead,lead,у границы,0.707,нижняя,12,lead,уверенно,0.931,средняя,12
-sim-0030,devops,1.06,senior,senior,senior,senior,senior,у границы,0.809,верхняя,18,senior,у границы,0.846,средняя,16
-sim-0031,backend,-1.588,junior,junior,junior,junior,junior,у границы,0.883,средняя,12,junior,уверенно,0.905,средняя,18
-sim-0032,frontend,1.579,senior,senior,lead,senior,senior,у границы,0.668,верхняя,18,senior,уверенно,0.87,верхняя,18
-sim-0033,mobile,-0.11,middle,junior,middle,middle,junior,у границы,0.505,верхняя,15,middle,у границы,0.682,нижняя,27
-sim-0034,data,0.225,middle,middle,junior,middle,middle,уверенно,0.908,средняя,17,middle,у границы,0.508,верхняя,18
-sim-0035,security,0.082,middle,junior,senior,middle,middle,у границы,0.864,средняя,24,middle,уверенно,0.883,средняя,24
-sim-0036,devops,0.759,senior,lead,lead,senior,senior,у границы,0.723,нижняя,24,senior,уверенно,0.963,средняя,24
-sim-0037,backend,-1.372,junior,junior,junior,junior,junior,уверенно,0.92,средняя,16,junior,у границы,0.828,средняя,12
-sim-0038,frontend,-0.523,middle,junior,junior,junior,junior,у границы,0.403,верхняя,16,middle,уверенно,0.918,средняя,24
-sim-0039,mobile,0.478,middle,senior,senior,senior,senior,у границы,0.666,нижняя,15,senior,у границы,0.669,нижняя,18
-sim-0040,data,-1.652,junior,junior,junior,не подтверждён,junior,у границы,0.856,средняя,12,junior,уверенно,0.891,средняя,18
-sim-0041,security,0.257,middle,junior,middle,middle,middle,у границы,0.665,верхняя,30,middle,уверенно,0.87,средняя,29
-sim-0042,devops,-0.089,middle,middle,middle,middle,middle,уверенно,0.919,средняя,24,middle,уверенно,0.906,средняя,18
-sim-0043,backend,2.102,lead,lead,senior,lead,senior,у границы,0.604,верхняя,24,lead,уверенно,0.953,средняя,12
-sim-0044,frontend,2.138,lead,senior,lead,lead,lead,у границы,0.832,нижняя,30,lead,уверенно,0.879,нижняя,33
-sim-0045,mobile,-0.716,junior,junior,middle,middle,junior,у границы,0.556,верхняя,15,middle,уверенно,0.935,средняя,30
-sim-0046,data,1.995,lead,senior,middle,senior,senior,у границы,0.847,нижняя,15,lead,у границы,0.776,нижняя,30
-sim-0047,security,0.177,middle,middle,middle,middle,middle,у границы,0.76,верхняя,18,middle,у границы,0.484,верхняя,29
-sim-0048,devops,-0.147,middle,senior,middle,middle,middle,уверенно,0.96,средняя,24,middle,уверенно,0.898,средняя,24
-sim-0049,backend,1.722,senior,lead,senior,senior,lead,у границы,0.847,нижняя,12,lead,у границы,0.661,нижняя,13
-sim-0050,frontend,-1.225,junior,junior,junior,junior,не подтверждён,не подтверждён,0.554,,12,junior,уверенно,0.877,средняя,12
-sim-0051,mobile,-1.585,junior,junior,не подтверждён,junior,junior,у границы,0.862,средняя,12,junior,уверенно,0.864,средняя,12
-sim-0052,data,0.981,senior,lead,senior,senior,senior,уверенно,0.906,средняя,24,senior,у границы,0.691,нижняя,26
-sim-0053,security,1.635,senior,senior,lead,senior,senior,уверенно,0.912,средняя,15,senior,уверенно,0.884,средняя,14
-sim-0054,devops,-0.269,middle,junior,middle,junior,middle,у границы,0.617,нижняя,30,middle,уверенно,0.939,средняя,24
-sim-0055,backend,0.374,middle,senior,middle,senior,senior,у границы,0.782,нижняя,27,middle,у границы,0.85,верхняя,24
-sim-0056,frontend,-0.727,junior,junior,junior,junior,junior,у границы,0.713,верхняя,16,middle,уверенно,0.918,нижняя,33
-sim-0057,mobile,-1.144,junior,junior,middle,junior,junior,у границы,0.527,верхняя,24,junior,у границы,0.807,верхняя,21
-sim-0058,data,0.42,middle,junior,senior,middle,middle,у границы,0.651,верхняя,42,senior,уверенно,0.914,средняя,42
-sim-0059,security,1.394,senior,lead,lead,senior,senior,у границы,0.527,верхняя,24,lead,у границы,0.632,нижняя,13
-sim-0060,devops,-1.486,junior,middle,middle,junior,junior,уверенно,0.945,средняя,24,junior,уверенно,0.888,нижняя,24
-sim-0061,backend,-1.457,junior,middle,middle,junior,junior,у границы,0.86,нижняя,24,junior,у границы,0.711,верхняя,28
-sim-0062,frontend,0.417,middle,junior,middle,senior,middle,у границы,0.604,верхняя,30,middle,у границы,0.486,верхняя,44
-sim-0063,mobile,-1.181,junior,junior,middle,junior,junior,у границы,0.417,верхняя,15,junior,у границы,0.656,верхняя,21
-sim-0064,data,-1.66,junior,middle,middle,junior,junior,у границы,0.758,нижняя,24,junior,уверенно,0.888,нижняя,24
-sim-0065,security,-1.615,junior,junior,junior,не подтверждён,junior,у границы,0.785,нижняя,12,junior,у границы,0.827,нижняя,12
-sim-0066,devops,-0.795,junior,junior,middle,junior,junior,у границы,0.442,верхняя,30,junior,у границы,0.769,верхняя,21
-sim-0067,backend,-0.183,middle,middle,middle,middle,middle,у границы,0.825,средняя,12,middle,уверенно,0.919,средняя,18
-sim-0068,frontend,1.701,senior,senior,lead,senior,senior,у границы,0.429,верхняя,18,senior,у границы,0.789,верхняя,21
-sim-0069,mobile,-1.005,junior,junior,junior,junior,junior,у границы,0.753,верхняя,15,junior,у границы,0.413,верхняя,21
-sim-0070,data,-0.711,junior,middle,не подтверждён,junior,junior,у границы,0.707,верхняя,27,middle,уверенно,0.907,средняя,12
-sim-0071,security,-0.973,junior,junior,junior,junior,junior,уверенно,0.951,средняя,18,junior,у границы,0.62,верхняя,17
-sim-0072,devops,-0.415,middle,junior,middle,middle,junior,у границы,0.602,верхняя,24,middle,уверенно,0.873,средняя,24
-sim-0073,backend,-0.791,junior,junior,junior,junior,junior,у границы,0.553,верхняя,16,middle,у границы,0.708,нижняя,25
-sim-0074,frontend,-0.633,junior,junior,junior,middle,middle,у границы,0.62,нижняя,28,junior,у границы,0.601,верхняя,33
-sim-0075,mobile,-0.121,middle,junior,middle,middle,middle,у границы,0.853,средняя,24,junior,у границы,0.663,верхняя,21
-sim-0076,data,1.194,senior,middle,senior,senior,senior,у границы,0.819,нижняя,29,senior,у границы,0.858,верхняя,37
-sim-0077,security,-1.32,junior,junior,middle,junior,junior,у границы,0.89,средняя,12,junior,уверенно,0.873,средняя,12
-sim-0078,devops,-1.399,junior,junior,junior,junior,junior,уверенно,0.945,средняя,18,junior,уверенно,0.894,средняя,12
-sim-0079,backend,1.364,senior,senior,senior,senior,senior,у границы,0.831,средняя,17,senior,у границы,0.809,средняя,12
-sim-0080,frontend,0.147,middle,middle,junior,middle,middle,у границы,0.641,верхняя,18,middle,уверенно,0.897,средняя,18
-sim-0081,mobile,1.987,lead,senior,senior,lead,senior,у границы,0.65,верхняя,24,senior,у границы,0.854,средняя,12
-sim-0082,data,-1.429,junior,middle,junior,junior,junior,уверенно,0.957,средняя,24,junior,уверенно,0.915,нижняя,24
-sim-0083,security,-1.14,junior,junior,junior,junior,junior,уверенно,0.901,средняя,12,junior,у границы,0.858,верхняя,17
-sim-0084,devops,-0.294,middle,middle,middle,middle,middle,у границы,0.84,средняя,12,middle,у границы,0.811,нижняя,18
-sim-0085,backend,-0.829,junior,junior,junior,junior,junior,у границы,0.76,верхняя,16,middle,у границы,0.729,нижняя,30
-sim-0086,frontend,1.08,senior,senior,senior,senior,senior,у границы,0.791,нижняя,15,senior,у границы,0.854,нижняя,17
-sim-0087,mobile,1.393,senior,senior,senior,senior,senior,у границы,0.677,верхняя,17,senior,у границы,0.816,средняя,12
-sim-0088,data,-0.013,middle,middle,middle,middle,middle,уверенно,0.948,средняя,20,middle,у границы,0.837,средняя,12
-sim-0089,security,1.757,senior,senior,senior,senior,senior,у границы,0.886,средняя,18,senior,уверенно,0.925,средняя,18
-sim-0090,devops,-1.511,junior,middle,junior,junior,junior,у границы,0.667,нижняя,24,не подтверждён,не подтверждён,0.448,,30
-sim-0091,backend,1.46,senior,middle,middle,middle,senior,у границы,0.772,верхняя,30,senior,у границы,0.763,верхняя,31
-sim-0092,frontend,0.827,senior,lead,lead,senior,senior,у границы,0.77,нижняя,24,senior,уверенно,0.926,нижняя,26
-sim-0093,mobile,0.362,middle,middle,middle,middle,middle,уверенно,0.925,средняя,18,middle,уверенно,0.89,средняя,18
-sim-0094,data,-0.644,junior,middle,middle,middle,middle,уверенно,0.908,средняя,15,middle,у границы,0.729,нижняя,27
-sim-0095,security,-1.577,junior,junior,junior,junior,junior,уверенно,0.928,средняя,12,не подтверждён,не подтверждён,0.732,,12
-sim-0096,devops,2.949,lead,senior,lead,lead,lead,уверенно,1.0,верхняя,30,lead,уверенно,0.987,средняя,30
-sim-0097,backend,-0.984,junior,middle,junior,junior,junior,у границы,0.851,верхняя,25,junior,уверенно,0.874,средняя,24
-sim-0098,frontend,-1.791,junior,junior,junior,не подтверждён,не подтверждён,не подтверждён,0.942,,12,не подтверждён,не подтверждён,0.742,,12
-sim-0099,mobile,1.58,senior,senior,senior,senior,senior,у границы,0.881,средняя,15,senior,у границы,0.835,средняя,12
-sim-0100,data,-0.08,middle,senior,middle,junior,middle,уверенно,0.922,средняя,27,middle,у границы,0.688,нижняя,25
-sim-0101,security,-1.61,junior,junior,junior,junior,не подтверждён,не подтверждён,0.494,,12,junior,у границы,0.809,нижняя,12
-sim-0102,devops,1.762,senior,senior,lead,lead,lead,уверенно,0.91,нижняя,30,senior,уверенно,0.909,средняя,18
-sim-0103,backend,0.739,senior,lead,middle,senior,senior,у границы,0.843,нижняя,24,middle,у границы,0.663,верхняя,39
-sim-0104,frontend,0.479,middle,middle,middle,middle,middle,у границы,0.78,верхняя,18,middle,у границы,0.708,верхняя,26
-sim-0105,mobile,0.945,senior,senior,middle,senior,senior,у границы,0.668,нижняя,15,senior,у границы,0.848,средняя,12
-sim-0106,data,1.186,senior,senior,senior,senior,senior,у границы,0.822,верхняя,16,senior,у границы,0.777,нижняя,15
-sim-0107,security,0.16,middle,middle,middle,middle,middle,у границы,0.811,средняя,12,middle,у границы,0.659,нижняя,26
-sim-0108,devops,1.761,senior,senior,senior,lead,senior,у границы,0.803,средняя,12,senior,у границы,0.519,верхняя,21
-sim-0109,backend,1.736,senior,senior,senior,senior,senior,у границы,0.414,верхняя,30,senior,у границы,0.527,верхняя,20
-sim-0110,frontend,-0.057,middle,middle,senior,middle,middle,уверенно,0.92,средняя,18,senior,у границы,0.758,нижняя,32
-sim-0111,mobile,2.536,lead,lead,lead,lead,lead,у границы,0.832,нижняя,12,lead,уверенно,0.998,верхняя,12
-sim-0112,data,-1.33,junior,junior,junior,junior,junior,у границы,0.833,средняя,12,junior,уверенно,0.898,средняя,12
-sim-0113,security,1.225,senior,middle,middle,senior,senior,у границы,0.894,средняя,30,senior,у границы,0.808,нижняя,29
-sim-0114,devops,-0.94,junior,middle,junior,junior,junior,у границы,0.885,нижняя,24,junior,у границы,0.85,верхняя,27
-sim-0115,backend,-0.013,middle,middle,senior,middle,middle,у границы,0.746,верхняя,18,middle,у границы,0.846,верхняя,18
-sim-0116,frontend,-0.142,middle,middle,middle,middle,middle,у границы,0.833,средняя,13,middle,у границы,0.848,нижняя,18
-sim-0117,mobile,1.235,senior,middle,senior,senior,senior,уверенно,0.921,нижняя,30,senior,уверенно,0.925,нижняя,30
-sim-0118,data,1.296,senior,senior,lead,senior,senior,у границы,0.831,средняя,12,senior,уверенно,0.88,средняя,17
-sim-0119,security,0.066,middle,middle,senior,middle,middle,у границы,0.859,средняя,12,middle,у границы,0.778,средняя,12
-sim-0120,devops,-0.593,middle,junior,middle,middle,junior,у границы,0.573,верхняя,18,middle,уверенно,0.864,нижняя,24
-sim-0121,backend,0.495,middle,senior,senior,senior,middle,у границы,0.733,верхняя,27,senior,у границы,0.664,нижняя,30
-sim-0122,frontend,-0.789,junior,junior,middle,junior,junior,у границы,0.549,верхняя,16,junior,у границы,0.554,верхняя,21
-sim-0123,mobile,0.459,middle,middle,senior,middle,senior,у границы,0.609,нижняя,30,senior,уверенно,0.953,средняя,30
-sim-0124,data,1.765,senior,senior,lead,senior,senior,у границы,0.801,средняя,12,senior,у границы,0.835,средняя,18
-sim-0125,security,-1.456,junior,middle,junior,не подтверждён,junior,уверенно,0.971,средняя,24,junior,у границы,0.816,нижняя,24
-sim-0126,devops,0.801,senior,senior,senior,middle,senior,у границы,0.823,средняя,12,senior,уверенно,0.897,средняя,16
-sim-0127,backend,-0.043,middle,senior,middle,middle,senior,у границы,0.843,средняя,12,middle,уверенно,0.955,средняя,24
-sim-0128,frontend,-0.071,middle,senior,lead,middle,middle,у границы,0.879,нижняя,24,middle,уверенно,0.898,нижняя,24
-sim-0129,mobile,-0.892,junior,junior,middle,junior,junior,у границы,0.532,верхняя,27,junior,уверенно,0.939,средняя,18
-sim-0130,data,-0.903,junior,junior,junior,junior,junior,у границы,0.864,средняя,12,junior,у границы,0.661,верхняя,18
-sim-0131,security,0.987,senior,lead,lead,senior,middle,у границы,0.552,верхняя,36,senior,уверенно,0.928,средняя,24
-sim-0132,devops,-0.962,junior,junior,junior,middle,junior,у границы,0.783,нижняя,12,junior,уверенно,0.93,средняя,18
-sim-0133,backend,-0.982,junior,middle,middle,junior,middle,у границы,0.664,нижняя,13,junior,у границы,0.77,верхняя,25
-sim-0134,frontend,2.932,lead,lead,lead,lead,lead,уверенно,0.999,верхняя,12,lead,уверенно,0.903,средняя,12
-sim-0135,mobile,2.211,lead,lead,lead,lead,lead,уверенно,0.957,средняя,12,senior,у границы,0.584,верхняя,26
-sim-0136,data,1.501,senior,lead,lead,senior,lead,у границы,0.854,нижняя,12,lead,у границы,0.729,нижняя,13
-sim-0137,security,-0.227,middle,middle,senior,junior,middle,у границы,0.761,нижняя,15,middle,у границы,0.73,нижняя,14
-sim-0138,devops,2.257,lead,senior,lead,lead,senior,у границы,0.406,верхняя,30,lead,уверенно,0.928,нижняя,30
-sim-0139,backend,-0.518,middle,middle,middle,middle,junior,у границы,0.454,верхняя,25,middle,у границы,0.851,средняя,12
-sim-0140,frontend,2.157,lead,senior,lead,senior,lead,у границы,0.751,нижняя,30,lead,уверенно,0.997,верхняя,24
-sim-0141,mobile,0.722,senior,senior,senior,middle,middle,у границы,0.789,верхняя,24,middle,у границы,0.834,верхняя,30
-sim-0142,data,1.512,senior,senior,senior,senior,senior,у границы,0.796,средняя,12,senior,у границы,0.791,средняя,12
-sim-0143,security,0.122,middle,middle,senior,middle,middle,у границы,0.752,верхняя,18,middle,у границы,0.826,средняя,12
-sim-0144,devops,2.446,lead,lead,lead,lead,senior,у границы,0.43,верхняя,24,lead,уверенно,0.962,средняя,12
-sim-0145,backend,-1.19,junior,junior,junior,junior,junior,у границы,0.705,верхняя,16,junior,у границы,0.756,нижняя,12
-sim-0146,frontend,-1.283,junior,junior,не подтверждён,junior,не подтверждён,не подтверждён,0.495,,12,junior,уверенно,0.887,средняя,18
-sim-0147,mobile,-0.529,middle,middle,middle,middle,middle,у границы,0.773,нижняя,12,middle,у границы,0.782,средняя,12
-sim-0148,data,-0.971,junior,junior,middle,junior,junior,у границы,0.829,верхняя,18,junior,у границы,0.85,верхняя,18
-sim-0149,security,1.231,senior,senior,lead,senior,senior,у границы,0.826,верхняя,18,senior,у границы,0.846,средняя,18
-sim-0150,devops,-0.147,middle,senior,senior,junior,middle,уверенно,0.957,средняя,24,middle,у границы,0.429,верхняя,28
-sim-0151,backend,-0.033,middle,middle,middle,middle,middle,у границы,0.88,средняя,12,middle,уверенно,0.907,средняя,12
-sim-0152,frontend,-1.699,junior,middle,middle,junior,не подтверждён,не подтверждён,0.772,,24,junior,у границы,0.813,нижняя,24
-sim-0153,mobile,-0.184,middle,senior,middle,middle,middle,уверенно,0.909,средняя,24,middle,у границы,0.796,нижняя,27
-sim-0154,data,1.916,lead,lead,lead,lead,lead,у границы,0.601,нижняя,12,senior,у границы,0.778,верхняя,24
-sim-0155,security,-0.481,middle,middle,middle,middle,junior,у границы,0.633,верхняя,27,middle,у границы,0.796,средняя,12
-sim-0156,devops,1.009,senior,lead,senior,senior,lead,у границы,0.674,нижняя,12,senior,уверенно,0.932,средняя,24
-sim-0157,backend,0.426,middle,middle,lead,middle,middle,у границы,0.749,верхняя,18,middle,у границы,0.46,верхняя,21
-sim-0158,frontend,0.757,senior,senior,lead,senior,senior,у границы,0.856,средняя,12,senior,у границы,0.702,нижняя,29
-sim-0159,mobile,-0.178,middle,middle,junior,junior,middle,у границы,0.673,нижняя,12,middle,у границы,0.691,нижняя,30
-sim-0160,data,-0.293,middle,senior,middle,junior,junior,у границы,0.526,верхняя,36,middle,уверенно,0.931,средняя,24
-sim-0161,security,-1.63,junior,junior,junior,junior,junior,у границы,0.632,нижняя,12,junior,у границы,0.833,нижняя,12
-sim-0162,devops,-0.681,junior,junior,senior,middle,junior,у границы,0.882,средняя,18,junior,уверенно,0.892,средняя,12
-sim-0163,backend,0.141,middle,senior,senior,middle,middle,уверенно,0.95,средняя,27,middle,уверенно,0.897,верхняя,30
-sim-0164,frontend,0.033,middle,middle,middle,middle,middle,у границы,0.884,средняя,18,middle,у границы,0.817,средняя,12
-sim-0165,mobile,0.423,middle,senior,senior,senior,senior,у границы,0.725,нижняя,27,senior,у границы,0.834,нижняя,12
-sim-0166,data,-1.481,junior,junior,junior,junior,junior,уверенно,0.904,средняя,18,junior,уверенно,0.902,средняя,18
-sim-0167,security,0.237,middle,middle,middle,senior,middle,у границы,0.876,средняя,18,middle,у границы,0.787,верхняя,17
-sim-0168,devops,0.13,middle,middle,senior,middle,middle,уверенно,0.9,средняя,15,middle,уверенно,0.861,верхняя,19
-sim-0169,backend,0.083,middle,junior,lead,junior,middle,уверенно,0.967,средняя,30,middle,уверенно,0.938,средняя,24
-sim-0170,frontend,1.539,senior,senior,lead,senior,senior,у границы,0.701,верхняя,18,senior,уверенно,0.938,средняя,18
-sim-0171,mobile,-0.629,junior,junior,senior,junior,junior,у границы,0.47,верхняя,27,middle,у границы,0.678,нижняя,30
-sim-0172,data,-1.44,junior,middle,junior,junior,junior,у границы,0.719,нижняя,24,junior,уверенно,0.95,средняя,24
-sim-0173,security,-1.588,junior,junior,junior,не подтверждён,junior,у границы,0.861,нижняя,12,junior,у границы,0.825,нижняя,12
-sim-0174,devops,0.141,middle,middle,middle,middle,middle,у границы,0.89,средняя,12,middle,уверенно,0.902,средняя,18
-sim-0175,backend,-0.602,junior,junior,junior,junior,middle,уверенно,0.903,нижняя,24,junior,уверенно,0.889,средняя,18
-sim-0176,frontend,0.644,senior,senior,middle,middle,senior,у границы,0.742,нижняя,27,middle,уверенно,0.867,верхняя,26
-sim-0177,mobile,0.402,middle,middle,senior,middle,middle,у границы,0.864,средняя,12,middle,у границы,0.519,верхняя,21
-sim-0178,data,-0.683,junior,middle,middle,middle,middle,у границы,0.859,средняя,12,junior,у границы,0.649,верхняя,27
-sim-0179,security,-0.026,middle,junior,middle,middle,middle,у границы,0.702,верхняя,30,senior,у границы,0.809,нижняя,36
-sim-0180,devops,1.116,senior,lead,lead,senior,senior,у границы,0.849,нижняя,24,senior,уверенно,0.934,средняя,24
-sim-0181,backend,1.428,senior,senior,lead,senior,senior,у границы,0.754,верхняя,17,senior,уверенно,0.861,средняя,19
-sim-0182,frontend,0.561,middle,middle,lead,middle,middle,у границы,0.464,верхняя,30,middle,у границы,0.626,верхняя,26
-sim-0183,mobile,-1.537,junior,junior,junior,не подтверждён,junior,у границы,0.75,верхняя,15,junior,уверенно,0.883,средняя,12
-sim-0184,data,-1.148,junior,middle,senior,junior,junior,у границы,0.824,верхняя,25,junior,уверенно,0.906,нижняя,24
-sim-0185,security,0.22,middle,junior,middle,middle,middle,у границы,0.627,верхняя,30,middle,у границы,0.792,верхняя,29
-sim-0186,devops,1.726,senior,senior,senior,senior,senior,у границы,0.836,средняя,12,senior,у границы,0.819,средняя,12
-sim-0187,backend,-1.134,junior,junior,middle,junior,junior,у границы,0.877,средняя,12,junior,уверенно,0.88,средняя,12
-sim-0188,frontend,1.982,lead,senior,lead,senior,senior,у границы,0.675,верхняя,18,senior,у границы,0.447,верхняя,21
-sim-0189,mobile,-0.987,junior,junior,junior,junior,middle,у границы,0.671,нижняя,24,junior,у границы,0.638,верхняя,27
-sim-0190,data,-0.67,junior,junior,middle,junior,middle,у границы,0.627,нижняя,30,junior,у границы,0.802,верхняя,18
-sim-0191,security,-1.558,junior,middle,junior,middle,junior,у границы,0.898,нижняя,24,junior,у границы,0.656,нижняя,24
-sim-0192,devops,-1.049,junior,junior,junior,junior,junior,у границы,0.762,верхняя,30,junior,у границы,0.791,верхняя,21
-sim-0193,backend,1.42,senior,senior,lead,senior,senior,у границы,0.591,верхняя,18,senior,уверенно,0.866,средняя,20
-sim-0194,frontend,1.724,senior,senior,lead,senior,senior,у границы,0.454,верхняя,30,lead,у границы,0.633,нижняя,24
-sim-0195,mobile,-0.295,middle,middle,senior,middle,middle,у границы,0.763,нижняя,12,middle,у границы,0.73,нижняя,30
-sim-0196,data,0.464,middle,middle,middle,middle,senior,у границы,0.848,нижняя,29,middle,уверенно,0.871,средняя,12
-sim-0197,security,0.441,middle,middle,senior,senior,middle,у границы,0.822,нижняя,15,middle,у границы,0.576,верхняя,17
-sim-0198,devops,1.749,senior,lead,lead,senior,senior,уверенно,0.918,средняя,24,lead,уверенно,0.974,средняя,12
-sim-0199,backend,-1.544,junior,junior,junior,junior,junior,у границы,0.88,средняя,12,junior,у границы,0.72,нижняя,12
-sim-0200,frontend,-0.393,middle,middle,senior,junior,middle,уверенно,0.931,средняя,18,middle,уверенно,0.889,средняя,20
-sim-0201,mobile,-0.899,junior,junior,junior,junior,junior,у границы,0.777,верхняя,15,middle,у границы,0.609,нижняя,33
-sim-0202,data,-1.349,junior,junior,junior,junior,junior,у границы,0.878,средняя,12,не подтверждён,не подтверждён,0.706,,12
-sim-0203,security,2.087,lead,lead,lead,lead,lead,уверенно,0.958,средняя,12,lead,уверенно,0.983,верхняя,12
-sim-0204,devops,-1.589,junior,junior,junior,не подтверждён,не подтверждён,не подтверждён,0.526,,12,junior,у границы,0.741,нижняя,14
-sim-0205,backend,-1.471,junior,middle,middle,junior,junior,уверенно,0.959,средняя,24,junior,уверенно,0.952,средняя,28
-sim-0206,frontend,-0.829,junior,junior,middle,middle,middle,у границы,0.705,нижняя,24,junior,уверенно,0.905,средняя,18
-sim-0207,mobile,0.936,senior,senior,senior,senior,senior,у границы,0.829,нижняя,15,senior,уверенно,0.937,средняя,18
-sim-0208,data,2.939,lead,lead,lead,lead,lead,у границы,0.795,нижняя,12,lead,уверенно,0.934,средняя,12
-sim-0209,security,-0.271,middle,middle,middle,middle,middle,у границы,0.896,средняя,15,middle,у границы,0.76,нижняя,26
-sim-0210,devops,1.889,lead,senior,lead,senior,senior,у границы,0.467,верхняя,18,senior,у границы,0.803,средняя,12
-sim-0211,backend,-0.489,middle,middle,junior,middle,junior,у границы,0.546,верхняя,25,middle,у границы,0.835,нижняя,12
-sim-0212,frontend,-0.739,junior,junior,middle,junior,junior,у границы,0.464,верхняя,28,junior,у границы,0.856,верхняя,18
-sim-0213,mobile,-1.738,junior,junior,junior,junior,не подтверждён,не подтверждён,0.547,,12,не подтверждён,не подтверждён,0.881,,12
-sim-0214,data,-0.836,junior,middle,middle,middle,middle,у границы,0.838,средняя,12,middle,уверенно,0.865,нижняя,15
-sim-0215,security,-1.757,junior,junior,не подтверждён,junior,junior,у границы,0.821,нижняя,12,не подтверждён,не подтверждён,0.633,,12
-sim-0216,devops,1.676,senior,middle,lead,senior,senior,уверенно,0.934,средняя,30,senior,у границы,0.405,верхняя,33
-sim-0217,backend,-0.504,middle,senior,senior,middle,middle,у границы,0.737,нижняя,24,middle,у границы,0.712,нижняя,25
-sim-0218,frontend,1.86,lead,senior,lead,lead,senior,у границы,0.439,верхняя,18,senior,у границы,0.596,верхняя,21
-sim-0219,mobile,-1.332,junior,junior,junior,не подтверждён,junior,у границы,0.82,средняя,12,junior,у границы,0.75,нижняя,12
-sim-0220,data,2.014,lead,senior,lead,lead,senior,у границы,0.853,средняя,14,senior,у границы,0.693,верхняя,24
-sim-0221,security,-0.549,middle,middle,middle,junior,middle,у границы,0.87,средняя,18,junior,у границы,0.754,верхняя,26
-sim-0222,devops,1.324,senior,senior,senior,senior,senior,у границы,0.873,средняя,18,senior,у границы,0.834,средняя,12
-sim-0223,backend,-1.726,junior,junior,не подтверждён,не подтверждён,не подтверждён,не подтверждён,0.478,,12,junior,у границы,0.729,нижняя,12
-sim-0224,frontend,-0.452,middle,middle,middle,junior,middle,у границы,0.882,средняя,12,junior,уверенно,0.949,средняя,30
-sim-0225,mobile,0.498,middle,middle,senior,middle,middle,уверенно,0.938,средняя,18,middle,у границы,0.405,верхняя,33
-sim-0226,data,-1.146,junior,junior,middle,junior,junior,у границы,0.408,верхняя,30,junior,уверенно,0.873,средняя,12
-sim-0227,security,-0.102,middle,senior,middle,middle,middle,у границы,0.896,средняя,27,middle,уверенно,0.902,нижняя,24
-sim-0228,devops,0.766,senior,lead,senior,senior,senior,у границы,0.731,нижняя,36,senior,у границы,0.639,нижняя,25
-sim-0229,backend,2.275,lead,lead,lead,lead,lead,уверенно,0.944,средняя,12,lead,уверенно,0.912,средняя,14
-sim-0230,frontend,-1.009,junior,junior,junior,junior,middle,у границы,0.601,нижняя,24,junior,уверенно,0.903,средняя,12
-sim-0231,mobile,2.645,lead,senior,lead,lead,senior,у границы,0.43,верхняя,17,lead,уверенно,0.999,верхняя,24
-sim-0232,data,-1.604,junior,middle,senior,junior,junior,у границы,0.666,нижняя,27,junior,уверенно,0.958,средняя,27
-sim-0233,security,2.577,lead,senior,lead,lead,lead,уверенно,0.986,средняя,30,lead,уверенно,1.0,верхняя,24
-sim-0234,devops,-0.708,junior,middle,junior,middle,middle,у границы,0.667,нижняя,15,junior,у границы,0.751,верхняя,30
-sim-0235,backend,-0.188,middle,middle,middle,middle,middle,у границы,0.813,средняя,12,middle,уверенно,0.912,средняя,16
-sim-0236,frontend,0.535,middle,middle,senior,middle,middle,у границы,0.878,верхняя,24,middle,уверенно,0.92,средняя,18
-sim-0237,mobile,1.372,senior,lead,senior,senior,senior,уверенно,0.918,нижняя,24,senior,уверенно,0.945,средняя,24
-sim-0238,data,-0.185,middle,senior,middle,middle,middle,у границы,0.885,нижняя,24,middle,уверенно,0.935,средняя,24
-sim-0239,security,0.595,middle,senior,senior,senior,middle,у границы,0.583,верхняя,27,senior,у границы,0.738,нижняя,26
-sim-0240,devops,-1.445,junior,middle,middle,junior,junior,уверенно,0.967,средняя,27,junior,у границы,0.768,верхняя,30
-sim-0241,backend,1.495,senior,senior,lead,senior,senior,у границы,0.791,средняя,12,senior,уверенно,0.911,средняя,18
-sim-0242,frontend,-0.515,middle,middle,middle,middle,junior,у границы,0.882,верхняя,25,middle,у границы,0.822,нижняя,18
-sim-0243,mobile,-0.711,junior,junior,senior,junior,junior,у границы,0.696,нижняя,12,junior,у границы,0.455,верхняя,27
-sim-0244,data,0.065,middle,middle,senior,middle,middle,у границы,0.889,средняя,15,middle,у границы,0.566,верхняя,18
-sim-0245,security,-1.67,junior,middle,junior,junior,junior,у границы,0.777,нижняя,24,junior,у границы,0.659,нижняя,24
-sim-0246,devops,1.974,lead,senior,lead,senior,senior,у границы,0.57,верхняя,24,senior,у границы,0.403,верхняя,21
-sim-0247,backend,-0.627,junior,junior,middle,junior,junior,у границы,0.887,средняя,12,junior,у границы,0.513,верхняя,19
-sim-0248,frontend,-0.299,middle,junior,junior,junior,middle,уверенно,0.904,нижняя,28,junior,у границы,0.849,средняя,12
-sim-0249,mobile,-1.166,junior,junior,junior,junior,junior,у границы,0.832,средняя,12,junior,уверенно,0.904,средняя,12
-sim-0250,data,1.05,senior,lead,senior,senior,senior,уверенно,0.905,средняя,24,senior,у границы,0.707,нижняя,25
-sim-0251,security,1.563,senior,senior,senior,middle,senior,у границы,0.708,верхняя,18,senior,у границы,0.859,средняя,12
-sim-0252,devops,-0.125,middle,junior,junior,middle,middle,у границы,0.563,верхняя,30,junior,у границы,0.463,верхняя,27
-sim-0253,backend,-1.335,junior,middle,middle,junior,junior,у границы,0.859,нижняя,24,junior,уверенно,0.916,средняя,24
-sim-0254,frontend,1.117,senior,senior,senior,senior,senior,у границы,0.867,средняя,12,senior,у границы,0.844,средняя,12
-sim-0255,mobile,2.173,lead,lead,senior,lead,lead,у границы,0.836,нижняя,12,lead,уверенно,0.871,нижняя,14
-sim-0256,data,1.705,senior,senior,senior,senior,senior,у границы,0.792,верхняя,16,senior,у границы,0.42,верхняя,19
-sim-0257,security,-0.575,middle,senior,senior,middle,middle,у границы,0.729,нижняя,36,junior,у границы,0.464,верхняя,36
-sim-0258,devops,-1.287,junior,junior,middle,junior,junior,у границы,0.885,средняя,12,не подтверждён,не подтверждён,0.403,,14
-sim-0259,backend,-0.134,middle,senior,middle,middle,middle,уверенно,0.911,нижняя,24,middle,у границы,0.837,нижняя,25
-sim-0260,frontend,-0.294,middle,middle,middle,middle,middle,у границы,0.884,средняя,12,middle,у границы,0.621,нижняя,18
-sim-0261,mobile,-1.424,junior,junior,не подтверждён,junior,junior,у границы,0.643,нижняя,12,junior,у границы,0.689,нижняя,12
-sim-0262,data,2.902,lead,lead,lead,lead,lead,уверенно,0.999,верхняя,12,lead,уверенно,0.937,средняя,12
-sim-0263,security,-0.109,middle,middle,middle,middle,middle,у границы,0.891,средняя,18,middle,у границы,0.833,верхняя,17
-sim-0264,devops,-1.006,junior,middle,middle,junior,junior,уверенно,0.955,средняя,27,junior,уверенно,0.937,средняя,24
-sim-0265,backend,-1.049,junior,middle,middle,junior,junior,уверенно,0.942,средняя,24,junior,уверенно,0.952,средняя,24
-sim-0266,frontend,-0.494,middle,middle,middle,middle,middle,у границы,0.813,нижняя,13,middle,уверенно,0.889,средняя,18
-sim-0267,mobile,-0.0,middle,senior,senior,middle,middle,у границы,0.836,верхняя,24,middle,у границы,0.788,верхняя,27
-sim-0268,data,0.801,senior,senior,senior,middle,senior,у границы,0.811,средняя,12,senior,у границы,0.774,средняя,12
-sim-0269,security,1.974,lead,senior,lead,senior,lead,уверенно,0.973,средняя,30,lead,уверенно,0.862,нижняя,31
-sim-0270,devops,-0.539,middle,middle,middle,junior,middle,у границы,0.662,нижняя,27,middle,у границы,0.732,нижняя,18
-sim-0271,backend,-1.24,junior,junior,junior,junior,junior,уверенно,0.904,средняя,12,junior,у границы,0.809,нижняя,12
-sim-0272,frontend,-1.601,junior,junior,junior,junior,junior,у границы,0.833,нижняя,12,junior,уверенно,0.899,средняя,12
-sim-0273,mobile,2.337,lead,senior,lead,senior,lead,уверенно,0.995,верхняя,24,lead,уверенно,0.925,нижняя,32
-sim-0274,data,0.546,middle,middle,senior,middle,middle,у границы,0.897,средняя,17,middle,у границы,0.857,средняя,12
-sim-0275,security,2.273,lead,senior,lead,lead,senior,у границы,0.847,средняя,12,lead,уверенно,0.998,верхняя,30
-sim-0276,devops,-0.695,junior,middle,senior,junior,junior,уверенно,0.966,средняя,27,middle,у границы,0.837,нижняя,30
-sim-0277,backend,1.447,senior,senior,senior,senior,senior,у границы,0.832,нижняя,12,senior,у границы,0.538,верхняя,19
-sim-0278,frontend,0.555,middle,middle,middle,middle,middle,у границы,0.718,верхняя,18,middle,у границы,0.765,верхняя,32
-sim-0279,mobile,1.187,senior,senior,lead,senior,senior,у границы,0.61,нижняя,15,senior,у границы,0.792,верхняя,32
-sim-0280,data,0.139,middle,junior,lead,junior,middle,у границы,0.828,нижняя,30,middle,уверенно,0.86,верхняя,30
-sim-0281,security,0.001,middle,middle,middle,middle,middle,у границы,0.809,средняя,12,middle,у границы,0.807,средняя,12
-sim-0282,devops,-1.619,junior,junior,не подтверждён,junior,junior,у границы,0.797,нижняя,12,не подтверждён,не подтверждён,0.448,,14
-sim-0283,backend,-0.604,junior,junior,senior,middle,junior,у границы,0.784,верхняя,16,middle,у границы,0.836,нижняя,25
-sim-0284,frontend,2.144,lead,lead,lead,lead,lead,у границы,0.792,нижняя,12,lead,уверенно,0.875,нижняя,12
-sim-0285,mobile,-0.205,middle,middle,middle,middle,junior,у границы,0.668,верхняя,24,middle,у границы,0.758,средняя,12
-sim-0286,data,0.988,senior,lead,lead,senior,middle,у границы,0.461,верхняя,36,senior,у границы,0.758,нижняя,26
-sim-0287,security,-0.862,junior,junior,middle,junior,middle,у границы,0.634,нижняя,24,junior,у границы,0.826,средняя,12
-sim-0288,devops,0.4,middle,junior,senior,middle,middle,у границы,0.598,верхняя,30,middle,уверенно,0.872,верхняя,30
-sim-0289,backend,1.715,senior,lead,lead,senior,senior,у границы,0.877,средняя,24,senior,у границы,0.614,верхняя,26
-sim-0290,frontend,1.69,senior,middle,senior,senior,lead,уверенно,0.992,средняя,36,senior,уверенно,0.91,средняя,24
-sim-0291,mobile,-1.374,junior,junior,middle,junior,junior,у границы,0.868,средняя,12,junior,уверенно,0.891,средняя,12
-sim-0292,data,-1.717,junior,junior,не подтверждён,junior,junior,у границы,0.678,нижняя,12,junior,у границы,0.858,нижняя,12
-sim-0293,security,0.797,senior,senior,middle,senior,senior,у границы,0.841,нижняя,15,middle,у границы,0.493,верхняя,26
-sim-0294,devops,1.485,senior,senior,senior,senior,lead,у границы,0.821,нижняя,30,senior,у границы,0.709,верхняя,21
-sim-0295,backend,-1.049,junior,junior,middle,junior,junior,у границы,0.851,верхняя,24,junior,уверенно,0.931,средняя,18
-sim-0296,frontend,0.425,middle,middle,middle,middle,senior,уверенно,0.906,средняя,24,middle,у границы,0.758,верхняя,20
-sim-0297,mobile,-1.246,junior,junior,senior,junior,junior,у границы,0.866,средняя,12,junior,уверенно,0.876,средняя,12
-sim-0298,data,0.279,middle,middle,senior,middle,middle,у границы,0.88,средняя,15,middle,уверенно,0.914,средняя,18
-sim-0299,security,0.818,senior,senior,senior,senior,senior,у границы,0.667,нижняя,15,senior,у границы,0.72,нижняя,14
-sim-0300,devops,-1.387,junior,junior,junior,junior,junior,уверенно,0.939,средняя,18,junior,уверенно,0.941,средняя,18
-sim-0301,backend,-1.097,junior,junior,junior,junior,junior,уверенно,0.918,средняя,16,junior,уверенно,0.907,средняя,18
-sim-0302,frontend,0.19,middle,senior,middle,middle,middle,у границы,0.896,верхняя,27,middle,уверенно,0.908,средняя,24
-sim-0303,mobile,0.493,middle,middle,middle,middle,senior,у границы,0.714,нижняя,30,middle,у границы,0.821,средняя,12
-sim-0304,data,-0.137,middle,middle,middle,middle,middle,у границы,0.881,средняя,15,middle,уверенно,0.915,средняя,18
-sim-0305,security,1.631,senior,senior,senior,senior,senior,у границы,0.84,верхняя,30,senior,у границы,0.703,нижняя,14
-sim-0306,devops,-0.624,junior,junior,middle,junior,junior,у границы,0.641,верхняя,18,middle,у границы,0.616,нижняя,33
-sim-0307,backend,2.026,lead,lead,lead,lead,lead,уверенно,0.955,средняя,12,lead,уверенно,0.9,средняя,14
-sim-0308,frontend,0.275,middle,middle,middle,middle,middle,у границы,0.556,верхняя,18,middle,у границы,0.84,верхняя,20
-sim-0309,mobile,-0.972,junior,junior,middle,junior,junior,у границы,0.881,средняя,15,junior,у границы,0.479,верхняя,27
-sim-0310,data,1.792,senior,lead,lead,lead,senior,у границы,0.514,верхняя,24,lead,у границы,0.662,нижняя,25
-sim-0311,security,0.627,senior,senior,lead,middle,senior,у границы,0.681,нижняя,27,middle,у границы,0.659,верхняя,24
-sim-0312,devops,-0.524,middle,middle,middle,middle,middle,у границы,0.846,средняя,12,middle,уверенно,0.932,средняя,18
-sim-0313,backend,-1.11,junior,junior,не подтверждён,junior,junior,у границы,0.673,верхняя,16,junior,уверенно,0.86,средняя,18
-sim-0314,frontend,1.377,senior,lead,senior,senior,senior,уверенно,0.944,средняя,24,senior,у границы,0.645,нижняя,26
-sim-0315,mobile,0.315,middle,middle,middle,middle,middle,у границы,0.809,верхняя,18,middle,у границы,0.749,верхняя,21
-sim-0316,data,-0.007,middle,middle,middle,middle,middle,у границы,0.888,средняя,15,junior,у границы,0.604,верхняя,25
-sim-0317,security,1.655,senior,senior,lead,senior,senior,у границы,0.451,верхняя,18,senior,у границы,0.777,верхняя,19
-sim-0318,devops,-0.266,middle,senior,junior,middle,middle,уверенно,0.906,нижняя,24,middle,уверенно,0.949,средняя,28
-sim-0319,backend,-1.595,junior,middle,не подтверждён,junior,не подтверждён,не подтверждён,0.557,,24,junior,у границы,0.628,нижняя,24
-sim-0320,frontend,-0.562,middle,middle,junior,middle,junior,у границы,0.47,верхняя,24,junior,уверенно,0.871,верхняя,30
-sim-0321,mobile,0.596,middle,middle,senior,middle,middle,у границы,0.8,нижняя,12,senior,уверенно,0.893,нижняя,27
-sim-0322,data,-0.628,junior,junior,junior,junior,junior,у границы,0.571,верхняя,18,junior,у границы,0.684,верхняя,18
-sim-0323,security,-1.265,junior,junior,junior,junior,junior,у границы,0.633,верхняя,18,junior,уверенно,0.947,средняя,17
-sim-0324,devops,-1.417,junior,junior,middle,junior,junior,у границы,0.758,нижняя,12,junior,у границы,0.847,нижняя,12
-sim-0325,backend,0.017,middle,middle,middle,middle,middle,у границы,0.829,средняя,12,middle,уверенно,0.884,средняя,18
-sim-0326,frontend,2.38,lead,senior,lead,lead,lead,у границы,0.824,нижняя,30,lead,у границы,0.849,нижняя,33
-sim-0327,mobile,-0.893,junior,junior,junior,junior,junior,у границы,0.857,средняя,12,middle,уверенно,0.883,нижняя,33
-sim-0328,data,-1.263,junior,middle,middle,junior,junior,уверенно,0.956,средняя,24,junior,уверенно,0.963,средняя,24
-sim-0329,security,-0.101,middle,senior,middle,middle,middle,уверенно,0.953,средняя,27,middle,уверенно,0.907,средняя,26
-sim-0330,devops,1.748,senior,senior,lead,senior,senior,у границы,0.821,средняя,12,senior,у границы,0.459,верхняя,21
-sim-0331,backend,2.048,lead,lead,lead,lead,lead,у границы,0.656,нижняя,12,lead,у границы,0.795,нижняя,14
-sim-0332,frontend,0.939,senior,senior,senior,senior,senior,у границы,0.685,нижняя,27,middle,у границы,0.62,верхняя,29
-sim-0333,mobile,0.42,middle,junior,middle,middle,middle,у границы,0.864,верхняя,30,middle,уверенно,0.92,средняя,30
-sim-0334,data,-0.935,junior,junior,junior,junior,junior,у границы,0.851,средняя,12,junior,уверенно,0.871,средняя,12
-sim-0335,security,-0.986,junior,junior,junior,junior,junior,у границы,0.555,верхняя,18,junior,у границы,0.829,верхняя,17
-sim-0336,devops,2.207,lead,lead,lead,lead,lead,уверенно,0.987,верхняя,12,lead,у границы,0.856,нижняя,12
-sim-0337,backend,-0.529,middle,middle,middle,junior,junior,у границы,0.648,верхняя,25,middle,уверенно,0.894,нижняя,28
-sim-0338,frontend,-0.79,junior,junior,junior,junior,junior,уверенно,0.93,средняя,16,junior,уверенно,0.906,средняя,18
-sim-0339,mobile,-0.633,junior,middle,junior,middle,middle,у границы,0.707,нижняя,12,junior,у границы,0.528,верхняя,30
-sim-0340,data,-1.718,junior,junior,junior,не подтверждён,junior,у границы,0.848,средняя,12,junior,уверенно,0.898,средняя,12
-sim-0341,security,0.847,senior,senior,senior,senior,middle,у границы,0.802,верхняя,27,senior,у границы,0.827,нижняя,14
-sim-0342,devops,-0.939,junior,junior,не подтверждён,junior,junior,уверенно,0.901,средняя,18,junior,уверенно,0.908,средняя,12
-sim-0343,backend,-1.197,junior,junior,junior,junior,junior,у границы,0.732,верхняя,16,junior,у границы,0.722,нижняя,12
-sim-0344,frontend,1.311,senior,senior,lead,senior,senior,уверенно,0.913,средняя,18,senior,у границы,0.766,нижняя,29
-sim-0345,mobile,-1.271,junior,junior,не подтверждён,junior,junior,у границы,0.498,верхняя,15,junior,уверенно,0.919,средняя,18
-sim-0346,data,0.94,senior,senior,middle,senior,senior,у границы,0.848,средняя,14,middle,у границы,0.601,верхняя,27
-sim-0347,security,-0.677,junior,junior,middle,middle,junior,у границы,0.844,средняя,12,junior,у границы,0.458,верхняя,17
-sim-0348,devops,-1.746,junior,middle,junior,junior,не подтверждён,не подтверждён,0.797,,24,junior,уверенно,0.97,средняя,24
-sim-0349,backend,1.132,senior,middle,senior,senior,senior,у границы,0.832,нижняя,24,senior,уверенно,0.924,нижняя,33
-sim-0350,frontend,-0.221,middle,junior,middle,junior,middle,уверенно,0.9,нижняя,24,middle,уверенно,0.925,средняя,24
-sim-0351,mobile,2.765,lead,lead,lead,senior,lead,у границы,0.84,нижняя,12,lead,уверенно,0.915,средняя,12
-sim-0352,data,-1.103,junior,junior,junior,junior,junior,у границы,0.896,средняя,12,junior,у границы,0.608,нижняя,12
-sim-0353,security,-1.757,junior,junior,middle,не подтверждён,junior,уверенно,0.935,средняя,12,junior,у границы,0.691,нижняя,12
-sim-0354,devops,-1.339,junior,junior,не подтверждён,junior,junior,у границы,0.835,средняя,12,junior,уверенно,0.883,средняя,12
-sim-0355,backend,0.384,middle,junior,middle,middle,middle,у границы,0.65,верхняя,34,senior,уверенно,0.915,нижняя,45
-sim-0356,frontend,0.062,middle,senior,middle,middle,middle,уверенно,0.901,средняя,27,middle,уверенно,0.916,средняя,26
-sim-0357,mobile,-0.969,junior,middle,junior,junior,junior,уверенно,0.94,средняя,24,junior,у границы,0.638,верхняя,30
-sim-0358,data,0.802,senior,middle,senior,senior,senior,у границы,0.614,нижняя,29,senior,у границы,0.795,нижняя,30
-sim-0359,security,-1.321,junior,middle,middle,junior,junior,у границы,0.826,верхняя,27,junior,у границы,0.661,нижняя,26
-sim-0360,devops,1.454,senior,senior,lead,lead,senior,у границы,0.793,верхняя,18,senior,у границы,0.682,верхняя,21
-sim-0361,backend,0.282,middle,middle,junior,middle,middle,уверенно,0.913,средняя,18,middle,уверенно,0.894,средняя,12
-sim-0362,frontend,2.338,lead,senior,senior,senior,lead,уверенно,0.998,средняя,30,lead,уверенно,0.998,верхняя,24
-sim-0363,mobile,0.457,middle,middle,middle,senior,middle,у границы,0.432,верхняя,18,middle,у границы,0.821,средняя,12
-sim-0364,data,0.013,middle,middle,senior,middle,middle,у границы,0.842,средняя,12,middle,у границы,0.84,средняя,12
-sim-0365,security,-0.525,middle,junior,junior,junior,junior,у границы,0.708,верхняя,18,middle,у границы,0.686,нижняя,24
-sim-0366,devops,0.55,middle,middle,senior,senior,senior,уверенно,0.923,средняя,24,middle,у границы,0.633,верхняя,19
-sim-0367,backend,-1.273,junior,middle,middle,junior,junior,уверенно,0.974,средняя,24,junior,уверенно,0.958,средняя,24
-sim-0368,frontend,0.199,middle,middle,senior,middle,middle,у границы,0.561,верхняя,30,middle,у границы,0.812,средняя,12
-sim-0369,mobile,1.106,senior,senior,middle,senior,senior,у границы,0.749,нижняя,27,senior,у границы,0.808,средняя,12
-sim-0370,data,-1.686,junior,middle,junior,не подтверждён,junior,у границы,0.833,нижняя,24,junior,у границы,0.83,нижняя,24
-sim-0371,security,0.484,middle,middle,senior,middle,senior,у границы,0.844,средняя,24,middle,у границы,0.727,верхняя,17
-sim-0372,devops,-1.666,junior,middle,senior,не подтверждён,не подтверждён,не подтверждён,0.866,,24,не подтверждён,не подтверждён,0.979,,24
-sim-0373,backend,-0.574,middle,middle,middle,middle,middle,у границы,0.726,нижняя,25,middle,уверенно,0.924,средняя,18
-sim-0374,frontend,2.575,lead,senior,lead,lead,lead,уверенно,0.998,верхняя,24,lead,уверенно,0.999,верхняя,24
-sim-0375,mobile,0.359,middle,junior,senior,middle,middle,у границы,0.887,нижняя,27,senior,уверенно,0.872,нижняя,36
-sim-0376,data,1.416,senior,senior,senior,senior,senior,у границы,0.851,средняя,12,senior,уверенно,0.92,средняя,17
-sim-0377,security,1.967,lead,lead,lead,senior,senior,у границы,0.858,верхняя,24,senior,у границы,0.492,верхняя,25
-sim-0378,devops,-0.35,middle,middle,senior,junior,middle,у границы,0.805,средняя,12,middle,уверенно,0.908,средняя,12
-sim-0379,backend,0.537,middle,middle,senior,middle,senior,у границы,0.864,нижняя,30,middle,уверенно,0.917,средняя,21
-sim-0380,frontend,-0.481,middle,middle,junior,middle,middle,у границы,0.729,нижняя,13,middle,у границы,0.699,верхняя,20
-sim-0381,mobile,-0.906,junior,junior,middle,junior,middle,у границы,0.761,нижняя,27,junior,у границы,0.48,верхняя,27
-sim-0382,data,-1.37,junior,junior,junior,junior,junior,у границы,0.846,средняя,12,junior,у границы,0.797,нижняя,12
-sim-0383,security,2.461,lead,lead,lead,lead,lead,уверенно,0.953,средняя,12,lead,уверенно,0.976,верхняя,12
-sim-0384,devops,0.572,middle,junior,middle,middle,middle,у границы,0.448,верхняя,30,senior,у границы,0.669,нижняя,43
-sim-0385,backend,1.195,senior,senior,senior,senior,senior,у границы,0.704,нижняя,15,senior,уверенно,0.894,средняя,18
-sim-0386,frontend,-1.117,junior,junior,junior,middle,junior,уверенно,0.9,верхняя,24,junior,уверенно,0.903,средняя,12
-sim-0387,mobile,-0.092,middle,senior,senior,middle,middle,уверенно,0.966,средняя,24,middle,у границы,0.806,нижняя,27
-sim-0388,data,2.147,lead,lead,lead,senior,lead,уверенно,0.999,верхняя,12,lead,уверенно,0.942,средняя,12
-sim-0389,security,1.177,senior,middle,senior,senior,senior,у границы,0.792,нижняя,30,senior,уверенно,0.964,средняя,29
-sim-0390,devops,-1.333,junior,junior,junior,junior,junior,у границы,0.869,средняя,12,junior,у границы,0.848,верхняя,18
-sim-0391,backend,1.54,senior,middle,lead,senior,senior,уверенно,0.955,средняя,30,senior,уверенно,0.883,средняя,24
-sim-0392,frontend,0.412,middle,senior,middle,middle,senior,у границы,0.73,нижняя,15,middle,уверенно,0.941,средняя,29
-sim-0393,mobile,2.211,lead,lead,lead,lead,lead,у границы,0.787,нижняя,12,lead,у границы,0.812,нижняя,26
-sim-0394,data,-0.738,junior,middle,middle,middle,junior,уверенно,0.908,верхняя,26,junior,у границы,0.789,верхняя,25
-sim-0395,security,0.375,middle,middle,senior,middle,middle,у границы,0.613,верхняя,18,senior,уверенно,0.922,нижняя,29
-sim-0396,devops,-1.052,junior,junior,middle,junior,junior,у границы,0.887,средняя,12,junior,у границы,0.464,верхняя,33
-sim-0397,backend,1.792,senior,middle,lead,senior,lead,у границы,0.862,нижняя,36,senior,у границы,0.714,верхняя,31
-sim-0398,frontend,-0.701,junior,junior,junior,junior,middle,уверенно,0.907,нижняя,28,middle,у границы,0.604,нижняя,33
-sim-0399,mobile,-0.555,middle,middle,senior,middle,middle,у границы,0.819,нижняя,12,junior,у границы,0.57,верхняя,30
-sim-0400,data,0.153,middle,junior,middle,middle,middle,у границы,0.842,верхняя,47,middle,у границы,0.673,нижняя,26
-sim-0401,security,-0.501,middle,senior,middle,middle,middle,уверенно,0.916,средняя,24,junior,уверенно,0.871,верхняя,36
-sim-0402,devops,-1.066,junior,junior,middle,junior,junior,у границы,0.664,нижняя,12,не подтверждён,не подтверждён,0.476,,14
-sim-0403,backend,2.399,lead,lead,lead,lead,lead,уверенно,0.961,средняя,12,lead,уверенно,1.0,верхняя,12
-sim-0404,frontend,0.792,senior,lead,lead,senior,senior,у границы,0.878,нижняя,24,senior,уверенно,0.962,средняя,24
-sim-0405,mobile,0.393,middle,middle,senior,middle,senior,у границы,0.878,нижняя,24,middle,уверенно,0.86,средняя,18
-sim-0406,data,-0.285,middle,middle,middle,middle,middle,у границы,0.628,нижняя,14,junior,у границы,0.409,верхняя,27
-sim-0407,security,-1.691,junior,middle,middle,junior,не подтверждён,не подтверждён,0.436,,24,junior,уверенно,0.888,нижняя,24
-sim-0408,devops,-1.345,junior,junior,middle,junior,junior,у границы,0.654,верхняя,18,junior,уверенно,0.882,нижняя,14
-sim-0409,backend,-1.398,junior,middle,junior,junior,не подтверждён,не подтверждён,0.476,,24,junior,у границы,0.732,верхняя,28
-sim-0410,frontend,0.297,middle,junior,middle,middle,senior,у границы,0.789,нижняя,36,middle,уверенно,0.87,верхняя,30
-sim-0411,mobile,-0.523,middle,junior,junior,junior,middle,уверенно,0.93,средняя,27,middle,у границы,0.811,нижняя,33
-sim-0412,data,-1.018,junior,middle,middle,junior,junior,у границы,0.848,верхняя,25,junior,уверенно,0.905,верхняя,24
-sim-0413,security,1.005,senior,senior,senior,senior,senior,у границы,0.874,нижняя,15,senior,уверенно,0.885,средняя,18
-sim-0414,devops,2.695,lead,lead,lead,lead,lead,уверенно,0.984,верхняя,12,lead,уверенно,0.907,средняя,12
-sim-0415,backend,-0.469,middle,middle,junior,middle,junior,у границы,0.808,верхняя,25,middle,у границы,0.802,нижняя,28
-sim-0416,frontend,0.598,middle,middle,senior,middle,middle,у границы,0.866,верхняя,30,middle,у границы,0.827,средняя,12
-sim-0417,mobile,-1.525,junior,middle,middle,junior,junior,у границы,0.657,нижняя,24,junior,уверенно,0.893,нижняя,24
-sim-0418,data,2.093,lead,lead,lead,lead,lead,у границы,0.766,нижняя,12,lead,уверенно,0.99,верхняя,12
-sim-0419,security,1.31,senior,senior,lead,senior,senior,уверенно,0.904,средняя,18,senior,уверенно,0.888,средняя,18
-sim-0420,devops,-1.082,junior,junior,junior,junior,не подтверждён,не подтверждён,0.723,,12,junior,у границы,0.625,верхняя,30
-sim-0421,backend,-1.701,junior,junior,middle,junior,не подтверждён,не подтверждён,0.742,,12,junior,уверенно,0.893,средняя,18
-sim-0422,frontend,-1.039,junior,junior,junior,junior,junior,уверенно,0.915,средняя,12,junior,у границы,0.606,верхняя,27
-sim-0423,mobile,-0.473,middle,middle,middle,middle,middle,у границы,0.669,нижняя,12,middle,уверенно,0.952,средняя,24
-sim-0424,data,-0.862,junior,junior,junior,junior,middle,у границы,0.889,средняя,24,junior,уверенно,0.903,средняя,18
-sim-0425,security,0.235,middle,middle,senior,middle,middle,у границы,0.698,верхняя,18,middle,у границы,0.82,верхняя,17
-sim-0426,devops,-0.868,junior,junior,middle,middle,junior,у границы,0.578,верхняя,30,junior,у границы,0.818,верхняя,21
-sim-0427,backend,2.845,lead,lead,lead,lead,lead,уверенно,1.0,верхняя,12,lead,уверенно,0.963,средняя,12
-sim-0428,frontend,1.688,senior,senior,lead,senior,senior,у границы,0.843,средняя,12,senior,у границы,0.844,верхняя,18
-sim-0429,mobile,0.106,middle,middle,junior,middle,middle,у границы,0.75,нижняя,12,middle,уверенно,0.89,средняя,18
-sim-0430,data,1.52,senior,middle,senior,senior,senior,у границы,0.664,верхняя,40,senior,уверенно,0.944,средняя,30
-sim-0431,security,-0.903,junior,middle,junior,middle,middle,у границы,0.874,нижняя,18,middle,у границы,0.849,средняя,12
-sim-0432,devops,0.979,senior,middle,middle,senior,senior,у границы,0.683,нижняя,24,senior,у границы,0.808,верхняя,39
-sim-0433,backend,-0.702,junior,junior,middle,junior,middle,у границы,0.828,нижняя,24,junior,у границы,0.581,верхняя,19
-sim-0434,frontend,-0.241,middle,junior,middle,middle,middle,у границы,0.882,нижняя,24,middle,уверенно,0.967,средняя,33
-sim-0435,mobile,-0.146,middle,senior,middle,middle,middle,уверенно,0.96,средняя,27,middle,у границы,0.771,нижняя,27
-sim-0436,data,-0.773,junior,junior,junior,junior,junior,у границы,0.865,средняя,12,junior,уверенно,0.949,средняя,18
-sim-0437,security,1.544,senior,senior,lead,senior,senior,у границы,0.85,средняя,12,lead,уверенно,0.874,нижняя,31
-sim-0438,devops,-1.257,junior,middle,junior,не подтверждён,junior,уверенно,0.944,средняя,24,junior,уверенно,0.936,средняя,30
-sim-0439,backend,1.595,senior,middle,senior,senior,lead,у границы,0.766,нижняя,41,senior,у границы,0.491,верхняя,37
-sim-0440,frontend,-0.306,middle,senior,junior,middle,middle,у границы,0.792,нижняя,36,middle,уверенно,0.889,средняя,24
-sim-0441,mobile,1.806,lead,senior,senior,lead,senior,у границы,0.698,верхняя,17,lead,у границы,0.688,нижняя,32
-sim-0442,data,-1.126,junior,junior,junior,junior,junior,уверенно,0.906,средняя,12,junior,у границы,0.58,верхняя,18
-sim-0443,security,1.523,senior,senior,lead,senior,senior,у границы,0.872,средняя,15,senior,у границы,0.827,средняя,12
-sim-0444,devops,0.47,middle,middle,middle,senior,middle,у границы,0.877,средняя,12,senior,уверенно,0.862,средняя,24
-sim-0445,backend,-1.121,junior,junior,не подтверждён,junior,junior,уверенно,0.904,средняя,24,junior,уверенно,0.873,средняя,12
-sim-0446,frontend,1.199,senior,senior,senior,senior,senior,уверенно,0.909,средняя,18,senior,уверенно,0.879,средняя,12
-sim-0447,mobile,1.782,senior,senior,lead,senior,senior,у границы,0.873,средняя,12,senior,у границы,0.506,верхняя,30
-sim-0448,data,-0.681,junior,middle,middle,middle,middle,у границы,0.841,нижняя,15,junior,уверенно,0.93,средняя,24
-sim-0449,security,1.851,lead,lead,senior,lead,senior,у границы,0.829,верхняя,24,lead,у границы,0.803,нижняя,25
-sim-0450,devops,-1.779,junior,junior,не подтверждён,не подтверждён,не подтверждён,не подтверждён,0.871,,12,junior,у границы,0.613,нижняя,14
-sim-0451,backend,-1.106,junior,middle,junior,middle,junior,уверенно,0.961,средняя,24,junior,уверенно,0.95,средняя,24
-sim-0452,frontend,1.843,lead,senior,lead,senior,senior,у границы,0.414,верхняя,18,senior,у границы,0.45,верхняя,33
-sim-0453,mobile,0.034,middle,senior,middle,middle,middle,уверенно,0.937,средняя,24,middle,уверенно,0.86,нижняя,30
-sim-0454,data,0.945,senior,senior,middle,senior,senior,у границы,0.811,нижняя,26,senior,уверенно,0.867,средняя,12
-sim-0455,security,1.389,senior,lead,lead,senior,senior,у границы,0.709,верхняя,24,senior,у границы,0.825,верхняя,25
-sim-0456,devops,0.491,middle,middle,senior,middle,senior,у границы,0.712,нижняя,30,middle,уверенно,0.916,средняя,18
-sim-0457,backend,-0.951,junior,junior,junior,junior,junior,у границы,0.892,средняя,12,junior,у границы,0.853,верхняя,19
-sim-0458,frontend,-1.02,junior,middle,middle,middle,junior,у границы,0.835,верхняя,25,junior,у границы,0.792,верхняя,27
-sim-0459,mobile,-1.638,junior,junior,junior,junior,junior,у границы,0.872,средняя,12,junior,уверенно,0.87,средняя,18
-sim-0460,data,2.143,lead,senior,lead,lead,lead,у границы,0.702,нижняя,28,lead,у границы,0.817,нижняя,31
-sim-0461,security,0.324,middle,middle,senior,middle,middle,у границы,0.733,верхняя,18,middle,у границы,0.734,верхняя,17
-sim-0462,devops,-0.674,junior,junior,middle,junior,junior,у границы,0.408,верхняя,18,junior,у границы,0.582,верхняя,21
-sim-0463,backend,2.529,lead,lead,lead,lead,lead,уверенно,0.992,верхняя,12,lead,уверенно,0.999,верхняя,12
-sim-0464,frontend,-0.508,middle,senior,senior,middle,middle,у границы,0.695,нижняя,24,middle,у границы,0.684,нижняя,39
-sim-0465,mobile,-1.184,junior,junior,junior,junior,junior,у границы,0.732,нижняя,12,junior,уверенно,0.898,средняя,21
-sim-0466,data,0.764,senior,senior,lead,senior,senior,у границы,0.811,нижняя,14,senior,у границы,0.672,нижняя,15
-sim-0467,security,-1.347,junior,middle,middle,junior,не подтверждён,не подтверждён,0.467,,24,junior,у границы,0.745,нижняя,24
-sim-0468,devops,-1.716,junior,junior,junior,junior,junior,у границы,0.875,средняя,12,junior,уверенно,0.873,средняя,12
-sim-0469,backend,1.969,lead,senior,lead,lead,senior,у границы,0.456,верхняя,18,lead,уверенно,0.96,средняя,32
-sim-0470,frontend,0.717,senior,senior,senior,senior,senior,у границы,0.71,нижняя,15,senior,у границы,0.856,средняя,12
-sim-0471,mobile,-1.493,junior,junior,junior,junior,junior,у границы,0.856,средняя,15,junior,уверенно,0.866,средняя,12
-sim-0472,data,0.471,middle,middle,middle,senior,middle,у границы,0.821,верхняя,17,middle,уверенно,0.881,средняя,18
-sim-0473,security,-0.919,junior,junior,middle,junior,middle,у границы,0.637,нижняя,30,junior,у границы,0.837,средняя,12
-sim-0474,devops,-1.113,junior,junior,junior,junior,junior,у границы,0.827,верхняя,18,junior,уверенно,0.892,средняя,18
-sim-0475,backend,2.719,lead,senior,lead,lead,lead,уверенно,0.995,верхняя,24,lead,уверенно,0.868,нижняя,24
-sim-0476,frontend,-0.302,middle,middle,middle,middle,middle,у границы,0.779,нижняя,25,middle,у границы,0.841,средняя,12
-sim-0477,mobile,0.482,middle,middle,junior,middle,senior,уверенно,0.901,нижняя,30,middle,у границы,0.843,верхняя,21
-sim-0478,data,0.172,middle,senior,middle,middle,middle,у границы,0.56,верхняя,27,middle,уверенно,0.891,верхняя,25
-sim-0479,security,0.212,middle,senior,senior,middle,middle,у границы,0.634,нижняя,24,middle,уверенно,0.959,средняя,26
-sim-0480,devops,0.69,senior,lead,senior,middle,middle,у границы,0.548,верхняя,36,senior,уверенно,0.937,средняя,24
-sim-0481,backend,-0.823,junior,junior,middle,junior,junior,у границы,0.832,средняя,12,junior,у границы,0.812,верхняя,19
-sim-0482,frontend,-0.718,junior,junior,junior,junior,middle,уверенно,0.954,средняя,30,junior,у границы,0.658,верхняя,21
-sim-0483,mobile,1.906,lead,senior,senior,senior,senior,у границы,0.654,верхняя,17,lead,у границы,0.615,нижняя,32
-sim-0484,data,0.954,senior,senior,lead,senior,middle,уверенно,0.937,средняя,27,senior,у границы,0.833,нижняя,17
-sim-0485,security,2.264,lead,senior,lead,senior,lead,уверенно,0.999,верхняя,24,senior,у границы,0.571,верхняя,19
-sim-0486,devops,0.282,middle,senior,senior,senior,middle,уверенно,0.91,нижняя,24,middle,уверенно,0.965,средняя,28
-sim-0487,backend,-1.436,junior,middle,junior,junior,junior,уверенно,0.925,средняя,24,junior,у границы,0.795,нижняя,24
-sim-0488,frontend,0.306,middle,junior,middle,middle,middle,у границы,0.825,верхняя,30,middle,у границы,0.794,верхняя,32
-sim-0489,mobile,-0.414,middle,senior,senior,middle,middle,уверенно,0.916,средняя,24,junior,у границы,0.491,верхняя,39
-sim-0490,data,-1.16,junior,junior,junior,junior,junior,у границы,0.817,верхняя,18,junior,уверенно,0.933,средняя,18
-sim-0491,security,-0.975,junior,junior,middle,junior,junior,у границы,0.841,средняя,12,junior,у границы,0.855,верхняя,17
-sim-0492,devops,1.203,senior,senior,lead,senior,senior,у границы,0.773,верхняя,18,senior,уверенно,0.864,средняя,16
-sim-0493,backend,-0.9,junior,junior,junior,junior,junior,у границы,0.81,верхняя,16,junior,у границы,0.846,верхняя,19
-sim-0494,frontend,0.022,middle,senior,senior,middle,middle,у границы,0.793,нижняя,24,middle,уверенно,0.878,средняя,26
-sim-0495,mobile,-1.05,junior,junior,junior,junior,junior,у границы,0.5,верхняя,27,junior,уверенно,0.879,средняя,12
-sim-0496,data,-0.925,junior,junior,junior,junior,junior,у границы,0.558,верхняя,18,junior,у границы,0.791,верхняя,18
-sim-0497,security,2.634,lead,senior,senior,lead,senior,у границы,0.848,средняя,12,lead,уверенно,0.994,верхняя,24
-sim-0498,devops,1.227,senior,senior,lead,senior,senior,уверенно,0.904,средняя,18,senior,уверенно,0.874,средняя,18
-sim-0499,backend,0.485,middle,middle,middle,middle,middle,у границы,0.537,верхняя,18,middle,у границы,0.475,верхняя,30
-sim-0500,frontend,-0.274,middle,middle,middle,middle,middle,у границы,0.832,средняя,12,middle,у границы,0.766,нижняя,18
+sim-0001,backend,-1.197,junior,junior,junior,junior,junior,у границы,0.766,нижняя,12,junior,уверенно,0.912,средняя,18
+sim-0002,frontend,1.257,senior,lead,lead,lead,senior,уверенно,0.962,средняя,24,senior,уверенно,0.93,средняя,24
+sim-0003,mobile,-0.82,junior,junior,junior,middle,junior,у границы,0.627,верхняя,18,middle,у границы,0.751,нижняя,33
+sim-0004,data,-0.183,middle,middle,middle,middle,junior,у границы,0.474,верхняя,24,junior,у границы,0.469,верхняя,27
+sim-0005,security,-0.249,middle,senior,lead,middle,middle,у границы,0.794,нижняя,24,middle,уверенно,0.908,нижняя,24
+sim-0006,devops,-0.047,middle,middle,junior,middle,middle,у границы,0.875,средняя,12,middle,уверенно,0.914,средняя,18
+sim-0007,backend,-0.46,middle,middle,middle,middle,middle,у границы,0.874,средняя,12,middle,уверенно,0.916,средняя,18
+sim-0008,frontend,1.277,senior,senior,lead,senior,senior,у границы,0.858,средняя,12,senior,уверенно,0.907,средняя,18
+sim-0009,mobile,2.428,lead,lead,lead,lead,lead,уверенно,0.929,средняя,12,lead,уверенно,0.87,средняя,12
+sim-0010,data,2.82,lead,lead,lead,lead,lead,уверенно,0.994,верхняя,12,lead,уверенно,0.999,верхняя,12
+sim-0011,security,2.985,lead,lead,lead,lead,lead,уверенно,0.999,верхняя,12,lead,уверенно,0.999,верхняя,12
+sim-0012,devops,-0.025,middle,junior,junior,middle,middle,уверенно,0.933,средняя,24,middle,уверенно,0.937,средняя,30
+sim-0013,backend,-1.62,junior,junior,junior,junior,junior,у границы,0.857,средняя,12,junior,уверенно,0.861,средняя,12
+sim-0014,frontend,1.16,senior,senior,lead,senior,senior,у границы,0.863,средняя,12,senior,у границы,0.673,нижняя,17
+sim-0015,mobile,0.374,middle,middle,middle,middle,middle,у границы,0.739,верхняя,18,middle,у границы,0.407,верхняя,21
+sim-0016,data,2.811,lead,lead,lead,lead,lead,уверенно,0.954,средняя,12,lead,уверенно,0.881,средняя,12
+sim-0017,security,-0.903,junior,junior,junior,junior,junior,уверенно,0.966,средняя,18,junior,уверенно,0.883,средняя,12
+sim-0018,devops,-1.103,junior,middle,junior,junior,junior,уверенно,0.957,средняя,24,junior,у границы,0.749,нижняя,24
+sim-0019,backend,-1.144,junior,middle,middle,junior,junior,уверенно,0.978,средняя,24,junior,у границы,0.855,верхняя,24
+sim-0020,frontend,0.323,middle,middle,senior,middle,middle,у границы,0.539,верхняя,30,middle,у границы,0.766,нижняя,18
+sim-0021,mobile,2.851,lead,lead,lead,lead,lead,уверенно,0.985,верхняя,12,lead,уверенно,0.986,верхняя,12
+sim-0022,data,2.74,lead,senior,lead,lead,lead,уверенно,0.999,верхняя,27,lead,уверенно,0.997,средняя,31
+sim-0023,security,-0.364,middle,junior,middle,junior,middle,у границы,0.828,нижняя,30,middle,у границы,0.797,нижняя,24
+sim-0024,devops,-1.384,junior,junior,middle,junior,junior,у границы,0.908,средняя,12,junior,уверенно,0.947,средняя,18
+sim-0025,backend,1.14,senior,lead,lead,middle,senior,у границы,0.882,нижняя,24,senior,уверенно,0.924,средняя,24
+sim-0026,frontend,-1.052,junior,junior,middle,junior,junior,уверенно,0.923,средняя,17,junior,уверенно,0.874,нижняя,12
+sim-0027,mobile,-0.694,junior,junior,middle,junior,junior,у границы,0.847,верхняя,18,junior,у границы,0.85,верхняя,18
+sim-0028,data,-0.947,junior,junior,junior,junior,middle,у границы,0.802,нижняя,27,junior,у границы,0.528,верхняя,18
+sim-0029,security,1.965,lead,lead,lead,lead,lead,у границы,0.881,средняя,12,lead,у границы,0.617,нижняя,13
+sim-0030,devops,1.06,senior,senior,senior,senior,senior,уверенно,0.939,средняя,18,senior,у границы,0.775,верхняя,21
+sim-0031,backend,-1.588,junior,junior,junior,junior,junior,у границы,0.863,нижняя,12,junior,уверенно,0.942,средняя,18
+sim-0032,frontend,1.579,senior,senior,lead,senior,senior,у границы,0.833,средняя,12,senior,уверенно,0.883,верхняя,21
+sim-0033,mobile,-0.11,middle,junior,middle,middle,middle,у границы,0.862,средняя,24,middle,уверенно,0.963,средняя,33
+sim-0034,data,0.225,middle,middle,junior,middle,middle,у границы,0.855,нижняя,13,middle,у границы,0.706,верхняя,18
+sim-0035,security,0.082,middle,junior,senior,middle,middle,у границы,0.718,верхняя,36,middle,у границы,0.852,средняя,24
+sim-0036,devops,0.759,senior,lead,lead,senior,senior,у границы,0.778,нижняя,24,middle,у границы,0.656,верхняя,37
+sim-0037,backend,-1.372,junior,junior,junior,не подтверждён,junior,уверенно,0.946,средняя,18,junior,у границы,0.811,верхняя,25
+sim-0038,frontend,-0.523,middle,junior,junior,junior,middle,у границы,0.727,нижняя,29,middle,у границы,0.781,верхняя,32
+sim-0039,mobile,0.478,middle,senior,senior,middle,middle,у границы,0.774,верхняя,27,middle,у границы,0.857,верхняя,24
+sim-0040,data,-1.652,junior,junior,junior,junior,junior,у границы,0.851,средняя,12,junior,уверенно,0.862,нижняя,12
+sim-0041,security,0.257,middle,junior,middle,middle,middle,у границы,0.894,средняя,24,middle,у границы,0.465,верхняя,29
+sim-0042,devops,-0.089,middle,middle,middle,middle,junior,у границы,0.809,верхняя,25,middle,уверенно,0.869,средняя,12
+sim-0043,backend,2.102,lead,lead,senior,lead,lead,уверенно,0.946,средняя,12,lead,уверенно,0.897,средняя,12
+sim-0044,frontend,2.138,lead,senior,lead,lead,senior,у границы,0.571,верхняя,18,senior,у границы,0.65,верхняя,21
+sim-0045,mobile,-0.716,junior,junior,middle,junior,middle,у границы,0.894,нижняя,30,middle,у границы,0.735,нижняя,27
+sim-0046,data,1.995,lead,senior,middle,senior,lead,уверенно,0.995,средняя,27,senior,у границы,0.803,средняя,12
+sim-0047,security,0.177,middle,middle,middle,middle,middle,у границы,0.882,нижняя,15,middle,у границы,0.696,нижняя,14
+sim-0048,devops,-0.147,middle,senior,middle,middle,middle,у границы,0.672,нижняя,24,middle,уверенно,0.877,верхняя,28
+sim-0049,backend,1.722,senior,lead,senior,lead,senior,у границы,0.874,средняя,24,senior,у границы,0.812,верхняя,24
+sim-0050,frontend,-1.225,junior,junior,junior,junior,junior,у границы,0.864,средняя,12,junior,уверенно,0.884,средняя,12
+sim-0051,mobile,-1.585,junior,junior,не подтверждён,junior,junior,у границы,0.761,верхняя,18,не подтверждён,не подтверждён,0.558,,12
+sim-0052,data,0.981,senior,lead,senior,senior,senior,уверенно,0.925,средняя,24,senior,уверенно,0.889,нижняя,24
+sim-0053,security,1.635,senior,senior,lead,senior,senior,у границы,0.87,нижняя,14,senior,у границы,0.847,средняя,12
+sim-0054,devops,-0.269,middle,junior,middle,middle,middle,уверенно,0.966,средняя,28,middle,уверенно,0.905,нижняя,24
+sim-0055,backend,0.374,middle,senior,middle,middle,middle,у границы,0.867,верхняя,27,middle,уверенно,0.944,средняя,30
+sim-0056,frontend,-0.727,junior,junior,junior,junior,junior,у границы,0.864,средняя,12,junior,уверенно,0.879,верхняя,18
+sim-0057,mobile,-1.144,junior,junior,middle,junior,junior,у границы,0.899,средняя,12,junior,у границы,0.78,верхняя,21
+sim-0058,data,0.42,middle,junior,senior,middle,middle,у границы,0.531,верхняя,28,senior,уверенно,0.933,средняя,42
+sim-0059,security,1.394,senior,lead,lead,senior,senior,уверенно,0.957,средняя,24,senior,уверенно,0.964,средняя,24
+sim-0060,devops,-1.486,junior,middle,middle,middle,junior,уверенно,0.949,средняя,24,junior,уверенно,0.937,средняя,30
+sim-0061,backend,-1.457,junior,middle,middle,junior,junior,у границы,0.748,нижняя,24,не подтверждён,не подтверждён,0.429,,24
+sim-0062,frontend,0.417,middle,junior,middle,senior,middle,у границы,0.624,верхняя,42,middle,у границы,0.426,верхняя,32
+sim-0063,mobile,-1.181,junior,junior,middle,junior,junior,у границы,0.901,средняя,18,junior,уверенно,0.881,средняя,12
+sim-0064,data,-1.66,junior,middle,middle,junior,не подтверждён,не подтверждён,0.826,,24,junior,у границы,0.674,нижняя,24
+sim-0065,security,-1.615,junior,junior,junior,junior,junior,у границы,0.652,нижняя,12,junior,у границы,0.842,средняя,12
+sim-0066,devops,-0.795,junior,junior,middle,junior,middle,у границы,0.625,нижняя,24,junior,у границы,0.409,верхняя,21
+sim-0067,backend,-0.183,middle,middle,middle,middle,middle,у границы,0.808,нижняя,15,middle,уверенно,0.861,средняя,12
+sim-0068,frontend,1.701,senior,senior,lead,senior,senior,у границы,0.87,средняя,12,senior,у границы,0.687,верхняя,21
+sim-0069,mobile,-1.005,junior,junior,junior,middle,junior,у границы,0.422,верхняя,18,junior,у границы,0.636,верхняя,21
+sim-0070,data,-0.711,junior,middle,не подтверждён,middle,junior,у границы,0.74,верхняя,25,junior,у границы,0.757,верхняя,27
+sim-0071,security,-0.973,junior,junior,junior,junior,junior,у границы,0.689,верхняя,30,junior,у границы,0.619,верхняя,17
+sim-0072,devops,-0.415,middle,junior,middle,middle,middle,у границы,0.856,нижняя,28,junior,у границы,0.624,верхняя,21
+sim-0073,backend,-0.791,junior,junior,junior,junior,junior,у границы,0.736,верхняя,18,junior,у границы,0.841,средняя,12
+sim-0074,frontend,-0.633,junior,junior,junior,junior,junior,у границы,0.599,верхняя,17,middle,у границы,0.647,нижняя,33
+sim-0075,mobile,-0.121,middle,junior,middle,middle,junior,у границы,0.478,верхняя,18,middle,у границы,0.841,средняя,24
+sim-0076,data,1.194,senior,middle,senior,senior,senior,у границы,0.89,средняя,24,middle,у границы,0.436,верхняя,18
+sim-0077,security,-1.32,junior,junior,middle,junior,junior,у границы,0.715,нижняя,12,junior,уверенно,0.879,средняя,12
+sim-0078,devops,-1.399,junior,junior,junior,junior,не подтверждён,не подтверждён,0.586,,12,junior,у границы,0.855,верхняя,18
+sim-0079,backend,1.364,senior,senior,senior,senior,senior,у границы,0.914,средняя,18,senior,у границы,0.772,верхняя,31
+sim-0080,frontend,0.147,middle,middle,junior,middle,middle,у границы,0.856,средняя,12,middle,у границы,0.813,верхняя,20
+sim-0081,mobile,1.987,lead,senior,senior,senior,lead,у границы,0.788,нижняя,29,lead,уверенно,0.968,средняя,30
+sim-0082,data,-1.429,junior,middle,junior,junior,junior,у границы,0.818,верхняя,25,junior,уверенно,0.931,средняя,24
+sim-0083,security,-1.14,junior,junior,junior,junior,junior,уверенно,0.929,средняя,12,junior,уверенно,0.885,средняя,12
+sim-0084,devops,-0.294,middle,middle,middle,middle,middle,у границы,0.835,средняя,12,middle,у границы,0.643,нижняя,30
+sim-0085,backend,-0.829,junior,junior,junior,junior,junior,у границы,0.585,верхняя,24,junior,у границы,0.725,верхняя,19
+sim-0086,frontend,1.08,senior,senior,senior,middle,senior,уверенно,0.949,средняя,18,senior,уверенно,0.942,средняя,18
+sim-0087,mobile,1.393,senior,senior,senior,middle,senior,у границы,0.769,верхняя,29,lead,у границы,0.815,нижняя,32
+sim-0088,data,-0.013,middle,middle,middle,junior,middle,у границы,0.84,средняя,12,middle,у границы,0.643,верхняя,26
+sim-0089,security,1.757,senior,senior,senior,senior,senior,у границы,0.591,верхняя,18,senior,уверенно,0.872,средняя,14
+sim-0090,devops,-1.511,junior,middle,junior,junior,junior,у границы,0.761,нижняя,24,не подтверждён,не подтверждён,0.761,,24
+sim-0091,backend,1.46,senior,middle,middle,senior,senior,у границы,0.613,верхняя,30,senior,уверенно,0.873,верхняя,36
+sim-0092,frontend,0.827,senior,lead,lead,middle,senior,у границы,0.874,нижняя,24,senior,у границы,0.652,нижняя,38
+sim-0093,mobile,0.362,middle,middle,middle,middle,middle,у границы,0.851,средняя,12,middle,уверенно,0.926,средняя,18
+sim-0094,data,-0.644,junior,middle,middle,middle,middle,у границы,0.77,нижняя,25,middle,у границы,0.694,нижняя,14
+sim-0095,security,-1.577,junior,junior,junior,junior,junior,уверенно,0.956,средняя,18,не подтверждён,не подтверждён,0.719,,12
+sim-0096,devops,2.949,lead,senior,lead,lead,lead,уверенно,1.0,верхняя,30,lead,уверенно,1.0,верхняя,24
+sim-0097,backend,-0.984,junior,middle,junior,middle,junior,у границы,0.913,верхняя,27,junior,у границы,0.628,верхняя,28
+sim-0098,frontend,-1.791,junior,junior,junior,junior,junior,у границы,0.829,нижняя,12,junior,у границы,0.767,нижняя,12
+sim-0099,mobile,1.58,senior,senior,senior,senior,senior,у границы,0.414,верхняя,17,senior,у границы,0.546,верхняя,20
+sim-0100,data,-0.08,middle,senior,middle,middle,middle,уверенно,0.946,средняя,25,middle,уверенно,0.876,нижняя,24
+sim-0101,security,-1.61,junior,junior,junior,junior,не подтверждён,не подтверждён,0.416,,12,не подтверждён,не подтверждён,0.428,,12
+sim-0102,devops,1.762,senior,senior,lead,lead,lead,уверенно,0.965,средняя,30,senior,у границы,0.806,верхняя,21
+sim-0103,backend,0.739,senior,lead,middle,middle,middle,у границы,0.59,верхняя,36,senior,у границы,0.749,нижняя,27
+sim-0104,frontend,0.479,middle,middle,middle,middle,middle,у границы,0.578,верхняя,18,middle,у границы,0.851,средняя,18
+sim-0105,mobile,0.945,senior,senior,middle,senior,senior,у границы,0.84,средняя,12,senior,у границы,0.801,средняя,12
+sim-0106,data,1.186,senior,senior,senior,senior,senior,у границы,0.686,нижняя,13,senior,уверенно,0.923,средняя,18
+sim-0107,security,0.16,middle,middle,middle,middle,middle,у границы,0.548,верхняя,24,middle,у границы,0.799,верхняя,24
+sim-0108,devops,1.761,senior,senior,senior,senior,senior,у границы,0.837,верхняя,18,senior,уверенно,0.866,средняя,18
+sim-0109,backend,1.736,senior,senior,senior,senior,lead,у границы,0.769,нижняя,29,lead,у границы,0.646,нижняя,30
+sim-0110,frontend,-0.057,middle,middle,senior,middle,middle,уверенно,0.931,средняя,18,middle,у границы,0.432,верхняя,20
+sim-0111,mobile,2.536,lead,lead,lead,lead,lead,уверенно,0.986,верхняя,12,lead,уверенно,0.978,верхняя,12
+sim-0112,data,-1.33,junior,junior,junior,junior,junior,у границы,0.588,верхняя,15,junior,у границы,0.548,верхняя,18
+sim-0113,security,1.225,senior,middle,middle,senior,senior,у границы,0.877,нижняя,29,senior,уверенно,0.877,верхняя,29
+sim-0114,devops,-0.94,junior,middle,junior,junior,middle,у границы,0.702,нижняя,13,junior,уверенно,0.865,верхняя,30
+sim-0115,backend,-0.013,middle,middle,senior,middle,middle,у границы,0.885,средняя,12,middle,уверенно,0.913,средняя,16
+sim-0116,frontend,-0.142,middle,middle,middle,middle,middle,у границы,0.892,средняя,14,middle,у границы,0.836,средняя,12
+sim-0117,mobile,1.235,senior,middle,senior,senior,senior,у границы,0.715,нижняя,24,senior,уверенно,0.921,средняя,24
+sim-0118,data,1.296,senior,senior,lead,middle,senior,у границы,0.784,нижняя,13,senior,у границы,0.816,нижняя,15
+sim-0119,security,0.066,middle,middle,senior,middle,middle,у границы,0.886,нижняя,27,middle,у границы,0.826,верхняя,17
+sim-0120,devops,-0.593,middle,junior,middle,junior,middle,у границы,0.828,нижняя,24,middle,уверенно,0.954,средняя,30
+sim-0121,backend,0.495,middle,senior,senior,senior,middle,у границы,0.613,верхняя,27,middle,у границы,0.71,верхняя,30
+sim-0122,frontend,-0.789,junior,junior,middle,не подтверждён,middle,у границы,0.702,нижняя,24,middle,уверенно,0.88,нижняя,30
+sim-0123,mobile,0.459,middle,middle,senior,middle,middle,у границы,0.806,средняя,12,senior,уверенно,0.914,нижняя,33
+sim-0124,data,1.765,senior,senior,lead,senior,senior,у границы,0.835,средняя,15,senior,у границы,0.591,верхняя,19
+sim-0125,security,-1.456,junior,middle,junior,junior,junior,уверенно,0.972,средняя,24,junior,уверенно,0.935,средняя,26
+sim-0126,devops,0.801,senior,senior,senior,senior,middle,у границы,0.485,верхняя,27,senior,уверенно,0.946,средняя,18
+sim-0127,backend,-0.043,middle,senior,middle,middle,middle,у границы,0.849,верхняя,24,middle,у границы,0.694,верхняя,30
+sim-0128,frontend,-0.071,middle,senior,lead,middle,senior,у границы,0.613,нижняя,15,middle,уверенно,0.907,средняя,29
+sim-0129,mobile,-0.892,junior,junior,middle,junior,junior,у границы,0.465,верхняя,18,junior,у границы,0.844,верхняя,18
+sim-0130,data,-0.903,junior,junior,junior,junior,junior,у границы,0.84,верхняя,15,junior,у границы,0.704,верхняя,18
+sim-0131,security,0.987,senior,lead,lead,senior,senior,у границы,0.649,нижняя,24,senior,уверенно,0.916,средняя,24
+sim-0132,devops,-0.962,junior,junior,junior,junior,junior,у границы,0.595,верхняя,24,junior,у границы,0.633,верхняя,21
+sim-0133,backend,-0.982,junior,middle,middle,junior,junior,уверенно,0.963,средняя,24,junior,уверенно,0.889,верхняя,28
+sim-0134,frontend,2.932,lead,lead,lead,lead,lead,уверенно,0.983,средняя,12,lead,уверенно,0.999,верхняя,12
+sim-0135,mobile,2.211,lead,lead,lead,lead,lead,у границы,0.898,средняя,12,lead,у границы,0.85,нижняя,12
+sim-0136,data,1.501,senior,lead,lead,senior,senior,у границы,0.896,нижняя,24,senior,уверенно,0.923,средняя,25
+sim-0137,security,-0.227,middle,middle,senior,middle,middle,у границы,0.617,нижняя,15,middle,у границы,0.854,средняя,12
+sim-0138,devops,2.257,lead,senior,lead,lead,lead,уверенно,0.999,верхняя,24,senior,у границы,0.526,верхняя,21
+sim-0139,backend,-0.518,middle,middle,middle,middle,middle,уверенно,0.931,средняя,21,middle,уверенно,0.876,средняя,12
+sim-0140,frontend,2.157,lead,senior,lead,lead,lead,уверенно,0.983,средняя,30,lead,уверенно,0.993,верхняя,24
+sim-0141,mobile,0.722,senior,senior,senior,middle,senior,у границы,0.703,нижняя,27,senior,у границы,0.761,нижняя,18
+sim-0142,data,1.512,senior,senior,senior,middle,senior,у границы,0.782,нижняя,26,senior,у границы,0.585,верхняя,19
+sim-0143,security,0.122,middle,middle,senior,middle,middle,у границы,0.872,верхняя,17,middle,у границы,0.728,верхняя,17
+sim-0144,devops,2.446,lead,lead,lead,lead,lead,уверенно,0.938,средняя,12,lead,уверенно,0.926,средняя,12
+sim-0145,backend,-1.19,junior,junior,junior,junior,junior,у границы,0.893,средняя,12,junior,у границы,0.852,средняя,12
+sim-0146,frontend,-1.283,junior,junior,не подтверждён,junior,junior,у границы,0.794,верхняя,24,junior,у границы,0.777,нижняя,12
+sim-0147,mobile,-0.529,middle,middle,middle,junior,junior,у границы,0.906,средняя,27,middle,уверенно,0.923,средняя,21
+sim-0148,data,-0.971,junior,junior,middle,junior,junior,у границы,0.884,средняя,12,junior,у границы,0.786,верхняя,18
+sim-0149,security,1.231,senior,senior,lead,senior,senior,у границы,0.879,средняя,12,senior,у границы,0.816,средняя,12
+sim-0150,devops,-0.147,middle,senior,senior,middle,middle,уверенно,0.961,средняя,24,middle,уверенно,0.899,средняя,24
+sim-0151,backend,-0.033,middle,middle,middle,middle,middle,у границы,0.451,верхняя,18,middle,у границы,0.456,верхняя,21
+sim-0152,frontend,-1.699,junior,middle,middle,junior,junior,уверенно,0.959,средняя,26,junior,уверенно,0.953,средняя,24
+sim-0153,mobile,-0.184,middle,senior,middle,junior,middle,у границы,0.915,нижняя,24,middle,у границы,0.783,верхняя,27
+sim-0154,data,1.916,lead,lead,lead,lead,senior,у границы,0.787,верхняя,24,senior,уверенно,0.884,верхняя,24
+sim-0155,security,-0.481,middle,middle,middle,middle,junior,у границы,0.71,верхняя,27,middle,у границы,0.737,нижняя,14
+sim-0156,devops,1.009,senior,lead,senior,middle,senior,у границы,0.896,нижняя,24,senior,у границы,0.654,нижняя,37
+sim-0157,backend,0.426,middle,middle,lead,senior,middle,у границы,0.588,верхняя,18,middle,у границы,0.721,верхняя,33
+sim-0158,frontend,0.757,senior,senior,lead,middle,middle,у границы,0.863,верхняя,27,middle,у границы,0.466,верхняя,29
+sim-0159,mobile,-0.178,middle,middle,junior,middle,middle,у границы,0.613,нижняя,15,middle,уверенно,0.862,средняя,12
+sim-0160,data,-0.293,middle,senior,middle,middle,junior,у границы,0.832,верхняя,36,junior,у границы,0.503,верхняя,36
+sim-0161,security,-1.63,junior,junior,junior,не подтверждён,junior,у границы,0.646,нижняя,12,junior,у границы,0.849,средняя,12
+sim-0162,devops,-0.681,junior,junior,senior,middle,junior,у границы,0.71,верхняя,28,junior,у границы,0.504,верхняя,21
+sim-0163,backend,0.141,middle,senior,senior,middle,middle,уверенно,0.968,средняя,27,middle,у границы,0.521,верхняя,27
+sim-0164,frontend,0.033,middle,middle,middle,junior,middle,у границы,0.589,верхняя,24,middle,у границы,0.833,нижняя,18
+sim-0165,mobile,0.423,middle,senior,senior,senior,middle,у границы,0.895,нижняя,24,middle,у границы,0.739,верхняя,30
+sim-0166,data,-1.481,junior,junior,junior,junior,junior,у границы,0.667,нижняя,12,junior,у границы,0.733,нижняя,12
+sim-0167,security,0.237,middle,middle,middle,middle,middle,у границы,0.531,верхняя,29,middle,у границы,0.717,нижняя,14
+sim-0168,devops,0.13,middle,middle,senior,middle,middle,у границы,0.667,верхняя,18,middle,у границы,0.791,верхняя,19
+sim-0169,backend,0.083,middle,junior,lead,middle,middle,у границы,0.543,верхняя,30,middle,уверенно,0.917,средняя,24
+sim-0170,frontend,1.539,senior,senior,lead,senior,senior,у границы,0.845,средняя,12,senior,у границы,0.715,верхняя,21
+sim-0171,mobile,-0.629,junior,junior,senior,junior,middle,у границы,0.905,нижняя,30,junior,уверенно,0.895,средняя,21
+sim-0172,data,-1.44,junior,middle,junior,junior,junior,уверенно,0.978,средняя,24,junior,уверенно,0.95,средняя,24
+sim-0173,security,-1.588,junior,junior,junior,junior,junior,у границы,0.853,нижняя,12,junior,уверенно,0.873,средняя,12
+sim-0174,devops,0.141,middle,middle,middle,middle,middle,у границы,0.85,нижняя,12,middle,уверенно,0.867,средняя,19
+sim-0175,backend,-0.602,junior,junior,junior,middle,middle,у границы,0.703,нижняя,24,junior,уверенно,0.861,средняя,12
+sim-0176,frontend,0.644,senior,senior,middle,middle,senior,у границы,0.881,средняя,12,senior,у границы,0.794,нижняя,17
+sim-0177,mobile,0.402,middle,middle,senior,middle,senior,у границы,0.678,нижняя,30,senior,у границы,0.858,средняя,24
+sim-0178,data,-0.683,junior,middle,middle,middle,middle,у границы,0.681,нижняя,12,middle,у границы,0.709,нижняя,15
+sim-0179,security,-0.026,middle,junior,middle,middle,middle,у границы,0.905,средняя,24,middle,уверенно,0.956,средняя,29
+sim-0180,devops,1.116,senior,lead,lead,senior,senior,у границы,0.769,верхняя,24,senior,у границы,0.674,нижняя,25
+sim-0181,backend,1.428,senior,senior,lead,senior,senior,у границы,0.918,средняя,15,senior,у границы,0.819,средняя,12
+sim-0182,frontend,0.561,middle,middle,lead,middle,senior,у границы,0.782,нижняя,30,senior,у границы,0.64,нижняя,32
+sim-0183,mobile,-1.537,junior,junior,junior,junior,junior,у границы,0.784,верхняя,18,junior,у границы,0.826,нижняя,12
+sim-0184,data,-1.148,junior,middle,senior,junior,junior,уверенно,0.964,средняя,24,junior,у границы,0.827,верхняя,27
+sim-0185,security,0.22,middle,junior,middle,middle,middle,у границы,0.867,верхняя,29,middle,уверенно,0.945,средняя,29
+sim-0186,devops,1.726,senior,senior,senior,senior,senior,у границы,0.774,средняя,12,senior,у границы,0.849,верхняя,33
+sim-0187,backend,-1.134,junior,junior,middle,junior,junior,у границы,0.916,средняя,18,junior,уверенно,0.881,средняя,12
+sim-0188,frontend,1.982,lead,senior,lead,lead,senior,у границы,0.418,верхняя,18,senior,у границы,0.776,верхняя,21
+sim-0189,mobile,-0.987,junior,junior,junior,junior,junior,у границы,0.411,верхняя,30,junior,у границы,0.59,верхняя,27
+sim-0190,data,-0.67,junior,junior,middle,junior,junior,у границы,0.615,верхняя,15,middle,у границы,0.732,нижняя,30
+sim-0191,security,-1.558,junior,middle,junior,junior,junior,уверенно,0.977,средняя,24,не подтверждён,не подтверждён,0.547,,24
+sim-0192,devops,-1.049,junior,junior,junior,junior,junior,у границы,0.913,средняя,16,junior,у границы,0.611,верхняя,21
+sim-0193,backend,1.42,senior,senior,lead,senior,senior,у границы,0.841,средняя,12,senior,у границы,0.849,нижняя,30
+sim-0194,frontend,1.724,senior,senior,lead,senior,senior,у границы,0.905,средняя,18,lead,уверенно,0.98,средняя,24
+sim-0195,mobile,-0.295,middle,middle,senior,middle,middle,у границы,0.819,средняя,12,middle,у границы,0.853,средняя,12
+sim-0196,data,0.464,middle,middle,middle,middle,middle,у границы,0.897,средняя,16,middle,у границы,0.432,верхняя,18
+sim-0197,security,0.441,middle,middle,senior,middle,middle,у границы,0.86,верхняя,17,senior,у границы,0.698,нижняя,29
+sim-0198,devops,1.749,senior,lead,lead,senior,senior,у границы,0.715,верхняя,24,senior,у границы,0.464,верхняя,27
+sim-0199,backend,-1.544,junior,junior,junior,junior,junior,у границы,0.81,нижняя,12,junior,у границы,0.803,средняя,12
+sim-0200,frontend,-0.393,middle,middle,senior,middle,middle,у границы,0.712,нижняя,14,middle,у границы,0.789,нижняя,18
+sim-0201,mobile,-0.899,junior,junior,junior,middle,junior,у границы,0.752,верхняя,18,junior,у границы,0.468,верхняя,21
+sim-0202,data,-1.349,junior,junior,junior,junior,junior,у границы,0.895,средняя,12,junior,у границы,0.816,верхняя,18
+sim-0203,security,2.087,lead,lead,lead,senior,lead,уверенно,0.966,средняя,12,lead,уверенно,0.953,средняя,12
+sim-0204,devops,-1.589,junior,junior,junior,junior,junior,у границы,0.761,нижняя,12,не подтверждён,не подтверждён,0.604,,14
+sim-0205,backend,-1.471,junior,middle,middle,junior,не подтверждён,не подтверждён,0.431,,24,junior,у границы,0.766,нижняя,24
+sim-0206,frontend,-0.829,junior,junior,middle,middle,junior,у границы,0.492,верхняя,17,junior,у границы,0.532,верхняя,21
+sim-0207,mobile,0.936,senior,senior,senior,middle,senior,у границы,0.866,нижняя,15,senior,уверенно,0.927,средняя,18
+sim-0208,data,2.939,lead,lead,lead,lead,lead,уверенно,0.994,верхняя,12,lead,уверенно,1.0,верхняя,12
+sim-0209,security,-0.271,middle,middle,middle,junior,middle,у границы,0.847,нижняя,15,middle,у границы,0.76,нижняя,26
+sim-0210,devops,1.889,lead,senior,lead,senior,senior,у границы,0.698,нижняя,15,senior,у границы,0.477,верхняя,21
+sim-0211,backend,-0.489,middle,middle,junior,middle,junior,у границы,0.534,верхняя,27,middle,у границы,0.617,нижняя,16
+sim-0212,frontend,-0.739,junior,junior,middle,junior,middle,у границы,0.899,нижняя,24,junior,у границы,0.698,верхняя,21
+sim-0213,mobile,-1.738,junior,junior,junior,junior,junior,у границы,0.891,средняя,12,junior,уверенно,0.887,средняя,12
+sim-0214,data,-0.836,junior,middle,middle,middle,junior,уверенно,0.965,средняя,24,junior,у границы,0.758,верхняя,27
+sim-0215,security,-1.757,junior,junior,не подтверждён,junior,junior,уверенно,0.93,средняя,12,junior,уверенно,0.868,средняя,12
+sim-0216,devops,1.676,senior,middle,lead,senior,senior,у границы,0.499,верхняя,30,senior,у границы,0.433,верхняя,51
+sim-0217,backend,-0.504,middle,senior,senior,middle,middle,у границы,0.782,нижняя,24,middle,у границы,0.603,нижняя,37
+sim-0218,frontend,1.86,lead,senior,lead,senior,senior,у границы,0.729,верхняя,18,senior,у границы,0.411,верхняя,21
+sim-0219,mobile,-1.332,junior,junior,junior,junior,junior,у границы,0.9,средняя,12,junior,уверенно,0.906,средняя,12
+sim-0220,data,2.014,lead,senior,lead,senior,lead,уверенно,0.982,средняя,27,senior,у границы,0.427,верхняя,31
+sim-0221,security,-0.549,middle,middle,middle,middle,middle,у границы,0.852,нижняя,15,middle,у границы,0.848,средняя,12
+sim-0222,devops,1.324,senior,senior,senior,senior,senior,у границы,0.88,средняя,12,senior,уверенно,0.894,средняя,18
+sim-0223,backend,-1.726,junior,junior,не подтверждён,junior,junior,у границы,0.778,нижняя,12,не подтверждён,не подтверждён,0.549,,12
+sim-0224,frontend,-0.452,middle,middle,middle,junior,junior,у границы,0.636,верхняя,26,middle,у границы,0.858,нижняя,18
+sim-0225,mobile,0.498,middle,middle,senior,middle,middle,у границы,0.797,верхняя,18,middle,уверенно,0.908,средняя,18
+sim-0226,data,-1.146,junior,junior,middle,junior,junior,у границы,0.781,верхняя,15,junior,у границы,0.836,средняя,12
+sim-0227,security,-0.102,middle,senior,middle,junior,middle,у границы,0.898,нижняя,24,middle,уверенно,0.957,средняя,26
+sim-0228,devops,0.766,senior,lead,senior,senior,senior,у границы,0.793,нижняя,24,senior,уверенно,0.873,нижняя,24
+sim-0229,backend,2.275,lead,lead,lead,lead,lead,у границы,0.887,средняя,12,lead,уверенно,0.972,верхняя,12
+sim-0230,frontend,-1.009,junior,junior,junior,junior,junior,у границы,0.918,средняя,17,junior,у границы,0.644,верхняя,21
+sim-0231,mobile,2.645,lead,senior,lead,lead,lead,уверенно,0.978,средняя,29,lead,уверенно,1.0,верхняя,30
+sim-0232,data,-1.604,junior,middle,senior,не подтверждён,junior,у границы,0.809,нижняя,25,junior,уверенно,0.948,средняя,24
+sim-0233,security,2.577,lead,senior,lead,lead,lead,уверенно,0.972,средняя,24,lead,уверенно,0.924,средняя,24
+sim-0234,devops,-0.708,junior,middle,junior,junior,middle,у границы,0.877,нижняя,18,junior,у границы,0.734,верхняя,30
+sim-0235,backend,-0.188,middle,middle,middle,middle,middle,у границы,0.884,средняя,12,middle,уверенно,0.928,средняя,18
+sim-0236,frontend,0.535,middle,middle,senior,middle,middle,у границы,0.872,средняя,12,senior,уверенно,0.905,нижняя,30
+sim-0237,mobile,1.372,senior,lead,senior,senior,senior,у границы,0.837,верхняя,24,senior,уверенно,0.946,средняя,24
+sim-0238,data,-0.185,middle,senior,middle,middle,middle,уверенно,0.941,средняя,24,middle,уверенно,0.958,средняя,27
+sim-0239,security,0.595,middle,senior,senior,middle,senior,у границы,0.671,нижняя,14,middle,у границы,0.416,верхняя,26
+sim-0240,devops,-1.445,junior,middle,middle,junior,junior,у границы,0.683,нижняя,24,не подтверждён,не подтверждён,0.516,,24
+sim-0241,backend,1.495,senior,senior,lead,senior,senior,у границы,0.827,средняя,12,senior,у границы,0.738,верхняя,31
+sim-0242,frontend,-0.515,middle,middle,middle,middle,middle,у границы,0.749,нижняя,14,junior,у границы,0.657,верхняя,30
+sim-0243,mobile,-0.711,junior,junior,senior,middle,junior,у границы,0.9,средняя,18,middle,у границы,0.758,нижняя,27
+sim-0244,data,0.065,middle,middle,senior,middle,middle,у границы,0.905,средняя,12,middle,у границы,0.836,средняя,12
+sim-0245,security,-1.67,junior,middle,junior,junior,junior,у границы,0.6,нижняя,24,junior,у границы,0.763,нижняя,24
+sim-0246,devops,1.974,lead,senior,lead,senior,lead,у границы,0.821,нижняя,24,lead,уверенно,0.901,нижняя,33
+sim-0247,backend,-0.627,junior,junior,middle,middle,middle,у границы,0.915,нижняя,24,middle,у границы,0.713,нижняя,25
+sim-0248,frontend,-0.299,middle,junior,junior,middle,middle,уверенно,0.926,средняя,24,middle,уверенно,0.929,нижняя,33
+sim-0249,mobile,-1.166,junior,junior,junior,junior,junior,у границы,0.465,верхняя,18,junior,у границы,0.68,верхняя,27
+sim-0250,data,1.05,senior,lead,senior,senior,senior,у границы,0.873,нижняя,24,senior,уверенно,0.917,средняя,24
+sim-0251,security,1.563,senior,senior,senior,lead,senior,у границы,0.868,средняя,12,senior,у границы,0.648,верхняя,19
+sim-0252,devops,-0.125,middle,junior,junior,middle,middle,уверенно,0.936,средняя,24,middle,уверенно,0.942,средняя,24
+sim-0253,backend,-1.335,junior,middle,middle,junior,junior,уверенно,0.966,средняя,24,junior,уверенно,0.947,средняя,24
+sim-0254,frontend,1.117,senior,senior,senior,senior,senior,у границы,0.87,средняя,12,senior,у границы,0.806,верхняя,21
+sim-0255,mobile,2.173,lead,lead,senior,senior,senior,у границы,0.534,верхняя,24,lead,у границы,0.605,нижняя,14
+sim-0256,data,1.705,senior,senior,senior,senior,lead,уверенно,0.978,средняя,27,lead,у границы,0.61,нижняя,31
+sim-0257,security,-0.575,middle,senior,senior,middle,middle,у границы,0.779,нижняя,24,middle,уверенно,0.885,средняя,24
+sim-0258,devops,-1.287,junior,junior,middle,junior,junior,у границы,0.848,нижняя,12,junior,уверенно,0.878,средняя,12
+sim-0259,backend,-0.134,middle,senior,middle,middle,middle,уверенно,0.95,средняя,24,middle,уверенно,0.937,средняя,24
+sim-0260,frontend,-0.294,middle,middle,middle,middle,middle,у границы,0.756,нижняя,26,middle,уверенно,0.929,средняя,18
+sim-0261,mobile,-1.424,junior,junior,не подтверждён,junior,junior,у границы,0.677,верхняя,18,не подтверждён,не подтверждён,0.46,,12
+sim-0262,data,2.902,lead,lead,lead,lead,lead,уверенно,0.949,средняя,12,lead,уверенно,0.999,верхняя,12
+sim-0263,security,-0.109,middle,middle,middle,middle,middle,у границы,0.847,средняя,12,middle,уверенно,0.913,средняя,17
+sim-0264,devops,-1.006,junior,middle,middle,junior,junior,уверенно,0.967,средняя,24,junior,уверенно,0.943,средняя,24
+sim-0265,backend,-1.049,junior,middle,middle,junior,junior,у границы,0.614,верхняя,27,junior,уверенно,0.891,верхняя,28
+sim-0266,frontend,-0.494,middle,middle,middle,middle,middle,у границы,0.717,нижняя,14,junior,у границы,0.646,верхняя,30
+sim-0267,mobile,-0.0,middle,senior,senior,middle,junior,у границы,0.707,верхняя,36,middle,у границы,0.636,нижняя,27
+sim-0268,data,0.801,senior,senior,senior,senior,senior,у границы,0.821,средняя,15,senior,у границы,0.814,средняя,12
+sim-0269,security,1.974,lead,senior,lead,lead,senior,у границы,0.537,верхняя,18,lead,уверенно,1.0,верхняя,24
+sim-0270,devops,-0.539,middle,middle,middle,middle,middle,у границы,0.918,средняя,18,middle,у границы,0.702,нижняя,18
+sim-0271,backend,-1.24,junior,junior,junior,junior,junior,у границы,0.91,средняя,12,junior,уверенно,0.905,средняя,18
+sim-0272,frontend,-1.601,junior,junior,junior,junior,junior,у границы,0.826,нижняя,12,junior,у границы,0.84,средняя,12
+sim-0273,mobile,2.337,lead,senior,lead,lead,lead,уверенно,0.96,средняя,29,lead,уверенно,0.961,средняя,24
+sim-0274,data,0.546,middle,middle,senior,middle,middle,у границы,0.599,верхняя,17,senior,уверенно,0.909,нижняя,30
+sim-0275,security,2.273,lead,senior,lead,senior,senior,у границы,0.429,верхняя,18,lead,уверенно,0.984,средняя,30
+sim-0276,devops,-0.695,junior,middle,senior,junior,junior,у границы,0.809,верхняя,25,junior,уверенно,0.872,верхняя,27
+sim-0277,backend,1.447,senior,senior,senior,senior,senior,у границы,0.839,нижняя,12,senior,у границы,0.856,средняя,18
+sim-0278,frontend,0.555,middle,middle,middle,middle,senior,у границы,0.828,нижняя,30,senior,у границы,0.84,нижняя,32
+sim-0279,mobile,1.187,senior,senior,lead,senior,senior,у границы,0.844,верхняя,17,senior,у границы,0.817,средняя,12
+sim-0280,data,0.139,middle,junior,lead,middle,middle,уверенно,0.935,средняя,24,middle,у границы,0.749,верхняя,31
+sim-0281,security,0.001,middle,middle,middle,middle,middle,у границы,0.591,верхняя,29,middle,у границы,0.804,средняя,12
+sim-0282,devops,-1.619,junior,junior,не подтверждён,junior,junior,у границы,0.886,средняя,12,не подтверждён,не подтверждён,0.833,,14
+sim-0283,backend,-0.604,junior,junior,senior,junior,middle,у границы,0.861,нижняя,24,junior,уверенно,0.912,средняя,18
+sim-0284,frontend,2.144,lead,lead,lead,lead,lead,у границы,0.685,нижняя,24,lead,у границы,0.727,нижняя,15
+sim-0285,mobile,-0.205,middle,middle,middle,middle,middle,у границы,0.907,средняя,15,middle,уверенно,0.869,средняя,12
+sim-0286,data,0.988,senior,lead,lead,middle,senior,у границы,0.791,нижняя,24,senior,уверенно,0.937,средняя,24
+sim-0287,security,-0.862,junior,junior,middle,junior,junior,у границы,0.894,нижняя,12,middle,у границы,0.624,нижняя,29
+sim-0288,devops,0.4,middle,junior,senior,middle,middle,у границы,0.521,верхняя,30,senior,у границы,0.763,нижняя,37
+sim-0289,backend,1.715,senior,lead,lead,senior,lead,у границы,0.688,нижняя,12,senior,у границы,0.732,верхняя,24
+sim-0290,frontend,1.69,senior,middle,senior,senior,senior,у границы,0.504,верхняя,30,senior,уверенно,0.874,верхняя,30
+sim-0291,mobile,-1.374,junior,junior,middle,junior,не подтверждён,не подтверждён,0.512,,12,junior,у границы,0.854,средняя,12
+sim-0292,data,-1.717,junior,junior,не подтверждён,junior,junior,у границы,0.867,средняя,12,не подтверждён,не подтверждён,0.87,,12
+sim-0293,security,0.797,senior,senior,middle,senior,senior,у границы,0.914,средняя,18,senior,уверенно,0.866,средняя,12
+sim-0294,devops,1.485,senior,senior,senior,lead,senior,у границы,0.544,верхняя,18,senior,уверенно,0.879,средняя,18
+sim-0295,backend,-1.049,junior,junior,middle,junior,junior,у границы,0.777,верхняя,18,junior,уверенно,0.893,средняя,12
+sim-0296,frontend,0.425,middle,middle,middle,middle,middle,у границы,0.796,верхняя,18,middle,уверенно,0.905,средняя,18
+sim-0297,mobile,-1.246,junior,junior,senior,junior,junior,у границы,0.71,нижняя,12,junior,у границы,0.786,верхняя,21
+sim-0298,data,0.279,middle,middle,senior,middle,middle,у границы,0.439,верхняя,16,middle,уверенно,0.883,средняя,19
+sim-0299,security,0.818,senior,senior,senior,middle,middle,у границы,0.585,верхняя,26,senior,уверенно,0.902,средняя,19
+sim-0300,devops,-1.387,junior,junior,junior,junior,junior,у границы,0.901,средняя,16,не подтверждён,не подтверждён,0.673,,14
+sim-0301,backend,-1.097,junior,junior,junior,junior,junior,у границы,0.907,средняя,12,junior,у границы,0.85,средняя,12
+sim-0302,frontend,0.19,middle,senior,middle,middle,middle,уверенно,0.939,средняя,24,senior,у границы,0.697,нижняя,29
+sim-0303,mobile,0.493,middle,middle,middle,middle,senior,у границы,0.647,нижняя,24,middle,у границы,0.54,верхняя,21
+sim-0304,data,-0.137,middle,middle,middle,middle,middle,у границы,0.86,средняя,12,middle,уверенно,0.912,нижняя,25
+sim-0305,security,1.631,senior,senior,senior,senior,senior,у границы,0.746,верхняя,18,lead,у границы,0.704,нижняя,31
+sim-0306,devops,-0.624,junior,junior,middle,middle,middle,у границы,0.889,средняя,24,junior,у границы,0.516,верхняя,21
+sim-0307,backend,2.026,lead,lead,lead,lead,senior,у границы,0.486,верхняя,24,senior,у границы,0.738,верхняя,26
+sim-0308,frontend,0.275,middle,middle,middle,middle,middle,у границы,0.861,верхняя,18,middle,у границы,0.715,верхняя,20
+sim-0309,mobile,-0.972,junior,junior,middle,junior,middle,у границы,0.86,нижняя,30,junior,у границы,0.844,верхняя,27
+sim-0310,data,1.792,senior,lead,lead,senior,lead,у границы,0.64,нижняя,12,lead,уверенно,0.867,нижняя,13
+sim-0311,security,0.627,senior,senior,lead,senior,senior,у границы,0.702,нижняя,14,senior,у границы,0.837,средняя,12
+sim-0312,devops,-0.524,middle,middle,middle,junior,middle,у границы,0.869,средняя,12,junior,у границы,0.489,верхняя,30
+sim-0313,backend,-1.11,junior,junior,не подтверждён,junior,junior,у границы,0.73,нижняя,12,junior,уверенно,0.865,нижняя,18
+sim-0314,frontend,1.377,senior,lead,senior,senior,senior,уверенно,0.958,средняя,24,senior,уверенно,0.907,верхняя,27
+sim-0315,mobile,0.315,middle,middle,middle,middle,middle,у границы,0.91,средняя,15,middle,у границы,0.401,верхняя,33
+sim-0316,data,-0.007,middle,middle,middle,middle,middle,у границы,0.802,нижняя,25,middle,у границы,0.81,средняя,12
+sim-0317,security,1.655,senior,senior,lead,senior,senior,у границы,0.787,верхняя,18,senior,уверенно,0.867,средняя,14
+sim-0318,devops,-0.266,middle,senior,junior,middle,middle,у границы,0.913,нижняя,24,middle,у границы,0.636,нижняя,27
+sim-0319,backend,-1.595,junior,middle,не подтверждён,junior,junior,уверенно,0.97,средняя,24,junior,у границы,0.707,нижняя,28
+sim-0320,frontend,-0.562,middle,middle,junior,middle,middle,у границы,0.879,средняя,14,junior,у границы,0.494,верхняя,30
+sim-0321,mobile,0.596,middle,middle,senior,middle,senior,у границы,0.897,средняя,24,senior,у границы,0.634,нижняя,33
+sim-0322,data,-0.628,junior,junior,junior,middle,middle,уверенно,0.932,средняя,24,junior,у границы,0.431,верхняя,18
+sim-0323,security,-1.265,junior,junior,junior,junior,junior,у границы,0.478,верхняя,18,junior,у границы,0.852,средняя,12
+sim-0324,devops,-1.417,junior,junior,middle,junior,junior,у границы,0.883,средняя,12,junior,уверенно,0.897,средняя,12
+sim-0325,backend,0.017,middle,middle,middle,middle,middle,у границы,0.782,верхняя,18,middle,уверенно,0.896,верхняя,21
+sim-0326,frontend,2.38,lead,senior,lead,senior,lead,уверенно,0.979,средняя,30,lead,у границы,0.696,нижняя,24
+sim-0327,mobile,-0.893,junior,junior,junior,junior,junior,у границы,0.831,нижняя,12,middle,у границы,0.652,нижняя,27
+sim-0328,data,-1.263,junior,middle,middle,junior,junior,уверенно,0.943,средняя,24,junior,у границы,0.853,нижняя,24
+sim-0329,security,-0.101,middle,senior,middle,middle,middle,уверенно,0.933,средняя,24,middle,у границы,0.773,нижняя,24
+sim-0330,devops,1.748,senior,senior,lead,senior,senior,у границы,0.667,верхняя,18,senior,у границы,0.859,верхняя,18
+sim-0331,backend,2.048,lead,lead,lead,lead,lead,уверенно,0.967,средняя,12,senior,у границы,0.695,верхняя,26
+sim-0332,frontend,0.939,senior,senior,senior,senior,senior,у границы,0.887,нижняя,27,senior,у границы,0.856,средняя,12
+sim-0333,mobile,0.42,middle,junior,middle,middle,middle,у границы,0.702,верхняя,30,middle,у границы,0.643,верхняя,33
+sim-0334,data,-0.935,junior,junior,junior,middle,junior,у границы,0.855,верхняя,15,junior,уверенно,0.875,средняя,12
+sim-0335,security,-0.986,junior,junior,junior,middle,junior,уверенно,0.951,средняя,18,junior,уверенно,0.862,средняя,12
+sim-0336,devops,2.207,lead,lead,lead,lead,lead,уверенно,0.943,средняя,12,lead,уверенно,0.989,верхняя,12
+sim-0337,backend,-0.529,middle,middle,middle,junior,junior,у границы,0.432,верхняя,27,junior,у границы,0.746,верхняя,28
+sim-0338,frontend,-0.79,junior,junior,junior,middle,junior,у границы,0.49,верхняя,17,junior,у границы,0.431,верхняя,33
+sim-0339,mobile,-0.633,junior,middle,junior,junior,middle,у границы,0.883,нижняя,18,junior,уверенно,0.963,средняя,30
+sim-0340,data,-1.718,junior,junior,junior,junior,не подтверждён,не подтверждён,0.529,,12,junior,уверенно,0.883,средняя,12
+sim-0341,security,0.847,senior,senior,senior,senior,middle,у границы,0.616,верхняя,26,senior,у границы,0.768,нижняя,14
+sim-0342,devops,-0.939,junior,junior,не подтверждён,middle,junior,у границы,0.554,верхняя,16,middle,у границы,0.663,нижняя,27
+sim-0343,backend,-1.197,junior,junior,junior,junior,junior,у границы,0.762,нижняя,12,junior,у границы,0.832,средняя,12
+sim-0344,frontend,1.311,senior,senior,lead,senior,senior,у границы,0.885,средняя,12,senior,уверенно,0.949,средняя,24
+sim-0345,mobile,-1.271,junior,junior,не подтверждён,junior,junior,у границы,0.446,верхняя,18,junior,у границы,0.687,верхняя,21
+sim-0346,data,0.94,senior,senior,middle,middle,senior,у границы,0.857,средняя,13,senior,уверенно,0.897,средняя,15
+sim-0347,security,-0.677,junior,junior,middle,junior,junior,у границы,0.9,верхняя,30,middle,уверенно,0.892,средняя,24
+sim-0348,devops,-1.746,junior,middle,junior,junior,не подтверждён,не подтверждён,0.758,,24,junior,уверенно,0.939,средняя,30
+sim-0349,backend,1.132,senior,middle,senior,middle,senior,у границы,0.656,нижняя,30,middle,уверенно,0.871,верхняя,18
+sim-0350,frontend,-0.221,middle,junior,middle,middle,middle,уверенно,0.93,средняя,24,middle,уверенно,0.922,средняя,24
+sim-0351,mobile,2.765,lead,lead,lead,lead,lead,уверенно,0.99,верхняя,12,lead,уверенно,0.999,верхняя,12
+sim-0352,data,-1.103,junior,junior,junior,junior,junior,у границы,0.753,нижняя,12,junior,у границы,0.813,верхняя,18
+sim-0353,security,-1.757,junior,junior,middle,не подтверждён,не подтверждён,не подтверждён,0.931,,12,junior,у границы,0.793,нижняя,12
+sim-0354,devops,-1.339,junior,junior,не подтверждён,junior,junior,уверенно,0.953,средняя,16,junior,уверенно,0.907,средняя,12
+sim-0355,backend,0.384,middle,junior,middle,middle,middle,уверенно,0.935,средняя,24,middle,уверенно,0.932,средняя,24
+sim-0356,frontend,0.062,middle,senior,middle,senior,middle,уверенно,0.93,средняя,24,middle,у границы,0.746,верхняя,26
+sim-0357,mobile,-0.969,junior,middle,junior,junior,junior,у границы,0.639,верхняя,27,junior,уверенно,0.905,верхняя,30
+sim-0358,data,0.802,senior,middle,senior,middle,senior,у границы,0.911,средняя,24,middle,у границы,0.851,нижняя,12
+sim-0359,security,-1.321,junior,middle,middle,junior,junior,уверенно,0.957,средняя,24,junior,уверенно,0.971,средняя,26
+sim-0360,devops,1.454,senior,senior,lead,senior,senior,у границы,0.721,нижняя,15,senior,уверенно,0.891,средняя,18
+sim-0361,backend,0.282,middle,middle,junior,middle,middle,у границы,0.814,средняя,12,middle,у границы,0.769,верхняя,21
+sim-0362,frontend,2.338,lead,senior,senior,lead,lead,у границы,0.702,нижняя,30,lead,уверенно,0.998,верхняя,24
+sim-0363,mobile,0.457,middle,middle,middle,middle,middle,у границы,0.79,верхняя,18,middle,у границы,0.783,верхняя,21
+sim-0364,data,0.013,middle,middle,senior,middle,middle,у границы,0.847,верхняя,16,middle,у границы,0.792,верхняя,19
+sim-0365,security,-0.525,middle,junior,junior,middle,middle,у границы,0.895,нижняя,24,middle,у границы,0.858,нижняя,24
+sim-0366,devops,0.55,middle,middle,senior,middle,senior,у границы,0.821,нижняя,30,middle,у границы,0.782,верхняя,19
+sim-0367,backend,-1.273,junior,middle,middle,junior,junior,уверенно,0.969,средняя,24,junior,уверенно,0.919,средняя,28
+sim-0368,frontend,0.199,middle,middle,senior,middle,middle,у границы,0.86,верхняя,18,middle,у границы,0.409,верхняя,26
+sim-0369,mobile,1.106,senior,senior,middle,senior,senior,у границы,0.495,верхняя,17,senior,уверенно,0.897,средняя,18
+sim-0370,data,-1.686,junior,middle,junior,junior,junior,уверенно,0.947,средняя,24,не подтверждён,не подтверждён,0.412,,24
+sim-0371,security,0.484,middle,middle,senior,middle,middle,у границы,0.846,верхняя,29,middle,у границы,0.627,верхняя,17
+sim-0372,devops,-1.666,junior,middle,senior,junior,junior,у границы,0.759,нижняя,24,junior,у границы,0.77,верхняя,30
+sim-0373,backend,-0.574,middle,middle,middle,middle,junior,у границы,0.601,верхняя,24,middle,у границы,0.831,средняя,12
+sim-0374,frontend,2.575,lead,senior,lead,lead,lead,уверенно,1.0,верхняя,24,lead,уверенно,1.0,верхняя,24
+sim-0375,mobile,0.359,middle,junior,senior,middle,middle,уверенно,0.93,средняя,24,middle,у границы,0.6,верхняя,33
+sim-0376,data,1.416,senior,senior,senior,senior,senior,у границы,0.465,верхняя,15,senior,уверенно,0.863,средняя,19
+sim-0377,security,1.967,lead,lead,lead,lead,lead,у границы,0.701,нижняя,12,lead,уверенно,0.869,нижняя,25
+sim-0378,devops,-0.35,middle,middle,senior,middle,middle,у границы,0.724,нижняя,13,middle,у границы,0.853,средняя,12
+sim-0379,backend,0.537,middle,middle,senior,middle,middle,у границы,0.788,верхняя,18,middle,уверенно,0.903,средняя,18
+sim-0380,frontend,-0.481,middle,middle,junior,junior,middle,у границы,0.661,нижняя,14,junior,у границы,0.835,верхняя,30
+sim-0381,mobile,-0.906,junior,junior,middle,junior,junior,у границы,0.844,нижняя,12,junior,у границы,0.771,верхняя,27
+sim-0382,data,-1.37,junior,junior,junior,junior,junior,у границы,0.581,верхняя,15,junior,у границы,0.763,нижняя,12
+sim-0383,security,2.461,lead,lead,lead,lead,lead,уверенно,0.994,верхняя,12,lead,у границы,0.686,нижняя,25
+sim-0384,devops,0.572,middle,junior,middle,senior,senior,у границы,0.652,нижняя,42,middle,у границы,0.55,верхняя,43
+sim-0385,backend,1.195,senior,senior,senior,senior,senior,у границы,0.738,верхняя,18,senior,уверенно,0.912,средняя,18
+sim-0386,frontend,-1.117,junior,junior,junior,junior,middle,у границы,0.879,нижняя,24,junior,у границы,0.844,нижняя,12
+sim-0387,mobile,-0.092,middle,senior,senior,middle,middle,уверенно,0.937,средняя,24,middle,уверенно,0.978,средняя,30
+sim-0388,data,2.147,lead,lead,lead,lead,lead,у границы,0.677,нижняя,24,lead,уверенно,0.866,средняя,12
+sim-0389,security,1.177,senior,middle,senior,senior,senior,у границы,0.895,верхняя,30,senior,уверенно,0.888,верхняя,30
+sim-0390,devops,-1.333,junior,junior,junior,junior,junior,у границы,0.569,верхняя,16,junior,уверенно,0.883,средняя,12
+sim-0391,backend,1.54,senior,middle,lead,senior,senior,у границы,0.604,верхняя,35,senior,уверенно,0.88,верхняя,31
+sim-0392,frontend,0.412,middle,senior,middle,middle,middle,у границы,0.819,верхняя,27,middle,у границы,0.666,верхняя,26
+sim-0393,mobile,2.211,lead,lead,lead,lead,lead,у границы,0.742,нижняя,12,lead,уверенно,0.974,верхняя,12
+sim-0394,data,-0.738,junior,middle,middle,junior,middle,у границы,0.761,нижняя,12,junior,у границы,0.703,верхняя,25
+sim-0395,security,0.375,middle,middle,senior,middle,senior,у границы,0.742,нижняя,29,middle,у границы,0.855,средняя,14
+sim-0396,devops,-1.052,junior,junior,middle,junior,junior,уверенно,0.934,средняя,16,junior,уверенно,0.888,средняя,12
+sim-0397,backend,1.792,senior,middle,lead,senior,lead,у границы,0.89,нижняя,36,lead,у границы,0.724,нижняя,44
+sim-0398,frontend,-0.701,junior,junior,junior,middle,middle,уверенно,0.932,средняя,24,junior,у границы,0.445,верхняя,21
+sim-0399,mobile,-0.555,middle,middle,senior,junior,middle,у границы,0.848,нижняя,12,junior,у границы,0.536,верхняя,30
+sim-0400,data,0.153,middle,junior,middle,middle,middle,у границы,0.438,верхняя,28,middle,у границы,0.789,верхняя,30
+sim-0401,security,-0.501,middle,senior,middle,middle,junior,у границы,0.432,верхняя,36,junior,уверенно,0.877,верхняя,36
+sim-0402,devops,-1.066,junior,junior,middle,junior,junior,у границы,0.644,верхняя,16,junior,уверенно,0.869,средняя,12
+sim-0403,backend,2.399,lead,lead,lead,lead,lead,уверенно,0.965,средняя,12,lead,уверенно,0.911,средняя,14
+sim-0404,frontend,0.792,senior,lead,lead,senior,senior,уверенно,0.938,средняя,24,senior,у границы,0.763,нижняя,26
+sim-0405,mobile,0.393,middle,middle,senior,middle,middle,у границы,0.532,верхняя,18,middle,уверенно,0.925,средняя,21
+sim-0406,data,-0.285,middle,middle,middle,middle,middle,у границы,0.68,нижняя,25,middle,у границы,0.652,нижняя,27
+sim-0407,security,-1.691,junior,middle,middle,junior,junior,уверенно,0.934,нижняя,24,junior,у границы,0.723,нижняя,24
+sim-0408,devops,-1.345,junior,junior,middle,junior,junior,у границы,0.865,средняя,12,junior,уверенно,0.869,средняя,12
+sim-0409,backend,-1.398,junior,middle,junior,junior,junior,уверенно,0.962,средняя,27,junior,уверенно,0.916,верхняя,28
+sim-0410,frontend,0.297,middle,junior,middle,middle,middle,у границы,0.755,верхняя,30,senior,у границы,0.814,нижняя,38
+sim-0411,mobile,-0.523,middle,junior,junior,junior,middle,у границы,0.852,средняя,24,middle,уверенно,0.872,нижняя,30
+sim-0412,data,-1.018,junior,middle,middle,junior,junior,у границы,0.869,нижняя,24,middle,у границы,0.642,нижняя,15
+sim-0413,security,1.005,senior,senior,senior,senior,senior,у границы,0.887,средняя,12,senior,у границы,0.687,нижняя,14
+sim-0414,devops,2.695,lead,lead,lead,lead,lead,уверенно,0.988,верхняя,12,lead,у границы,0.853,нижняя,15
+sim-0415,backend,-0.469,middle,middle,junior,middle,middle,у границы,0.839,нижняя,12,middle,у границы,0.845,средняя,12
+sim-0416,frontend,0.598,middle,middle,senior,middle,middle,у границы,0.76,верхняя,18,senior,у границы,0.713,нижняя,32
+sim-0417,mobile,-1.525,junior,middle,middle,junior,не подтверждён,не подтверждён,0.73,,24,junior,уверенно,0.912,нижняя,24
+sim-0418,data,2.093,lead,lead,lead,lead,senior,у границы,0.653,верхняя,24,senior,у границы,0.781,верхняя,24
+sim-0419,security,1.31,senior,senior,lead,senior,senior,у границы,0.787,верхняя,18,senior,у границы,0.753,нижняя,26
+sim-0420,devops,-1.082,junior,junior,junior,junior,junior,у границы,0.894,средняя,12,junior,у границы,0.825,средняя,12
+sim-0421,backend,-1.701,junior,junior,middle,не подтверждён,не подтверждён,не подтверждён,0.44,,12,не подтверждён,не подтверждён,0.689,,12
+sim-0422,frontend,-1.039,junior,junior,junior,junior,junior,у границы,0.856,средняя,12,junior,уверенно,0.87,верхняя,21
+sim-0423,mobile,-0.473,middle,middle,middle,junior,junior,у границы,0.585,верхняя,27,middle,у границы,0.644,нижняя,30
+sim-0424,data,-0.862,junior,junior,junior,middle,junior,у границы,0.761,верхняя,15,junior,уверенно,0.863,средняя,18
+sim-0425,security,0.235,middle,middle,senior,middle,middle,у границы,0.903,средняя,15,middle,у границы,0.77,верхняя,17
+sim-0426,devops,-0.868,junior,junior,middle,junior,junior,у границы,0.735,верхняя,28,junior,уверенно,0.886,верхняя,18
+sim-0427,backend,2.845,lead,lead,lead,lead,lead,уверенно,1.0,верхняя,12,lead,уверенно,0.997,верхняя,12
+sim-0428,frontend,1.688,senior,senior,lead,senior,senior,у границы,0.776,верхняя,18,senior,уверенно,0.86,верхняя,18
+sim-0429,mobile,0.106,middle,middle,junior,middle,middle,у границы,0.899,верхняя,18,middle,уверенно,0.883,средняя,18
+sim-0430,data,1.52,senior,middle,senior,senior,senior,у границы,0.595,верхняя,27,senior,уверенно,0.873,верхняя,30
+sim-0431,security,-0.903,junior,middle,junior,junior,middle,у границы,0.606,нижняя,15,middle,уверенно,0.89,средняя,17
+sim-0432,devops,0.979,senior,middle,middle,senior,middle,у границы,0.616,верхняя,18,middle,у границы,0.855,средняя,12
+sim-0433,backend,-0.702,junior,junior,middle,middle,junior,у границы,0.564,верхняя,18,junior,у границы,0.55,верхняя,19
+sim-0434,frontend,-0.241,middle,junior,middle,middle,middle,уверенно,0.92,нижняя,29,middle,уверенно,0.931,нижняя,30
+sim-0435,mobile,-0.146,middle,senior,middle,junior,middle,у границы,0.89,нижняя,24,middle,у границы,0.661,нижняя,27
+sim-0436,data,-0.773,junior,junior,junior,junior,junior,у границы,0.406,верхняя,15,junior,у границы,0.531,верхняя,26
+sim-0437,security,1.544,senior,senior,lead,senior,senior,уверенно,0.945,средняя,18,senior,у границы,0.659,верхняя,19
+sim-0438,devops,-1.257,junior,middle,junior,junior,junior,уверенно,0.97,средняя,24,не подтверждён,не подтверждён,0.432,,24
+sim-0439,backend,1.595,senior,middle,senior,senior,senior,у границы,0.892,средняя,24,senior,уверенно,0.971,средняя,36
+sim-0440,frontend,-0.306,middle,senior,junior,middle,middle,уверенно,0.924,средняя,24,middle,уверенно,0.885,средняя,24
+sim-0441,mobile,1.806,lead,senior,senior,senior,senior,у границы,0.438,верхняя,29,senior,у границы,0.652,верхняя,20
+sim-0442,data,-1.126,junior,junior,junior,junior,не подтверждён,не подтверждён,0.53,,12,junior,у границы,0.644,верхняя,18
+sim-0443,security,1.523,senior,senior,lead,senior,senior,у границы,0.836,средняя,12,senior,у границы,0.805,средняя,12
+sim-0444,devops,0.47,middle,middle,middle,middle,middle,у границы,0.408,верхняя,18,senior,у границы,0.634,нижняя,31
+sim-0445,backend,-1.121,junior,junior,не подтверждён,junior,junior,у границы,0.897,нижняя,12,junior,у границы,0.85,средняя,12
+sim-0446,frontend,1.199,senior,senior,senior,middle,senior,у границы,0.624,нижняя,15,senior,у границы,0.805,средняя,12
+sim-0447,mobile,1.782,senior,senior,lead,senior,senior,у границы,0.42,верхняя,17,senior,у границы,0.506,верхняя,20
+sim-0448,data,-0.681,junior,middle,middle,junior,middle,у границы,0.867,средняя,12,middle,у границы,0.848,средняя,12
+sim-0449,security,1.851,lead,lead,senior,lead,lead,у границы,0.757,нижняя,12,lead,у границы,0.721,нижняя,13
+sim-0450,devops,-1.779,junior,junior,не подтверждён,junior,не подтверждён,не подтверждён,0.847,,12,junior,у границы,0.761,нижняя,14
+sim-0451,backend,-1.106,junior,middle,junior,junior,junior,у границы,0.904,верхняя,27,junior,уверенно,0.897,верхняя,28
+sim-0452,frontend,1.843,lead,senior,lead,senior,lead,уверенно,0.996,средняя,30,senior,у границы,0.563,верхняя,21
+sim-0453,mobile,0.034,middle,senior,middle,middle,middle,уверенно,0.959,средняя,24,middle,уверенно,0.941,средняя,24
+sim-0454,data,0.945,senior,senior,middle,senior,senior,у границы,0.774,нижняя,25,senior,у границы,0.852,средняя,12
+sim-0455,security,1.389,senior,lead,lead,lead,senior,уверенно,0.926,средняя,24,senior,уверенно,0.961,средняя,24
+sim-0456,devops,0.491,middle,middle,senior,middle,middle,у границы,0.714,верхняя,18,middle,у границы,0.551,верхняя,31
+sim-0457,backend,-0.951,junior,junior,junior,junior,middle,у границы,0.776,нижняя,24,junior,у границы,0.669,верхняя,19
+sim-0458,frontend,-1.02,junior,middle,middle,middle,junior,у границы,0.677,верхняя,26,junior,уверенно,0.978,средняя,30
+sim-0459,mobile,-1.638,junior,junior,junior,junior,не подтверждён,не подтверждён,0.402,,12,junior,уверенно,0.878,нижняя,12
+sim-0460,data,2.143,lead,senior,lead,lead,senior,у границы,0.404,верхняя,15,senior,у границы,0.66,верхняя,31
+sim-0461,security,0.324,middle,middle,senior,middle,middle,у границы,0.867,средняя,17,middle,уверенно,0.898,средняя,17
+sim-0462,devops,-0.674,junior,junior,middle,junior,junior,у границы,0.581,верхняя,16,junior,у границы,0.744,верхняя,21
+sim-0463,backend,2.529,lead,lead,lead,senior,lead,у границы,0.856,нижняя,12,lead,у границы,0.801,нижняя,14
+sim-0464,frontend,-0.508,middle,senior,senior,middle,middle,у границы,0.683,нижняя,24,middle,у границы,0.742,нижняя,27
+sim-0465,mobile,-1.184,junior,junior,junior,junior,junior,у границы,0.668,нижняя,12,middle,у границы,0.628,нижняя,27
+sim-0466,data,0.764,senior,senior,lead,middle,senior,у границы,0.869,средняя,13,senior,у границы,0.792,нижняя,15
+sim-0467,security,-1.347,junior,middle,middle,junior,junior,у границы,0.775,нижняя,24,junior,уверенно,0.934,средняя,24
+sim-0468,devops,-1.716,junior,junior,junior,junior,junior,у границы,0.902,средняя,12,junior,у границы,0.626,нижняя,14
+sim-0469,backend,1.969,lead,senior,lead,senior,senior,у границы,0.476,верхняя,17,lead,у границы,0.85,нижняя,24
+sim-0470,frontend,0.717,senior,senior,senior,senior,middle,уверенно,0.929,средняя,24,middle,у границы,0.43,верхняя,29
+sim-0471,mobile,-1.493,junior,junior,junior,junior,junior,у границы,0.719,нижняя,12,junior,уверенно,0.867,средняя,12
+sim-0472,data,0.471,middle,middle,middle,middle,middle,у границы,0.884,средняя,17,middle,у границы,0.567,верхняя,19
+sim-0473,security,-0.919,junior,junior,middle,junior,junior,уверенно,0.943,средняя,18,middle,у границы,0.622,нижняя,24
+sim-0474,devops,-1.113,junior,junior,junior,junior,junior,у границы,0.823,верхняя,16,junior,уверенно,0.876,средняя,12
+sim-0475,backend,2.719,lead,senior,lead,lead,lead,уверенно,0.998,верхняя,24,lead,уверенно,0.984,средняя,32
+sim-0476,frontend,-0.302,middle,middle,middle,junior,middle,у границы,0.89,средняя,18,middle,у границы,0.786,средняя,12
+sim-0477,mobile,0.482,middle,middle,junior,middle,middle,у границы,0.779,верхняя,24,middle,у границы,0.425,верхняя,27
+sim-0478,data,0.172,middle,senior,middle,middle,middle,у границы,0.862,верхняя,26,middle,у границы,0.559,верхняя,28
+sim-0479,security,0.212,middle,senior,senior,middle,middle,у границы,0.818,верхняя,26,middle,у границы,0.699,верхняя,26
+sim-0480,devops,0.69,senior,lead,senior,senior,middle,у границы,0.808,верхняя,36,middle,уверенно,0.903,верхняя,37
+sim-0481,backend,-0.823,junior,junior,middle,junior,middle,у границы,0.611,нижняя,30,middle,у границы,0.83,нижняя,25
+sim-0482,frontend,-0.718,junior,junior,junior,junior,junior,у границы,0.833,верхняя,17,junior,у границы,0.412,верхняя,27
+sim-0483,mobile,1.906,lead,senior,senior,senior,lead,у границы,0.857,нижняя,24,lead,уверенно,0.946,средняя,30
+sim-0484,data,0.954,senior,senior,lead,senior,middle,у границы,0.459,верхняя,26,senior,уверенно,0.901,средняя,18
+sim-0485,security,2.264,lead,senior,lead,lead,senior,у границы,0.884,средняя,12,lead,уверенно,0.916,нижняя,31
+sim-0486,devops,0.282,middle,senior,senior,middle,middle,уверенно,0.95,средняя,24,senior,уверенно,0.9,средняя,18
+sim-0487,backend,-1.436,junior,middle,junior,не подтверждён,junior,уверенно,0.938,верхняя,27,junior,уверенно,0.869,верхняя,28
+sim-0488,frontend,0.306,middle,junior,middle,middle,middle,у границы,0.854,верхняя,24,middle,у границы,0.856,верхняя,32
+sim-0489,mobile,-0.414,middle,senior,senior,middle,middle,уверенно,0.966,средняя,24,middle,уверенно,0.899,средняя,24
+sim-0490,data,-1.16,junior,junior,junior,junior,junior,у границы,0.852,средняя,12,junior,у границы,0.675,верхняя,18
+sim-0491,security,-0.975,junior,junior,middle,junior,junior,у границы,0.636,верхняя,18,junior,у границы,0.855,средняя,12
+sim-0492,devops,1.203,senior,senior,lead,senior,senior,у границы,0.835,верхняя,18,senior,у границы,0.852,верхняя,18
+sim-0493,backend,-0.9,junior,junior,junior,junior,junior,у границы,0.57,верхняя,18,junior,у границы,0.573,верхняя,19
+sim-0494,frontend,0.022,middle,senior,senior,middle,middle,у границы,0.73,нижняя,24,middle,уверенно,0.946,средняя,29
+sim-0495,mobile,-1.05,junior,junior,junior,junior,junior,у границы,0.91,верхняя,30,junior,у границы,0.725,верхняя,21
+sim-0496,data,-0.925,junior,junior,junior,junior,junior,у границы,0.89,средняя,12,junior,у границы,0.625,верхняя,26
+sim-0497,security,2.634,lead,senior,senior,senior,lead,уверенно,0.996,верхняя,24,lead,уверенно,0.998,верхняя,30
+sim-0498,devops,1.227,senior,senior,lead,senior,senior,у границы,0.695,нижняя,15,senior,у границы,0.847,средняя,12
+sim-0499,backend,0.485,middle,middle,middle,middle,middle,у границы,0.858,средняя,12,middle,уверенно,0.863,верхняя,18
+sim-0500,frontend,-0.274,middle,middle,middle,middle,middle,уверенно,0.928,средняя,18,middle,уверенно,0.885,средняя,20
