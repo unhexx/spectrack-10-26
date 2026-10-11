@@ -263,7 +263,9 @@ def test_employer_sees_scored_profiles_without_email(client):
         "/api/employer/candidates",
         params={"category_id": "backend:middle", "q": "платеж"},
     )
-    assert [card["profile_id"] for card in text.json()] == [high]
+    text_ids = [card["profile_id"] for card in text.json()]
+    assert text_ids[0] == high
+    assert set(text_ids) == set(ids)
     reason = text.json()[0]["list_reason"]
     assert "платеж" in reason
     assert "в тексте профиля" in reason
@@ -291,7 +293,7 @@ def test_employer_sees_scored_profiles_without_email(client):
         params={"category_id": "backend:middle", "q": "https://jobs.example/vacancy"},
     )
     assert odd.status_code == 200
-    assert odd.json() == []
+    assert [card["profile_id"] for card in odd.json()] == ids
 
     overlap_low = _seeker(client, "overlap-low@example.com", stack=["python", "sql"])
     overlap_high_id = _seeker(client, "overlap-high@example.com", stack=["python"])
@@ -585,16 +587,30 @@ def test_need_matches_stems_not_substrings():
     assert same.matched
     assert same.sort_key == (0, 0, 0, 0, 1, "1-090-0000-0-00000001")
     assert "в тексте профиля: дан" in same.reason
-    assert not fit("дан", "задание").matched
-    assert not fit("дан", "издание").matched
-    assert not fit("разработка", "разработчик").matched
-    assert not fit("бэкенд", "backend").matched
+    for query, haystack in (
+        ("дан", "задание"),
+        ("дан", "издание"),
+        ("разработка", "разработчик"),
+        ("бэкенд", "backend"),
+    ):
+        missed = fit(query, haystack)
+        assert missed.matched
+        assert missed.sort_key[4] == 0
     empty = fit("", "данными")
     assert empty.matched
     assert empty.sort_key == (0, 0, 0, 0, 0, "1-090-0000-0-00000001")
     short = fit("go js", "golang javascript")
     assert short.matched
     assert short.sort_key[4] == 0
+    kept = fit("go js", "go js")
+    assert kept.sort_key[4] == 2
+    assert kept.sort_key > short.sort_key
+    partial = fit("данных очередей", "данными")
+    assert partial.matched
+    assert partial.sort_key[4] == 1
+    full = fit("данных очередей", "данными очередями")
+    assert full.sort_key[4] == 2
+    assert full.sort_key > partial.sort_key
 
 
 def test_need_tokens_do_not_share_a_stemmer_between_threads():
@@ -748,7 +764,7 @@ def test_visibility_flags_mask_the_employer_card(client):
     assert hidden_experience.status_code == 200, hidden_experience.text
     login("flags-boss@example.com")
     found = cards({"category_id": "backend:middle", "q": "платеж"})
-    assert [card["profile_id"] for card in found] == [visible_id]
+    assert found[0]["profile_id"] == visible_id
     assert found[0]["experience"] == ""
     assert experience not in found[0]["list_reason"]
     assert "платеж" in found[0]["list_reason"]

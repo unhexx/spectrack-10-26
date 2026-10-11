@@ -1,4 +1,8 @@
-"""Прогон SYNTH-EVAL. Печатает девять канонических строк записки."""
+"""Прогон SYNTH-EVAL. Печатает девять канонических строк записки.
+
+ТЗ §2 и §3.4: итог и стабильность берёт кабинетный тест, как ``GET /validation``.
+Сравнение ``expected_outcome`` с ``test_outcome`` шарда сюда не входит.
+"""
 
 from __future__ import annotations
 
@@ -45,18 +49,16 @@ def annotate_relevant(bundle: dict) -> dict:
 
 
 def _synth_case_counts(data: dict) -> dict[str, tuple[int, int]]:
-    """Категория и топ — как golden_run; итог и стабильность — поля шарда, не IRT кабинета."""
+    """Категория и топ — по шарду. Итог и стабильность — тест кабинета.
+
+    ``summarize`` считает outcome_match и form_stable на вариантах банка,
+    не на полях шарда. Подмена этих полей число не двигает.
+    """
     gold = summarize(as_cases(data))
-    profiles = list(data.get("profiles") or [])
-    outcome_hit = sum(
-        1 for row in profiles if row.get("expected_outcome") == row.get("test_outcome")
-    )
-    pairs = list(data.get("template_pairs") or [])
-    stable_hit = sum(1 for pair in pairs if pair.get("answers") == pair.get("answers_repeat"))
     return {
         "category_match": gold["category_match"],
-        "outcome_match": (outcome_hit, len(profiles)),
-        "template_stable": (stable_hit, len(pairs)),
+        "outcome_match": gold["outcome_match"],
+        "template_stable": gold["form_stable"],
         "relevant_in_top": gold["relevant_in_top"],
     }
 

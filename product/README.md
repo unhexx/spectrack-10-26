@@ -63,7 +63,7 @@ docker compose -f deploy/fsp/compose.yaml --profile test run --rm tests
 
 Подборка работодателя — по категории или по всей базе: без категории выдаются все опубликованные профили с фильтрами по специализации, грейду, стеку, роли, формату и достижениям ФСП (`GET /api/employer/candidates`, страница `/employer/shortlist`).
 
-Текст потребности сравнивается стемами `snowballstemmer` 3.1.1, не подстрокой. По непустому тексту над списком подсказка: основная категория и одна запасная строка соседнего грейда, у каждой число опубликованных. Категорию выбирает человек.
+Текст потребности сравнивается стемами `snowballstemmer` 3.1.1 (BSD-3-Clause), не подстрокой. Короткие слова не отбрасываются. Неполное совпадение текста карточку не выкидывает: число совпавших стемов входит в порядок выдачи. По непустому тексту над списком подсказка: основная категория и одна запасная строка соседнего грейда, у каждой число опубликованных. Категорию выбирает человек.
 
 На опубликованном профиле три галки: ФИО, стаж, достижения ФСП. Снятая галка оставляет поле на карточке пустым. Выключенная публикация по-прежнему убирает карточку целиком.
 
@@ -96,6 +96,7 @@ docker compose -f deploy/fsp/compose.yaml --profile test run --rm tests
 | htmx 2.0.4 | Zero-Clause BSD | [`app/static/htmx.LICENSE`](app/static/htmx.LICENSE) |
 | Swagger UI 5.33.1 | Apache-2.0 | [`app/static/docs/swagger-ui.LICENSE`](app/static/docs/swagger-ui.LICENSE) |
 | ReDoc 2.5.4 | MIT | [`app/static/docs/redoc.standalone.js.LICENSE`](app/static/docs/redoc.standalone.js.LICENSE) |
+| snowballstemmer 3.1.1 | BSD-3-Clause | [`docs/snowballstemmer.COPYING`](docs/snowballstemmer.COPYING) |
 
 Прямые пакеты Python — в [`pyproject.toml`](pyproject.toml), заморозка образа — в [`requirements.lock`](requirements.lock).
 

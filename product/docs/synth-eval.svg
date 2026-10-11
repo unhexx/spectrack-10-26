@@ -3,7 +3,7 @@
 <text x="16" y="36" font-size="14" font-family="JetBrains Mono" fill="#1B1C21">category_match 1000 1000</text>
 <rect x="300" y="24" width="400" height="12" fill="#EDEDED"/>
 <rect x="300" y="24" width="400" height="12" fill="#402FFF"/>
-<text x="16" y="82" font-size="14" font-family="JetBrains Mono" fill="#1B1C21">outcome_match 1000 1000</text>
+<text x="16" y="82" font-size="14" font-family="JetBrains Mono" fill="#1B1C21">outcome_match 72 72</text>
 <rect x="300" y="70" width="400" height="12" fill="#EDEDED"/>
 <rect x="300" y="70" width="400" height="12" fill="#402FFF"/>
 <text x="16" y="128" font-size="14" font-family="JetBrains Mono" fill="#1B1C21">template_stable 24 24</text>

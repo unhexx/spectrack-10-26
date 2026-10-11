@@ -1,12 +1,21 @@
 """Контракт SYNTH-EVAL: слоты, банк имён и сборщик шарда.
 
-Ответы строит персона выбранного шаблона. Шарды в git пишет CLI;
+ТЗ §2 «команда предлагает собственную процедуру оценки своего решения»;
+ТЗ §3.4 «процедура валидации и её результаты»; ТЗ §6, критерий 2.
+
+Итог теста здесь не считается. Кабинетный тест — банк семейств и IRT
+в ``product.matching.assessment``. Старый тест из трёх вопросов
+(``select_template``, ``score_attempt``, пороги 50 и 80) сюда не
+возвращается: он писал в шард и ожидаемый, и фактический итог из одной
+функции, и ``outcome_match`` подтверждал сам себя. Буквы a/b/c в шарде —
+след слота каталога, не сдача кабинета.
+
+Ответы слота строит персона. Шарды в git пишет CLI;
 тела шардов в этом модуле не хранятся.
 """
 
 from __future__ import annotations
 
-import hashlib
 import json
 import random
 import sys
@@ -14,7 +23,6 @@ from functools import lru_cache
 from pathlib import Path
 
 from product.matching.category import assign_category
-from product.matching.rules import load_rules
 from product.matching.stems import catalog
 from product.matching.types import ProfileView
 
@@ -144,58 +152,6 @@ def load_template(template_id: str) -> dict:
     raise KeyError(template_id)
 
 
-def templates_for(specialization: str, grade: str, rule_version: str) -> list[dict]:
-    found = [
-        row
-        for row in catalog()
-        if row.get("specialization") == specialization
-        and row.get("grade") == grade
-        and row.get("rule_version", rule_version) == rule_version
-    ]
-    found.sort(key=lambda row: template_id_of(row))
-    return found
-
-
-def select_template(profile_id: int, specialization: str, grade: str, rule_version: str) -> str:
-    found = templates_for(specialization, grade, rule_version)
-    if len(found) < 2 or len(found) > 3:
-        raise RuntimeError("template_pair")
-    digest = hashlib.sha256(f"{rule_version}|{profile_id}|{specialization}|{grade}".encode()).digest()
-    index = int.from_bytes(digest, "big") % len(found)
-    return template_id_of(found[index])
-
-
-def score_attempt(template: dict, answers: list) -> dict:
-    """Балл шарда SYNTH-EVAL по каталогу вопросов; кабинетный тест v2 не вызывает."""
-    questions = template["questions"]
-    if not isinstance(answers, list) or len(answers) != len(questions):
-        raise ValueError("answer_unknown")
-    correct_n = 0
-    for question, answer in zip(questions, answers):
-        if not isinstance(answer, str):
-            raise ValueError("answer_unknown")
-        choice_ids = {str(choice["id"]) for choice in question["choices"]}
-        if answer not in choice_ids:
-            raise ValueError("answer_unknown")
-        if answer == question["correct"]:
-            correct_n += 1
-    score = round(100 * correct_n / len(questions))
-    grades = [str(item) for item in load_rules()["grades"]]
-    grade = str(template["grade"])
-    index = grades.index(grade)
-    confirm_min = int(template.get("confirm_min", 50))
-    higher_min = int(template.get("suggest_higher_min", 80))
-    if score >= higher_min:
-        if index == len(grades) - 1:
-            return {"score": score, "outcome": "confirm", "proposed_grade": grade}
-        return {"score": score, "outcome": "suggest_higher", "proposed_grade": grades[index + 1]}
-    if score >= confirm_min:
-        return {"score": score, "outcome": "confirm", "proposed_grade": grade}
-    if index == 0:
-        return {"score": score, "outcome": "suggest_lower", "proposed_grade": grades[0]}
-    return {"score": score, "outcome": "suggest_lower", "proposed_grade": grades[index - 1]}
-
-
 def _catalog_templates() -> tuple[tuple[str, str, str], ...]:
     rows = []
     for row in catalog():
@@ -293,15 +249,14 @@ def assign_slot(index: int) -> dict:
 
 
 def profile_id_for(spec: str, grade: str, letter: str, used: set[int], shard: int) -> int:
-    wanted = f"{spec}-{grade}-{letter}"
+    """Луч на шарде с шагом 4. Старый выбор шаблона по хешу id сюда не входит."""
     pid = PROFILE_ID_BASE + (shard - 1)
-    while True:
-        if pid not in used and select_template(pid, spec, grade, RULE_VERSION) == wanted:
-            used.add(pid)
-            return pid
+    while pid in used:
         pid += 4
         if pid > PROFILE_ID_BASE + 2_000_000:
-            raise RuntimeError(f"не нашли id для {wanted}")
+            raise RuntimeError(f"не нашли id для {spec}-{grade}-{letter}")
+    used.add(pid)
+    return pid
 
 
 def forbidden_name(display_name: str) -> bool:
@@ -409,14 +364,13 @@ def _profile_row(slot: dict, pid: int, display_name: str) -> dict:
     k = slot["k"]
     template = load_template(slot["template_id"])
     answers = answers_for(template, slot["persona"], slot=k)
-    scored = score_attempt(template, answers)
     assigned = assign_category(
         ProfileView(
             profile_id=pid,
             specialization=spec,
             grade=declared,
-            test_score=scored["score"],
-            test_outcome=scored["outcome"],
+            test_score=None,
+            test_outcome=None,
             fsp_confirmed_count=k % 5,
         ),
         RULE_VERSION,
@@ -437,9 +391,9 @@ def _profile_row(slot: dict, pid: int, display_name: str) -> dict:
         "template_id": slot["template_id"],
         "rule_version": RULE_VERSION,
         "answers": answers,
-        "test_score": scored["score"],
-        "test_outcome": scored["outcome"],
-        "expected_outcome": scored["outcome"],
+        "test_score": None,
+        "test_outcome": None,
+        "expected_outcome": None,
         "expected_category_id": assigned.category_id,
         "stack": [CANONICAL_STACK[spec]],
         "team_role": team_role,

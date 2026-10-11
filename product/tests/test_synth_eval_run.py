@@ -60,6 +60,8 @@ def test_render_synth_report_nine_canonical_lines(mini_bundle):
     gold = summarize(as_cases(mini_bundle))
     counts = collect_counts(mini_bundle)
     assert counts["category_match"] == gold["category_match"]
+    assert counts["outcome_match"] == gold["outcome_match"]
+    assert counts["template_stable"] == gold["form_stable"]
     assert counts["relevant_in_top"] == gold["relevant_in_top"]
     for index, name in enumerate(
         ("category_match", "outcome_match", "template_stable", "relevant_in_top")
@@ -154,9 +156,18 @@ def test_full_shards_report_denominators():
     assert bundle["n"] == 1000
     assert bundle["shards"] == [1, 2, 3, 4]
     counts = collect_counts(bundle)
+    gold = summarize(as_cases(bundle))
     assert counts["category_match"] == (1000, 1000)
-    assert counts["outcome_match"] == (1000, 1000)
-    assert counts["template_stable"] == (24, 24)
+    assert counts["outcome_match"] == gold["outcome_match"]
+    assert counts["template_stable"] == gold["form_stable"]
+    # Иной допустимый итог и балл шарда. «other» при живом test_score — CategoryError,
+    # это проверка категории, не метрики. outcome_match читает кабинет, не эти поля.
+    poisoned = dict(bundle)
+    poisoned["profiles"] = [
+        dict(row, expected_outcome="nope", test_outcome="suggest_lower", test_score=1)
+        for row in bundle["profiles"]
+    ]
+    assert collect_counts(poisoned)["outcome_match"] == counts["outcome_match"]
     assert counts["relevant_in_top"] == (36, 36)
     assert counts["resume_ok"] == (0, 0)
     assert counts["grade_separation"] == (215, 216)

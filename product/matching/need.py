@@ -1,8 +1,10 @@
 """Общий разбор потребности для золотого прогона и живой подборки.
 
-Один проход даёт фильтр, кортеж порядка и фразу «почему этот человек»;
-пустая потребность оставляет нули в кортеже и не выкидывает карточку
-совпавшей категории.
+Один проход даёт фильтр, кортеж порядка и фразу «почему этот человек».
+Пустая потребность оставляет нули в кортеже и не выкидывает карточку
+совпавшей категории. Короткие слова не отбрасываются: их стем тоже
+участвует в счёте. Неполное совпадение текста карточку не выкидывает,
+число совпавших стемов стоит в кортеже порядка.
 
 ТЗ §2.1 «Описание потребности», «Результаты поиска ранжируются по степени соответствия… с краткой объяснимостью выдачи»; ТЗ §6 критерий 1.
 """
@@ -49,7 +51,7 @@ def need_tokens(query: str) -> list[str]:
     seen: set[str] = set()
     for raw in str(query or "").split():
         token = raw.strip().casefold()
-        if len(token) < 3:
+        if not token:
             continue
         stem = _stem_token(token, ru, en)
         if stem in seen:
@@ -100,8 +102,6 @@ def evaluate_need(
     needles = need_tokens(spec.q)
     stem_set = set(need_tokens(haystack))
     hit = [token for token in needles if token in stem_set]
-    if needles and len(hit) != len(needles):
-        return NeedFit(False, empty, "")
     role_hit = 1 if spec.team_role and team_role == spec.team_role else 0
     format_hit = 1 if spec.work_format and work_format == spec.work_format else 0
     fsp_hit = 0

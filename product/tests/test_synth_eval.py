@@ -27,8 +27,6 @@ from product.matching.synth_eval import (
     load_shards,
     load_template,
     profile_id_for,
-    score_attempt,
-    select_template,
 )
 from product.matching import synth_eval, synth_eval_chart, synth_eval_run
 
@@ -233,11 +231,9 @@ def test_build_shard_one_in_tmp(tmp_path):
     living = [row["display_name"] for row in shard["profiles"]]
     assert living == chosen[:SHARD_SIZE]
     for row in shard["profiles"]:
-        assert select_template(row["profile_id"], row["specialization"], row["grade"], "v1") == row["template_id"]
-        scored = score_attempt(load_template(row["template_id"]), row["answers"])
-        assert scored["score"] == row["test_score"]
-        assert scored["outcome"] == row["test_outcome"]
-        assert scored["outcome"] == row["expected_outcome"]
+        assert row["test_score"] is None
+        assert row["test_outcome"] is None
+        assert row["expected_outcome"] is None
         assert row["expected_category_id"] == f"{row['specialization']}:{row['declared_grade']}"
         assert row["profile_id"] >= 10001
         assert row["profile_id"] % 4 == 1
