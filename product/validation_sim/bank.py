@@ -33,9 +33,9 @@
       ]
     }
 
-``variants[].text = null`` означает «вариант ещё не написан, использует образец
-семейства». Команда дописывает тексты изоморфов в тот же файл — симуляция и
-сборка варианта от этого не меняются.
+``variants[].text = null`` — своего текста нет, кабинет берёт образец.
+Для multi, order и numeric ``build_bank`` ставит текст и ``answer`` из
+``own_texts``: без этого ``live_view`` сбрасывает тип в judge.
 
 Типы вопросов и вероятность угадать (``c``):
     single  — один верный из трёх (как сейчас в проекте): c = 1/3;
@@ -125,6 +125,8 @@ def build_bank(seed: int = 2026) -> dict:
     одинаковы по трудности, это и есть «сопоставимая сложность».
     Различающая сила a семейства ~ U(0.9; 1.6).
     """
+    from product.validation_sim.own_texts import own_variant
+
     rng = random.Random(seed)
     samples = _samples_by_pair()
     families = []
@@ -143,15 +145,19 @@ def build_bank(seed: int = 2026) -> dict:
                     base = pool[k % len(pool)]
                     sample = dict(base, reused=k >= len(pool))
                 topic = sample["text"][:70] if sample else f"Тема {k + 1}"
-                variants = [
-                    {
+                variants = []
+                for j in range(VARIANTS_PER_FAMILY):
+                    variant = {
                         "variant_id": f"{family_id}.v{j + 1}",
                         "a": round(max(0.5, a + rng.gauss(0.0, 0.05)), 3),
                         "b": round(b + rng.gauss(0.0, 0.08), 3),
                         "text": None,
                     }
-                    for j in range(VARIANTS_PER_FAMILY)
-                ]
+                    own = own_variant(spec, grade, k, j)
+                    if own:
+                        variant["text"] = own["text"]
+                        variant["answer"] = own["answer"]
+                    variants.append(variant)
                 families.append(
                     {
                         "family_id": family_id,
@@ -190,11 +196,8 @@ def load_bank(path: Path = DEFAULT_PATH) -> dict:
 def live_view(bank: dict) -> dict:
     """Банк в том виде, в каком его сейчас может показать кабинет.
 
-    Готовые тексты есть только у образцов «один из трёх» (216 вопросов
-    каталога). Поэтому в живом тесте:
-    - семейство показывается в формате judge («оцените каждый вариант») по своему
-      образцу; тип multi/order/numeric включится сам, когда команда допишет
-      варианты этого типа (``variants[].text`` и ответ);
+    - семейство со своим ``variants[].text`` сохраняет тип из банка;
+    - без своего текста тип становится judge по образцу «один из трёх»;
     - семейства с повтором образца (``sample.reused``) не показываются, чтобы в
       одном варианте не встретились два одинаковых вопроса;
     - семейства без образца пропускаются.

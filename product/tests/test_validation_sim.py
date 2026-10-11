@@ -133,8 +133,79 @@ def test_shipped_bank_matches_catalog_texts():
         assert texts[sample["text"]] == (sample["options"], sample["correct_index"]), family["family_id"]
 
 
-def test_live_view_is_judge_without_repeats():
-    live = bank_mod.live_view(bank_mod.load_bank())
+def test_live_view_keeps_own_text_and_skips_repeats():
+    """Свой текст сохраняет тип. Без текста — judge. Повтор образца в кабинет не входит."""
+    bare = {
+        "schema_version": 1,
+        "types": bank_mod.TYPES,
+        "families": [
+            {
+                "family_id": "plain",
+                "type": "single",
+                "sample": {"reused": False, "text": "образец"},
+                "variants": [{"text": None}],
+            },
+            {
+                "family_id": "typed",
+                "type": "multi",
+                "sample": {"reused": False},
+                "variants": [{"text": "свой вопрос", "answer": 5}],
+            },
+            {
+                "family_id": "repeat",
+                "type": "order",
+                "sample": {"reused": True, "text": "повтор"},
+                "variants": [{"text": "текст повтора не возвращает семейство", "answer": 7}],
+            },
+            {
+                "family_id": "no-sample",
+                "type": "numeric",
+                "sample": None,
+                "variants": [{"text": "без образца", "answer": 9}],
+            },
+        ],
+    }
+    kinds = {row["family_id"]: row["type"] for row in bank_mod.live_view(bare)["families"]}
+    assert kinds == {"plain": "judge", "typed": "multi"}
+
+    bank = bank_mod.load_bank()
+    live = bank_mod.live_view(bank)
     assert len(live["families"]) == 216
-    assert {f["type"] for f in live["families"]} == {"judge"}
-    assert not any(f["sample"].get("reused") for f in live["families"])
+    assert not any(row["sample"].get("reused") for row in live["families"])
+    assert not any(row["family_id"].rsplit(".", 1)[-1] in {"f10", "f11", "f12"} for row in live["families"])
+    by_id = {row["family_id"]: row for row in bank["families"]}
+    counts: dict[str, int] = {}
+    for row in live["families"]:
+        source = by_id[row["family_id"]]
+        own = any(variant.get("text") for variant in source["variants"])
+        if own:
+            assert row["type"] == source["type"]
+            assert row["type"] in {"multi", "order", "numeric"}
+            assert all(
+                variant.get("text") and variant.get("answer") not in (None, 0, 1, 2)
+                for variant in row["variants"]
+            )
+        else:
+            assert row["type"] == "judge"
+            assert source["type"] == "single"
+            assert not any(variant.get("text") for variant in row["variants"])
+        counts[row["type"]] = counts.get(row["type"], 0) + 1
+    assert counts == {"judge": 120, "multi": 48, "order": 24, "numeric": 24}
+    assert any(row["sample"].get("reused") and row["type"] in {"order", "numeric"} for row in bank["families"])
+
+
+def test_typed_item_key_is_variant_answer():
+    """Ключ multi/order/numeric — answer варианта, не случайный номер."""
+    bank = bank_mod.live_view(bank_mod.build_bank(seed=1))
+    index = bank_mod.BankIndex(bank)
+    by_id = {variant["variant_id"]: variant for family in bank["families"] for variant in family["variants"]}
+    form = assemble_form(index, "backend", "middle", random.Random(4), History(), Exposure())
+    typed = [item for item in form["items"] if item["type"] in {"multi", "order", "numeric"}]
+    judges = [item for item in form["items"] if item["type"] == "judge"]
+    assert typed and judges
+    for item in typed:
+        assert "options" not in item
+        assert form["key"][item["item_id"]] == by_id[item["item_id"]]["answer"]
+        assert form["key"][item["item_id"]] not in (0, 1, 2)
+    for item in judges:
+        assert form["key"][item["item_id"]] in {option["id"] for option in item["options"]}

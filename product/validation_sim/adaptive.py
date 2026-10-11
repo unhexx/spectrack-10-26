@@ -54,7 +54,7 @@ BORDER_ZONE = (0.15, 0.85)  # п.2: вероятность по границе �
 MAX_ATTEMPTS = 3     # заявленный грейд + не больше двух шагов вниз/вверх
 
 PILOT_PATH = Path(__file__).resolve().parent / "data" / "pilot.json"            # банк со всеми форматами (прогноз)
-PILOT_LIVE_PATH = Path(__file__).resolve().parent / "data" / "pilot_live.json"  # банк кабинета (216 вопросов, judge)
+PILOT_LIVE_PATH = Path(__file__).resolve().parent / "data" / "pilot_live.json"  # банк кабинета: judge и свои multi/order/numeric
 
 
 def load_pilot(path: Path = PILOT_PATH) -> dict:

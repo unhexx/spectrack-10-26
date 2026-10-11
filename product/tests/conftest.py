@@ -95,8 +95,12 @@ def stored_form(client: TestClient, attempt_id: int) -> dict:
     return _json.loads(raw)
 
 
-def answer_for(item: dict, correct: bool) -> list[str]:
-    """judge: верный ответ — отмечен «верно» только ключевой вариант."""
+def answer_for(item: dict, correct: bool) -> list[str] | int:
+    """judge — id, отмеченные «верно». multi/order/numeric — число-ключ."""
+    if item.get("type") in ("multi", "order", "numeric"):
+        if correct:
+            return item["key"]
+        return 0 if item["key"] != 0 else 4
     return [item["key"]] if correct else []
 
 

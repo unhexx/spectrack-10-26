@@ -9,7 +9,8 @@
     <input type="hidden" name="attempt_id" value="{{ draft_view.attempt_id }}">
     <input type="hidden" name="qid" value="{{ question.id }}">
     <fieldset>
-      <legend>{{ question.text }}</legend>
+      <legend class="test-stem">{{ question.text }}</legend>
+      {% if question.choices %}
       <p class="hint">Оцените каждый вариант.</p>
       {% for choice in question.choices %}
       <div class="test-choice">
@@ -18,6 +19,10 @@
         <label><input type="radio" name="mark_{{ choice.id }}" value="false" required> неверно</label>
       </div>
       {% endfor %}
+      {% else %}
+      <p class="hint">Введите число — как закодирован ответ, написано в вопросе.</p>
+      <label>Ответ <input name="value" inputmode="numeric" autocomplete="off" required></label>
+      {% endif %}
     </fieldset>
     <p><button type="submit">Ответить</button></p>
   </form>

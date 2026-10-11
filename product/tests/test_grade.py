@@ -96,6 +96,7 @@ def test_forms_follow_plan_and_stay_offline():
     source = (root / "assessment.py").read_text(encoding="utf-8")
     assert "sqlalchemy" not in source
     seen_sets = []
+    seen_types: set[str] = set()
     for spec in rules["specializations"]:
         for grade in rules["grades"]:
             plan = {part["level"]: part["count"] for part in assessment.blueprint(grade)}
@@ -111,11 +112,18 @@ def test_forms_follow_plan_and_stay_offline():
             public = assessment.public_questions(form["items"])
             blob = json.dumps(public, ensure_ascii=False)
             for item in form["items"]:
-                assert item["key"] in {c["id"] for c in item["options"]}
+                if item.get("options"):
+                    assert item["type"] == "judge"
+                    assert item["key"] in {c["id"] for c in item["options"]}
+                else:
+                    assert item["type"] in {"multi", "order", "numeric"}
+                    assert isinstance(item["key"], int) and item["key"] not in (0, 1, 2)
+                seen_types.add(item["type"])
             assert '"key"' not in blob and '"b":' not in blob and "family" not in blob
             for question in public:
                 assert {c["id"] for c in question["choices"]}.isdisjoint({"a", "b", "c"})
             seen_sets.append(frozenset(item["item_id"] for item in form["items"]))
+    assert "judge" in seen_types and seen_types & {"multi", "order", "numeric"}
     again = assessment.new_form("backend", "middle", assessment.History(), assessment.Exposure())
     first = assessment.new_form("backend", "middle", assessment.History(), assessment.Exposure())
     assert [i["key"] for i in again["items"]] != [i["key"] for i in first["items"]]
@@ -123,6 +131,32 @@ def test_forms_follow_plan_and_stay_offline():
     assert samples["vacancies"]
     for item in samples["vacancies"]:
         assert item["grade"] in rules["grades"] and item["specialization"] in rules["specializations"]
+
+
+def test_api_submit_accepts_judge_list_and_number(client):
+    """API принимает и список id judge, и число multi/order/numeric."""
+    _seeker(client, "both-types@example.com")
+    started = client.post("/api/candidate/tests/start", json={})
+    assert started.status_code == 201, started.text
+    attempt_id = started.json()["attempt_id"]
+    form = stored_form(client, attempt_id)
+    types = {item["type"] for item in form["items"]}
+    assert "judge" in types and types & {"multi", "order", "numeric"}
+    answers = answers_by_mode(client, attempt_id, "middle", "higher")
+    for item in form["items"]:
+        if item["type"] == "judge":
+            assert answers[item["qid"]] == [item["key"]]
+        else:
+            assert answers[item["qid"]] == item["key"]
+    sent = client.post(f"/api/candidate/tests/{attempt_id}/submit", json={"answers": answers})
+    assert sent.status_code == 200, sent.text
+    stored = stored_form(client, attempt_id)
+    for item in form["items"]:
+        got = stored["answers"][item["qid"]]
+        if item["type"] == "judge":
+            assert got == [item["key"]]
+        else:
+            assert got == item["key"]
 
 
 def test_catalog_is_unique_and_feeds_the_bank():
@@ -156,7 +190,14 @@ def test_retake_uses_other_families():
     second = assessment.new_form("data", "senior", seen, assessment.exposure_from([first]))
     at_first = {i["family_id"] for i in first["items"] if i["slot"] == "at"}
     at_second = {i["family_id"] for i in second["items"] if i["slot"] == "at"}
-    assert len(at_first & at_second) <= 3  # в банке кабинета 9 тем на уровень, в варианте — 6
+    pool = {
+        fam["family_id"]
+        for fam in assessment.bank_index().families("data", "senior")
+        if fam["family_id"] not in assessment.pilot()["retired"]
+    }
+    # Шесть тем уровня. Сначала невиданные; повтор — только если действующих меньше двенадцати.
+    assert at_first <= pool and at_second <= pool
+    assert len(at_first & at_second) == max(0, 12 - len(pool))
 
 
 def test_recorded_attempt_confirms_without_moving_grade(client):
@@ -381,8 +422,11 @@ def test_page_shows_attempt_history_and_vacancy_link(client):
         item = open_items[0]
         page = client.get("/candidate/test")
         data = {"csrf": _csrf(page.text), "attempt_id": str(body["attempt_id"]), "qid": item["qid"]}
-        for option in item["options"]:
-            data[f"mark_{option['id']}"] = "true" if option["id"] == item["key"] else "false"
+        if item.get("options"):
+            for option in item["options"]:
+                data[f"mark_{option['id']}"] = "true" if option["id"] == item["key"] else "false"
+        else:
+            data["value"] = str(item["key"])
         sent = client.post("/candidate/test/answer", data=data, follow_redirects=False)
         assert sent.status_code == 303
         if _status(client, body["attempt_id"]) == "submitted":

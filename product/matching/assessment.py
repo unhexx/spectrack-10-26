@@ -16,8 +16,9 @@
 
 1. Вариант из 12 вопросов по единому плану 3/6/3 (уровень ниже / свой / выше),
    темы и сложность одинаковы для всех, конкретные вопросы — свои у каждого.
-2. Формат «оцените каждый вариант: верно / неверно» (judge): вопрос засчитан,
-   только если верно оценены все три варианта; угадать — 1 из 8, а не 1 из 3.
+2. Формат judge — «верно / неверно» по трём вариантам, угадать 1 из 8.
+   multi, order и numeric со своим текстом остаются своим типом: ответ — число,
+   ключ попытки совпадает с answer варианта, угадывание — по-прежнему space.
 3. Порядок вариантов перемешан, id вариантов одноразовые, ключ хранится только
    в записи попытки на сервере и в ответ API не попадает.
 4. Уровень θ оценивается по IRT с учётом сложности каждого вопроса; у границы
@@ -47,7 +48,7 @@ _ITEM_FIELDS = ("qid", "item_id", "family_id", "slot", "level", "type", "a", "b"
 
 @lru_cache(maxsize=1)
 def bank_index() -> BankIndex:
-    """Банк в виде, доступном кабинету: 216 вопросов каталога в формате judge."""
+    """Банк кабинета: без повторов образца, свой текст сохраняет тип вопроса."""
     return BankIndex(live_view(load_bank()))
 
 
@@ -108,12 +109,34 @@ def pending(stored: dict) -> list[dict]:
     return [row for row in stored["items"] if row["qid"] not in answers]
 
 
-def normalize_answer(row: dict, raw: object) -> list[str] | None:
-    """Ответ на вопрос judge — список id вариантов, отмеченных «верно».
+def _canonical_int(raw: object) -> int | None:
+    """Целое или его десятичная запись. Булево — не число."""
+    if isinstance(raw, bool):
+        return None
+    if isinstance(raw, int):
+        return raw
+    if isinstance(raw, str):
+        text = raw.strip()
+        if text.startswith("+"):
+            text = text[1:]
+        if text.lstrip("-").isdigit() and text not in ("", "-"):
+            return int(text)
+    return None
 
-    Принимается список id или одна строка-id (как выбор одного варианта).
-    Чужой id → None (ответ не распознан, API вернёт 422).
+
+def normalize_answer(row: dict, raw: object) -> list[str] | int | None:
+    """Ответ в том виде, в каком его сравнивает ``is_correct``.
+
+    judge — список id вариантов, отмеченных «верно». Чужой id → None.
+    multi / order / numeric — целое или его десятичная запись (в том числе
+    список из одного такого значения, как обёртка API).
     """
+    if row.get("type") in ("multi", "order", "numeric"):
+        if isinstance(raw, list):
+            if len(raw) != 1:
+                return None
+            raw = raw[0]
+        return _canonical_int(raw)
     ids = {opt["id"] for opt in row.get("options") or []}
     if isinstance(raw, str):
         raw = [raw] if raw else []
@@ -122,6 +145,18 @@ def normalize_answer(row: dict, raw: object) -> list[str] | None:
     if any(x not in ids for x in raw):
         return None
     return sorted(set(raw))
+
+
+def scored_answer(row: dict, correct: bool) -> list[str] | int:
+    """Ответ, который ``is_correct`` сочтёт верным или заведомо неверным.
+
+    Нужен симуляции кабинета: она пишет ответ сама, минуя ``normalize_answer``.
+    """
+    if row.get("type") in ("multi", "order", "numeric"):
+        if correct:
+            return row["key"]
+        return 0 if row["key"] != 0 else 4
+    return [row["key"]] if correct else []
 
 
 def correct_flags(stored: dict) -> list[tuple[dict, bool]]:

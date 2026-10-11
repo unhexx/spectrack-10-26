@@ -194,10 +194,11 @@ def _make_item(
         item["text"] = variant.get("text") or sample["text"]
         key[item["item_id"]] = tokens[order.index(sample["correct_index"])]
     else:
-        # Для multi/order/numeric в симуляции достаточно номера верного
-        # ответа в пространстве из ``space`` возможных; текст дописывает команда.
+        # multi/order/numeric: свой текст и ответ варианта. Нет answer —
+        # прежний случайный номер в пространстве ``space`` (повтор образца).
         item["text"] = variant.get("text") or (family["sample"] or {}).get("text", family["topic"])
-        key[item["item_id"]] = rng.randrange(space)
+        own = variant.get("answer")
+        key[item["item_id"]] = own if own is not None else rng.randrange(space)
     history.families.add(family["family_id"])
     history.variants.add(variant["variant_id"])
     exposure.add(family["family_id"], variant["variant_id"])

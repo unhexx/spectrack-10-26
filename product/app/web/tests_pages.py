@@ -6,9 +6,9 @@
 описаний вакансий и на их основе показать, как система формирует задания».
 
 Вопросы показываются по одному, вернуться к отвеченному нельзя: ответ
-сохраняется сразу (обновление страницы не открывает его снова). В каждом
-вопросе кандидат оценивает все три варианта — «верно» или «неверно».
-Работает без JavaScript: обычная форма и переадресация.
+сохраняется сразу (обновление страницы не открывает его снова). У judge
+кандидат оценивает каждый вариант — «верно» или «неверно». У multi, order
+и numeric вводит одно число. Работает без JavaScript.
 """
 
 from __future__ import annotations
@@ -137,7 +137,7 @@ async def start_page(request: Request, db: Session = Depends(db_session)):
 
 @router.post("/candidate/test/answer")
 async def answer_page(request: Request, db: Session = Depends(db_session)):
-    """Один вопрос: поля mark_<id варианта> = true | false для всех трёх вариантов."""
+    """Один вопрос: judge — mark_<id> = true|false; числовой тип — поле value."""
     user, denial = page_user(request, db, "candidate")
     if denial is not None:
         return denial
@@ -150,10 +150,16 @@ async def answer_page(request: Request, db: Session = Depends(db_session)):
             fail(404, "not_found", "not_found_attempt")
         qid = str(form.get("qid") or "")
         marks = {key[5:]: str(value) for key, value in form.items() if key.startswith("mark_")}
-        if not marks or any(value not in _MARKS for value in marks.values()):
-            fail(422, "answer_unknown")
-        chosen = [choice for choice, value in marks.items() if value == "true"]
-        answer_question(db, user, attempt_id, qid, chosen, marked=set(marks))
+        if marks:
+            if any(value not in _MARKS for value in marks.values()):
+                fail(422, "answer_unknown")
+            chosen = [choice for choice, value in marks.items() if value == "true"]
+            answer_question(db, user, attempt_id, qid, chosen, marked=set(marks))
+        else:
+            raw = form.get("value")
+            if raw is None or str(raw).strip() == "":
+                fail(422, "answer_unknown")
+            answer_question(db, user, attempt_id, qid, str(raw), marked=None)
     except ApiError as exc:
         return page_error(request, "candidate/test.html", _context(request, db, user), exc)
     return RedirectResponse("/candidate/test", status_code=303)

@@ -498,7 +498,7 @@ relevant_in_top 30 36
 resume_ok 0 0
 grade_separation 215 216
 sim_competent 72 72
-sim_key_leak 3 72
+sim_key_leak 0 72
 sim_adjacent 0 72
 ```
 

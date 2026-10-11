@@ -49,11 +49,13 @@ def _forms() -> tuple[tuple[str, dict], ...]:
 
 
 def _knows_up_to(stored: dict, level: int) -> dict:
+    from product.matching import assessment
+
     grades = [str(g) for g in load_rules()["grades"]]
     answers = {}
     for item in stored["items"]:
         ok = grades.index(item["level"]) <= level
-        answers[item["qid"]] = [item["key"]] if ok else []
+        answers[item["qid"]] = assessment.scored_answer(item, ok)
     return {**stored, "answers": answers}
 
 
@@ -61,8 +63,13 @@ def _leaked_key(stored: dict) -> dict:
     answers = {}
     for index, item in enumerate(stored["items"]):
         position = _LEAKED_POSITIONS[index % len(_LEAKED_POSITIONS)]
-        option = item["options"][position % len(item["options"])]
-        answers[item["qid"]] = [option["id"]]
+        options = item.get("options") or []
+        if options:
+            option = options[position % len(options)]
+            answers[item["qid"]] = [option["id"]]
+        else:
+            # Позиция шаблона b-c-a. У multi/order/numeric ключ на эти номера не стоит.
+            answers[item["qid"]] = position
     return {**stored, "answers": answers}
 
 

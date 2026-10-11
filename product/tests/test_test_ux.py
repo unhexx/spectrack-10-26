@@ -64,46 +64,94 @@ def _marks(item: dict, correct: bool) -> dict[str, str]:
     return marks
 
 
-def _answer(client, attempt_id: int, item: dict, marks: dict[str, str]):
+def _payload(item: dict, correct: bool) -> dict[str, str]:
+    """Поля формы: judge — оценки вариантов, числовой тип — само число."""
+    if item.get("options"):
+        return _marks(item, correct)
+    wrong = 0 if item["key"] != 0 else 4
+    return {"value": str(item["key"] if correct else wrong)}
+
+
+def _stored_value(item: dict, correct: bool):
+    if item.get("type") in ("multi", "order", "numeric"):
+        return item["key"] if correct else (0 if item["key"] != 0 else 4)
+    return [item["key"]] if correct else []
+
+
+def _answer(client, attempt_id: int, item: dict, fields: dict[str, str]):
     page = client.get("/candidate/test")
-    data = {"csrf": _csrf(page.text), "attempt_id": str(attempt_id), "qid": item["qid"], **marks}
+    data = {"csrf": _csrf(page.text), "attempt_id": str(attempt_id), "qid": item["qid"], **fields}
     return client.post("/candidate/test/answer", data=data, follow_redirects=False)
 
 
-def test_draft_page_shows_one_question_with_true_false_for_each_choice(client):
+def _until(client, attempt_id: int, kind: str) -> dict:
+    """Дойти до вопроса нужного вида, предыдущие сдать верно."""
+    for _ in range(30):
+        item = _current(client, attempt_id)
+        if kind == "judge" and item.get("options"):
+            return item
+        if kind == "number" and not item.get("options"):
+            return item
+        assert _answer(client, attempt_id, item, _payload(item, True)).status_code == 303
+    raise AssertionError(kind)
+
+
+def _shows(page_text: str, item: dict) -> None:
+    assert item["text"] in page_text
+    assert "correct" not in page_text and '"key"' not in page_text
+    assert "<noscript>" not in page_text
+    if item.get("options"):
+        assert "Оцените каждый вариант." in page_text
+        radios = re.findall(r'type="radio" name="mark_([0-9a-f]+)" value="(true|false)"', page_text)
+        assert len(radios) == 6
+        assert {choice for choice, _ in radios} == {opt["id"] for opt in item["options"]}
+    else:
+        assert "Введите число" in page_text
+        assert 'name="value"' in page_text
+        assert "Оцените каждый вариант." not in page_text
+
+
+def test_draft_page_shows_judge_and_number(client):
     _seeker(client)
     attempt_id = _start_page(client)
-    item = _current(client, attempt_id)
     page = client.get("/candidate/test")
     assert page.status_code == 200
     assert "Вопрос 1 из 12" in page.text
-    assert item["text"] in page.text
-    assert "Оцените каждый вариант." in page.text
-    radios = re.findall(r'type="radio" name="mark_([0-9a-f]+)" value="(true|false)"', page.text)
-    assert len(radios) == 6
-    assert {choice for choice, _ in radios} == {opt["id"] for opt in item["options"]}
-    assert "correct" not in page.text and '"key"' not in page.text
-    assert "<noscript>" not in page.text  # форма работает и без JavaScript
+    seen = set()
+    for _ in range(12):
+        item = _current(client, attempt_id)
+        page = client.get("/candidate/test")
+        _shows(page.text, item)
+        seen.add("judge" if item.get("options") else item["type"])
+        if not item.get("options") and "number-rejected" not in seen:
+            rejected = _answer(client, attempt_id, item, {"value": "нет"})
+            assert rejected.status_code == 422
+            assert item["qid"] not in (stored_form(client, attempt_id).get("answers") or {})
+            seen.add("number-rejected")
+        if "judge" in seen and seen & {"multi", "order", "numeric"} and "number-rejected" in seen:
+            break
+        assert _answer(client, attempt_id, item, _payload(item, True)).status_code == 303
+    assert "judge" in seen and seen & {"multi", "order", "numeric"} and "number-rejected" in seen
 
 
 def test_answer_advances_and_answered_question_cannot_be_reopened(client):
     _seeker(client, "advance@example.com")
     attempt_id = _start_page(client)
     first = _current(client, attempt_id)
-    sent = _answer(client, attempt_id, first, _marks(first, True))
+    sent = _answer(client, attempt_id, first, _payload(first, True))
     assert sent.status_code == 303
     page = client.get("/candidate/test")
     assert "Вопрос 2 из 12" in page.text
     assert first["text"] not in page.text
-    again = _answer(client, attempt_id, first, _marks(first, False))
+    again = _answer(client, attempt_id, first, _payload(first, False))
     assert again.status_code == 422
-    assert stored_form(client, attempt_id)["answers"][first["qid"]] == [first["key"]]
+    assert stored_form(client, attempt_id)["answers"][first["qid"]] == _stored_value(first, True)
 
 
 def test_incomplete_or_bad_marks_keep_the_question(client):
     _seeker(client, "marks@example.com")
     attempt_id = _start_page(client)
-    item = _current(client, attempt_id)
+    item = _until(client, attempt_id, "judge")
     marks = _marks(item, True)
     partial = dict(list(marks.items())[:2])
     short = _answer(client, attempt_id, item, partial)
@@ -113,20 +161,20 @@ def test_incomplete_or_bad_marks_keep_the_question(client):
     assert bad.status_code == 422
     foreign = _answer(client, attempt_id, item, {"mark_deadbeef": "true", **marks})
     assert foreign.status_code == 422
-    assert not stored_form(client, attempt_id).get("answers")
+    assert item["qid"] not in (stored_form(client, attempt_id).get("answers") or {})
     no_csrf = client.post(
         "/candidate/test/answer",
         data={"csrf": "wrong", "attempt_id": str(attempt_id), "qid": item["qid"], **marks},
         follow_redirects=False,
     )
     assert no_csrf.status_code in (400, 403)
-    assert not stored_form(client, attempt_id).get("answers")
+    assert item["qid"] not in (stored_form(client, attempt_id).get("answers") or {})
 
 
 def test_all_false_marks_count_as_wrong_answer(client):
     _seeker(client, "false@example.com")
     attempt_id = _start_page(client)
-    item = _current(client, attempt_id)
+    item = _until(client, attempt_id, "judge")
     sent = _answer(client, attempt_id, item, {f"mark_{o['id']}": "false" for o in item["options"]})
     assert sent.status_code == 303
     assert stored_form(client, attempt_id)["answers"][item["qid"]] == []
@@ -142,7 +190,7 @@ def test_page_walk_with_extra_blocks_ends_in_outcome_panel(client):
         item = _current(client, attempt_id)
         totals.add(len(stored_form(client, attempt_id)["items"]))
         ok = _LEVELS.index(item["level"]) <= _LEVELS.index("middle")
-        assert _answer(client, attempt_id, item, _marks(item, ok)).status_code == 303
+        assert _answer(client, attempt_id, item, _payload(item, ok)).status_code == 303
     assert _status(client, attempt_id) == "submitted"
     page = client.get("/candidate/test")
     assert "Итог попытки" in page.text
@@ -160,7 +208,7 @@ def test_outcome_panel_uses_recorded_pair(client):
         if _status(client, attempt_id) == "submitted":
             break
         item = _current(client, attempt_id)
-        assert _answer(client, attempt_id, item, _marks(item, True)).status_code == 303
+        assert _answer(client, attempt_id, item, _payload(item, True)).status_code == 303
     page = client.get("/candidate/test")
     assert "Грейд попытки: middle." in page.text
     assert "Верных ответов: 100%" in page.text

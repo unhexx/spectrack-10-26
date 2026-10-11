@@ -5,186 +5,187 @@
  "weak_below": 0.15,
  "families_analysed": 216,
  "retired": [
-  "backend.junior.f01",
-  "backend.junior.f04",
-  "backend.junior.f07",
-  "backend.junior.f08",
+  "backend.junior.f02",
+  "backend.junior.f05",
   "backend.junior.f09",
-  "backend.middle.f06",
-  "backend.middle.f07",
-  "data.junior.f01",
   "data.junior.f02",
-  "data.junior.f04",
-  "data.junior.f07",
+  "data.junior.f03",
+  "data.junior.f05",
+  "data.junior.f06",
   "data.junior.f08",
   "data.lead.f02",
-  "data.lead.f07",
-  "data.middle.f05",
-  "devops.junior.f01",
+  "data.lead.f03",
+  "data.lead.f04",
+  "data.middle.f01",
+  "data.middle.f04",
+  "data.middle.f07",
+  "data.middle.f09",
+  "data.senior.f02",
+  "devops.junior.f04",
+  "devops.junior.f07",
+  "devops.middle.f02",
+  "devops.middle.f07",
   "frontend.junior.f02",
   "frontend.junior.f04",
-  "frontend.junior.f08",
-  "frontend.middle.f04",
-  "frontend.middle.f06",
+  "frontend.junior.f06",
+  "frontend.middle.f02",
   "mobile.junior.f01",
+  "mobile.junior.f02",
   "mobile.junior.f03",
   "mobile.junior.f04",
-  "mobile.junior.f07",
-  "mobile.junior.f09",
-  "mobile.lead.f08",
-  "mobile.middle.f04",
-  "mobile.middle.f07",
-  "mobile.middle.f09",
+  "mobile.lead.f06",
   "security.junior.f01",
-  "security.junior.f04"
+  "security.junior.f02",
+  "security.junior.f03",
+  "security.senior.f08"
  ],
  "target_accuracy": 0.93,
- "confident_threshold": 0.9,
+ "confident_threshold": 0.92,
  "pilot_curve": [
   {
    "threshold": 0.7,
-   "coverage_pct": 75.7,
+   "coverage_pct": 76.2,
    "accuracy_pct": 90.0
   },
   {
    "threshold": 0.71,
-   "coverage_pct": 74.5,
-   "accuracy_pct": 90.1
+   "coverage_pct": 74.8,
+   "accuracy_pct": 90.2
   },
   {
    "threshold": 0.72,
-   "coverage_pct": 73.4,
-   "accuracy_pct": 90.1
+   "coverage_pct": 73.7,
+   "accuracy_pct": 90.8
   },
   {
    "threshold": 0.73,
-   "coverage_pct": 72.2,
-   "accuracy_pct": 90.6
+   "coverage_pct": 72.8,
+   "accuracy_pct": 90.7
   },
   {
    "threshold": 0.74,
-   "coverage_pct": 71.3,
-   "accuracy_pct": 90.6
-  },
-  {
-   "threshold": 0.75,
-   "coverage_pct": 69.8,
+   "coverage_pct": 71.0,
    "accuracy_pct": 91.0
   },
   {
-   "threshold": 0.76,
-   "coverage_pct": 68.3,
+   "threshold": 0.75,
+   "coverage_pct": 69.4,
    "accuracy_pct": 91.2
+  },
+  {
+   "threshold": 0.76,
+   "coverage_pct": 68.4,
+   "accuracy_pct": 91.5
   },
   {
    "threshold": 0.77,
-   "coverage_pct": 66.2,
-   "accuracy_pct": 91.2
-  },
-  {
-   "threshold": 0.78,
-   "coverage_pct": 64.7,
-   "accuracy_pct": 91.3
-  },
-  {
-   "threshold": 0.79,
-   "coverage_pct": 62.8,
-   "accuracy_pct": 91.4
-  },
-  {
-   "threshold": 0.8,
-   "coverage_pct": 60.9,
+   "coverage_pct": 66.9,
    "accuracy_pct": 91.6
   },
   {
-   "threshold": 0.81,
-   "coverage_pct": 59.1,
+   "threshold": 0.78,
+   "coverage_pct": 65.1,
+   "accuracy_pct": 91.7
+  },
+  {
+   "threshold": 0.79,
+   "coverage_pct": 64.1,
+   "accuracy_pct": 91.9
+  },
+  {
+   "threshold": 0.8,
+   "coverage_pct": 62.4,
    "accuracy_pct": 92.0
   },
   {
+   "threshold": 0.81,
+   "coverage_pct": 61.0,
+   "accuracy_pct": 92.1
+  },
+  {
    "threshold": 0.82,
-   "coverage_pct": 56.7,
-   "accuracy_pct": 92.2
+   "coverage_pct": 59.0,
+   "accuracy_pct": 92.0
   },
   {
    "threshold": 0.83,
-   "coverage_pct": 53.9,
-   "accuracy_pct": 92.8
+   "coverage_pct": 56.3,
+   "accuracy_pct": 92.0
   },
   {
    "threshold": 0.84,
-   "coverage_pct": 50.4,
-   "accuracy_pct": 92.5
+   "coverage_pct": 52.7,
+   "accuracy_pct": 92.0
   },
   {
    "threshold": 0.85,
-   "coverage_pct": 46.3,
-   "accuracy_pct": 92.4
+   "coverage_pct": 50.1,
+   "accuracy_pct": 92.2
   },
   {
    "threshold": 0.86,
-   "coverage_pct": 42.2,
-   "accuracy_pct": 92.9
+   "coverage_pct": 45.6,
+   "accuracy_pct": 92.8
   },
   {
    "threshold": 0.87,
-   "coverage_pct": 38.1,
-   "accuracy_pct": 92.9
+   "coverage_pct": 41.5,
+   "accuracy_pct": 93.0
   },
   {
    "threshold": 0.88,
-   "coverage_pct": 33.6,
-   "accuracy_pct": 92.9
+   "coverage_pct": 38.1,
+   "accuracy_pct": 92.7
   },
   {
    "threshold": 0.89,
-   "coverage_pct": 30.4,
-   "accuracy_pct": 93.1
+   "coverage_pct": 34.8,
+   "accuracy_pct": 92.2
   },
   {
    "threshold": 0.9,
-   "coverage_pct": 26.5,
-   "accuracy_pct": 93.6
+   "coverage_pct": 31.3,
+   "accuracy_pct": 91.7
   },
   {
    "threshold": 0.91,
-   "coverage_pct": 23.3,
-   "accuracy_pct": 93.6
+   "coverage_pct": 26.8,
+   "accuracy_pct": 91.8
   },
   {
    "threshold": 0.92,
-   "coverage_pct": 18.9,
-   "accuracy_pct": 93.7
+   "coverage_pct": 22.7,
+   "accuracy_pct": 93.8
   },
   {
    "threshold": 0.93,
-   "coverage_pct": 15.1,
-   "accuracy_pct": 96.0
+   "coverage_pct": 19.3,
+   "accuracy_pct": 95.3
   },
   {
    "threshold": 0.94,
-   "coverage_pct": 12.5,
-   "accuracy_pct": 99.2
+   "coverage_pct": 15.8,
+   "accuracy_pct": 95.6
   },
   {
    "threshold": 0.95,
-   "coverage_pct": 10.0,
-   "accuracy_pct": 99.0
+   "coverage_pct": 13.6,
+   "accuracy_pct": 95.6
   },
   {
    "threshold": 0.96,
-   "coverage_pct": 8.2,
-   "accuracy_pct": 98.8
+   "coverage_pct": 10.8,
+   "accuracy_pct": 94.4
   },
   {
    "threshold": 0.97,
-   "coverage_pct": 6.1,
-   "accuracy_pct": 100.0
+   "coverage_pct": 7.4,
+   "accuracy_pct": 97.3
   },
   {
    "threshold": 0.98,
-   "coverage_pct": 5.1,
-   "accuracy_pct": 100.0
+   "coverage_pct": 5.5,
+   "accuracy_pct": 98.2
   }
  ]
 }

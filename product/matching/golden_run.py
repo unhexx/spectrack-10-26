@@ -191,6 +191,8 @@ def _engine_cases():
 
 
 def _answered(stored: dict, grade: str, mode: str) -> dict:
+    from product.matching import assessment
+
     grades = [str(g) for g in load_rules()["grades"]]
     answers = {}
     for item in stored["items"]:
@@ -200,7 +202,7 @@ def _answered(stored: dict, grade: str, mode: str) -> dict:
             ok = grades.index(item["level"]) <= grades.index(grade)
         else:
             ok = grades.index(item["level"]) < grades.index(grade)
-        answers[item["qid"]] = [item["key"]] if ok else []
+        answers[item["qid"]] = assessment.scored_answer(item, ok)
     return {**stored, "answers": answers}
 
 

@@ -175,7 +175,8 @@ def test_full_shards_report_denominators():
     assert counts["resume_ok"] == (0, 0)
     assert counts["grade_separation"] == (215, 216)
     assert counts["sim_competent"] == (72, 72)
-    assert counts["sim_key_leak"] == (3, 72)
+    # Позиционный шаблон b-c-a не подтверждает грейд: у multi/order/numeric ключ не 0, 1 и 2.
+    assert counts["sim_key_leak"] == (0, 72)
     assert counts["sim_adjacent"] == (0, 72)
 
 

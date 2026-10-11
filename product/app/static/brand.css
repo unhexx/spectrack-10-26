@@ -145,6 +145,8 @@ nav { display: flex; gap: 0.6rem; margin: 0 0 0.55rem; }
   main { padding: 0.6rem; }
 }
 
+.test-stem { white-space: pre-wrap; }
+
 .test-track {
   border: 1px solid var(--fsp-ink);
   background: var(--fsp-light);
