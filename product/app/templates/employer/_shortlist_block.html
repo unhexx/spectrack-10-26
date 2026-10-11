@@ -2,6 +2,9 @@
 <section class="kept">
   <h2>{{ title }}</h2>
   {% include "_notice.html" %}
+  {% for row in category_hints %}
+  <p>{% if row.spare %}Запасная: {{ row.category_id }}, опубликовано {{ row.count }}.{% else %}Категория {{ row.category_id }}, опубликовано {{ row.count }}.{% endif %}</p>
+  {% endfor %}
   {% if cards %}
   <ul>
     {% for card in cards %}

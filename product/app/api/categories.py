@@ -11,6 +11,7 @@ from sqlalchemy.orm import Session
 from product.app.api.deps import db_session, require_candidate, require_employer
 from product.app.db.models import User
 from product.app.services.categories import employer_candidates, latest_assignment, parse_has_fsp
+from product.app.services.category_hint import category_hint
 from product.app.services.errors import example, fail, response_example
 from product.app.services.profiles import get_own_profile
 
@@ -42,6 +43,10 @@ _CARD = {
     "fsp_rank": "",
     "achievements": [],
 }
+_HINT = [
+    {"category_id": "backend:senior", "spare": False, "count": 3},
+    {"category_id": "backend:middle", "spare": True, "count": 5},
+]
 
 
 @router.get(
@@ -105,3 +110,23 @@ def read_candidates(
         has_fsp=parse_has_fsp(has_fsp),
         q=q,
     )
+
+
+@router.get(
+    "/employer/category-hint",
+    responses={
+        200: {"content": {"application/json": {"example": _HINT}}},
+        401: {"content": {"application/json": {"example": example("unauthorized")}}},
+        403: {"content": {"application/json": {"example": example("forbidden", "forbidden_employer")}}},
+    },
+)
+def read_category_hint(
+    q: str = Query(default="", description="Текст потребности"),
+    _user: User = Depends(require_employer),
+    db: Session = Depends(db_session),
+):
+    """Две строки на найденную специализацию и счётчик опубликованных.
+
+    Подсказка не выбирает категорию и не сужает выдачу.
+    """
+    return category_hint(db, q)

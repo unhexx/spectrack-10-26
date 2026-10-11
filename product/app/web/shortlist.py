@@ -12,6 +12,7 @@ from sqlalchemy.orm import Session
 
 from product.app.api.deps import db_session
 from product.app.services.categories import employer_candidates, parse_has_fsp
+from product.app.services.category_hint import category_hint
 from product.app.services.errors import ApiError, hint as catalog_hint
 from product.app.web.guards import page_user
 from product.app.web.render import ensure_csrf, render
@@ -39,8 +40,10 @@ def shortlist_page(request: Request, db: Session = Depends(db_session)):
         "cards": [],
         "error": "",
         "hint": "",
+        "category_hints": [],
         "show_block": False,
     }
+    q = params.get("q") or ""
     # Отправленная форма (любой параметр) — уже запрос; пустая категория = вся база.
     if category_id or partial or len(params):
         try:
@@ -53,7 +56,7 @@ def shortlist_page(request: Request, db: Session = Depends(db_session)):
                 team_role=params.get("team_role") or "",
                 work_format=params.get("work_format") or "",
                 has_fsp=parse_has_fsp(params.get("has_fsp")),
-                q=params.get("q") or "",
+                q=q,
             )
             ctx["title"] = _title(category_id, specialization, grade)
             ctx["cards"] = cards
@@ -62,6 +65,8 @@ def shortlist_page(request: Request, db: Session = Depends(db_session)):
         except ApiError as exc:
             ctx["title"] = "Подборка"
             ctx["error"] = exc.message
+        if q.strip():
+            ctx["category_hints"] = category_hint(db, q)
         ctx["show_block"] = True
         if partial:
             return render(request, "employer/_shortlist_block.html", ctx)

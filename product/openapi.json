@@ -893,6 +893,89 @@
         ]
       }
     },
+    "/api/employer/category-hint": {
+      "get": {
+        "tags": [
+          "category"
+        ],
+        "summary": "Read Category Hint",
+        "description": "Две строки на найденную специализацию и счётчик опубликованных.\n\nПодсказка не выбирает категорию и не сужает выдачу.",
+        "operationId": "read_category_hint_api_employer_category_hint_get",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Текст потребности",
+              "default": "",
+              "title": "Q"
+            },
+            "description": "Текст потребности"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {},
+                "example": [
+                  {
+                    "category_id": "backend:senior",
+                    "spare": false,
+                    "count": 3
+                  },
+                  {
+                    "category_id": "backend:middle",
+                    "spare": true,
+                    "count": 5
+                  }
+                ]
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "unauthorized",
+                  "message": "Что случилось. Нужен вход.\nПочему. Запрос без cookie сессии product_session. Гостю кабинет и API не открывают.\nЧто сделать. Откройте /auth/login, войдите почтой и паролем и повторите действие."
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "forbidden",
+                  "message": "Что случилось. Это кабинет работодателя.\nПочему. Учётка соискателя не читает карточку компании, подборку и отправку приглашений.\nЧто сделать. Выйдите и войдите почтой работодателя либо зарегистрируйте отдельную учётку с ролью employer."
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "product_session": []
+          }
+        ]
+      }
+    },
     "/api/candidate/tests/start": {
       "post": {
         "tags": [
