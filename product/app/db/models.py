@@ -317,3 +317,22 @@ class FspAchievement(Base):
     role_in_team: Mapped[str] = mapped_column(String(120), nullable=False)
     place: Mapped[str] = mapped_column(String(64), nullable=False)
     held_on: Mapped[str] = mapped_column(String(40), nullable=False)
+
+
+class PeriodicTask(Base):
+    __tablename__ = "periodic_tasks"
+    __table_args__ = (
+        Index("ix_periodic_profile", "profile_id"),
+        Index(
+            "uq_periodic_open",
+            "profile_id",
+            unique=True,
+            sqlite_where=text("completed_at IS NULL"),
+        ),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    profile_id: Mapped[int] = mapped_column(ForeignKey("profiles.id"), nullable=False)
+    vacancy_id: Mapped[int] = mapped_column(ForeignKey("vacancies.id"), nullable=False)
+    offered_at: Mapped[str] = mapped_column(String(40), nullable=False)
+    completed_at: Mapped[str | None] = mapped_column(String(40), nullable=True)

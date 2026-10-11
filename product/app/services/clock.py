@@ -24,6 +24,14 @@ def parse_utc(stamp: str) -> datetime:
     return moment
 
 
+def whole_days_since(stamp: str) -> int:
+    """Целые сутки вниз от метки до сейчас. Сегодня — 0."""
+    seconds = (datetime.now(timezone.utc) - parse_utc(stamp)).total_seconds()
+    if seconds <= 0:
+        return 0
+    return int(seconds // 86400)
+
+
 def days_elapsed(stamp: str, days: int) -> bool:
     return datetime.now(timezone.utc) >= parse_utc(stamp) + timedelta(days=days)
 

@@ -11,7 +11,9 @@ from sqlalchemy.orm import Session
 
 from product.app.api.deps import db_session
 from product.app.api.resumes import read_resume_upload
-from product.app.services.errors import ApiError
+from product.app.services.errors import ApiError, fail
+from product.app.services.periodic import complete_offer, empty_offer, notice_for, task_state
+from product.app.services.profile_ref import own_profile_id
 from product.app.services.profiles import cabinet_payload, save_profile
 from product.app.services.resumes import apply_resume
 from product.app.web.guards import page_user
@@ -22,6 +24,14 @@ router = APIRouter()
 
 def _cabinet_context(request: Request, db: Session, user, error: str = "") -> dict:
     body = cabinet_payload(db, user)
+    profile = body.get("profile")
+    if profile is None:
+        periodic = empty_offer()
+        notice = notice_for(periodic)
+    else:
+        periodic, notice = task_state(db, profile.id)
+    body["periodic"] = periodic
+    body["periodic_notice"] = notice
     body["csrf"] = ensure_csrf(request)
     body["error"] = error
     body["user"] = user
@@ -84,6 +94,26 @@ def save_cabinet(
     try:
         assert_csrf(request, csrf)
         save_profile(db, user, payload)
+    except ApiError as exc:
+        return page_error(request, "candidate/cabinet.html", _cabinet_context(request, db, user), exc)
+    return RedirectResponse("/candidate", status_code=303)
+
+
+@router.post("/candidate/periodic-task")
+def complete_periodic_page(
+    request: Request,
+    csrf: str = Form(""),
+    db: Session = Depends(db_session),
+):
+    user, denial = page_user(request, db, "candidate")
+    if denial is not None:
+        return denial
+    try:
+        assert_csrf(request, csrf)
+        profile_id = own_profile_id(db, user)
+        if profile_id is None:
+            fail(404, "not_found", "not_found_periodic")
+        complete_offer(db, profile_id)
     except ApiError as exc:
         return page_error(request, "candidate/cabinet.html", _cabinet_context(request, db, user), exc)
     return RedirectResponse("/candidate", status_code=303)

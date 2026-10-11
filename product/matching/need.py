@@ -159,14 +159,16 @@ def _field_text(value: int, yesno: bool) -> str:
 
 
 def neighbor_phrase(
-    sort_key: tuple[int, int, int, int, int, str],
-    next_sort_key: tuple[int, int, int, int, int, str] | None,
+    sort_key: tuple[int, int, int, int, int, str] | tuple[int, int, int, int, int, int, str],
+    next_sort_key: tuple[int, int, int, int, int, str]
+    | tuple[int, int, int, int, int, int, str]
+    | None,
 ) -> str:
     """Сравнение с соседней карточкой. Кортеж сортировки не меняет."""
     if next_sort_key is None:
         return "Ниже этой карточки в подборке никого нет."
-    mine = _rank_fields(sort_key[5])
-    other = _rank_fields(next_sort_key[5])
+    mine = _rank_fields(sort_key[-1])
+    other = _rank_fields(next_sort_key[-1])
     if mine is None or other is None:
         return ""
     compared = ", ".join(

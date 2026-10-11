@@ -10,14 +10,15 @@ from __future__ import annotations
 import json
 import re
 
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from product.app.db.models import CategoryAssignment as StoredCategory
-from product.app.db.models import Consent, FspAchievement, FspParticipant, Profile, TestAttempt
+from product.app.db.models import Consent, FspAchievement, FspParticipant, PeriodicTask, Profile, TestAttempt
 from product.app.db.session import sqlite_int
 from product.app.services.clock import utc_now
 from product.app.services.errors import fail
+from product.app.services.periodic import freshness_bonus, task_line
 from product.matching.category import assign_category, has_prize_place
 from product.matching.need import evaluate_need, haystack_text, neighbor_phrase
 from product.matching.rules import load_rules, rule_version
@@ -235,7 +236,8 @@ def employer_candidates(
     достижений ФСП»: без категории ищем по всем опубликованным профилям,
     специализация и грейд сужают поиск по отдельности.
 
-    Фильтр — `evaluate_need`; порядок — `NeedFit.sort_key`. Согласие
+    Фильтр — `evaluate_need`. Порядок снаружи: пять чисел потребности,
+    бонус сдачи 0 или 1, затем `rank_key`. Согласие
     publication проверяется до подбора, не внутри matching (ТЗ §2.1
     «Настройки: приватность», §3.5 «152-ФЗ»).
     """
@@ -256,7 +258,14 @@ def employer_candidates(
         _closed(team_role, rules["team_roles"], "closed_list")
     if work_format:
         _closed(work_format, rules["work_formats"], "closed_list")
-    ranked: list[tuple[tuple[int, int, int, int, int, str], dict, int]] = []
+    done_by_profile = dict(
+        session.execute(
+            select(PeriodicTask.profile_id, func.max(PeriodicTask.completed_at))
+            .where(PeriodicTask.completed_at.is_not(None))
+            .group_by(PeriodicTask.profile_id)
+        ).all()
+    )
+    ranked: list[tuple[tuple[int, int, int, int, int, int, str], dict, int]] = []
     profiles = session.scalars(select(Profile)).all()
     for profile in profiles:
         consent = session.scalar(select(Consent).where(Consent.profile_id == profile.id))
@@ -283,7 +292,11 @@ def employer_candidates(
             continue
         card = _card(profile, assignment, labels, achievements, rank, consent, reason=fit.reason)
         card.update(_test_view(session, assignment.test_attempt_id))
-        ranked.append((fit.sort_key, card, consent.show_achievements))
+        done_at = done_by_profile.get(profile.id)
+        card["task_line"] = task_line(done_at)
+        overlap, role, fmt, fsp, tokens, rank_key = fit.sort_key
+        key = (overlap, role, fmt, fsp, tokens, freshness_bonus(done_at), rank_key)
+        ranked.append((key, card, consent.show_achievements))
     ranked.sort(key=lambda item: item[0], reverse=True)
     cards = []
     for index, (key, card, show_achievements) in enumerate(ranked):

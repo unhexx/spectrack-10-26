@@ -33,6 +33,7 @@ _CARD = {
     "category_id": "backend:middle",
     "explanation": "Опрос: специализация backend, грейд middle. Тест: заявленный грейд подтверждён, балл 67. Правила v1.",
     "list_reason": "Категория backend:middle. Тест сдан, потребность без уточнений.",
+    "task_line": "ещё не сдавал",
     "rank_key": "1-067-0000-0-00000001",
     "test_score": 67,
     "grade_status": "подтверждён",

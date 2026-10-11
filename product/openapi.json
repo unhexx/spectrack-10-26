@@ -523,6 +523,122 @@
         ]
       }
     },
+    "/api/candidate/periodic-task": {
+      "get": {
+        "tags": [
+          "candidate"
+        ],
+        "summary": "Read Periodic Task",
+        "operationId": "read_periodic_task_api_candidate_periodic_task_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {},
+                "example": {
+                  "vacancy_id": 1,
+                  "title": "Backend middle",
+                  "prompt": "Назовите один заголовок идемпотентного POST.",
+                  "offered_at": "2026-10-07T12:00:00Z",
+                  "completed_at": "",
+                  "line": "ещё не сдавал"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "unauthorized",
+                  "message": "Что случилось. Нужен вход.\nПочему. Запрос без cookie сессии product_session. Гостю кабинет и API не открывают.\nЧто сделать. Откройте /auth/login, войдите почтой и паролем и повторите действие."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "forbidden",
+                  "message": "Что случилось. Это кабинет соискателя.\nПочему. Учётка работодателя не читает анкету, тест и приглашения соискателя.\nЧто сделать. Выйдите и войдите почтой соискателя либо зарегистрируйте отдельную учётку с ролью candidate."
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "product_session": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "candidate"
+        ],
+        "summary": "Complete Periodic Task",
+        "operationId": "complete_periodic_task_api_candidate_periodic_task_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {},
+                "example": {
+                  "title": "",
+                  "prompt": "",
+                  "offered_at": "",
+                  "completed_at": "",
+                  "line": "последнее задание 0 дней назад"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "unauthorized",
+                  "message": "Что случилось. Нужен вход.\nПочему. Запрос без cookie сессии product_session. Гостю кабинет и API не открывают.\nЧто сделать. Откройте /auth/login, войдите почтой и паролем и повторите действие."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "forbidden",
+                  "message": "Что случилось. Это кабинет соискателя.\nПочему. Учётка работодателя не читает анкету, тест и приглашения соискателя.\nЧто сделать. Выйдите и войдите почтой соискателя либо зарегистрируйте отдельную учётку с ролью candidate."
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "not_found",
+                  "message": "Что случилось. Открытого задания нет.\nПочему. Сдавать можно только свою открытую строку, пока вакансия опубликована и у неё есть формулировка. Чужое задание этой сдачей не закрывается. Снятая вакансия и пропуск балл не дают.\nЧто сделать. Откройте кабинет соискателя. Кнопка «Сдал» есть только у живого задания."
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "product_session": []
+          }
+        ]
+      }
+    },
     "/api/employer/company": {
       "get": {
         "tags": [
@@ -836,6 +952,7 @@
                     "category_id": "backend:middle",
                     "explanation": "Опрос: специализация backend, грейд middle. Тест: заявленный грейд подтверждён, балл 67. Правила v1.",
                     "list_reason": "Категория backend:middle. Тест сдан, потребность без уточнений.",
+                    "task_line": "ещё не сдавал",
                     "rank_key": "1-067-0000-0-00000001",
                     "test_score": 67,
                     "grade_status": "подтверждён",
