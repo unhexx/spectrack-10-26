@@ -76,6 +76,7 @@ def evaluate_need(
     haystack: str,
     need: Need | dict,
     rank_key: str = "",
+    mention_achievements: bool = True,
 ) -> NeedFit:
     """Фильтр, порядок внутри категории и фраза «почему этот человек» — один проход.
 
@@ -115,9 +116,9 @@ def evaluate_need(
         parts.append(f"в профиле роль {team_role}")
     if format_hit:
         parts.append(f"в профиле формат {work_format}")
-    if spec.has_fsp is True and fsp_count > 0:
+    if mention_achievements and spec.has_fsp is True and fsp_count > 0:
         parts.append(f"в профиле {fsp_count} достижений ФСП")
-    elif spec.has_fsp is False and fsp_count <= 0:
+    elif mention_achievements and spec.has_fsp is False and fsp_count <= 0:
         parts.append("в профиле нет достижений ФСП")
     if hit:
         parts.append("в тексте профиля: " + ", ".join(hit))
@@ -158,26 +159,39 @@ def _field_text(value: int, yesno: bool) -> str:
     return str(value)
 
 
+_HIDDEN_RANK_FIELDS = frozenset({"число достижений", "приз"})
+
+
 def neighbor_phrase(
     sort_key: tuple[int, int, int, int, int, str] | tuple[int, int, int, int, int, int, str],
     next_sort_key: tuple[int, int, int, int, int, str]
     | tuple[int, int, int, int, int, int, str]
     | None,
+    *,
+    mention_achievements: bool = True,
 ) -> str:
-    """Сравнение с соседней карточкой. Кортеж сортировки не меняет."""
+    """Сравнение с соседней карточкой. Кортеж сортировки не меняет.
+
+    Скрытые достижения не попадают во фразу: поле не называется и число не печатается.
+    """
     if next_sort_key is None:
         return "Ниже этой карточки в подборке никого нет."
     mine = _rank_fields(sort_key[-1])
     other = _rank_fields(next_sort_key[-1])
     if mine is None or other is None:
         return ""
+    visible = [
+        (field, left, right)
+        for field, left, right in zip(_NEIGHBOR_FIELDS, mine, other, strict=True)
+        if mention_achievements or field[0] not in _HIDDEN_RANK_FIELDS
+    ]
     compared = ", ".join(
         f"{name} {_field_text(left, yesno)} против {_field_text(right, yesno)}"
-        for (name, yesno), left, right in zip(_NEIGHBOR_FIELDS, mine, other, strict=True)
+        for (name, yesno), left, right in visible
     )
     if sort_key[:5] != next_sort_key[:5]:
         return f"Выше соседней карточки по совпадению потребности: {compared}."
-    for (name, yesno), left, right in zip(_NEIGHBOR_FIELDS, mine, other, strict=True):
+    for (name, yesno), left, right in visible:
         if left == right:
             continue
         if left > right:
@@ -185,11 +199,17 @@ def neighbor_phrase(
                 f"Выше соседней карточки по полю {name}: "
                 f"{_field_text(left, yesno)} против {_field_text(right, yesno)}."
             )
-        return (
-            "Выше соседней карточки не по полям подтверждён, балл, "
-            "число достижений и приз."
-        )
-    return "С соседней карточкой совпадают подтверждён, балл, число достижений и приз."
+        if mention_achievements:
+            return (
+                "Выше соседней карточки не по полям подтверждён, балл, "
+                "число достижений и приз."
+            )
+        return "Выше соседней карточки не по полям подтверждён и балл."
+    if not mention_achievements and mine[2:] != other[2:]:
+        return "Выше соседней карточки."
+    if mention_achievements:
+        return "С соседней карточкой совпадают подтверждён, балл, число достижений и приз."
+    return "С соседней карточкой совпадают подтверждён и балл."
 
 
 def matches_need(

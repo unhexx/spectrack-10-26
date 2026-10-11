@@ -8,7 +8,6 @@
 from __future__ import annotations
 
 import json
-import re
 
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
@@ -146,11 +145,27 @@ def _need(
     )
 
 
+def published_rows(session: Session) -> list[tuple[Profile, Consent, StoredCategory]]:
+    """Опубликованные профили с последним назначением. Выдача и подсказка ходят сюда."""
+    rows: list[tuple[Profile, Consent, StoredCategory]] = []
+    for profile in session.scalars(select(Profile)).all():
+        consent = session.scalar(select(Consent).where(Consent.profile_id == profile.id))
+        if consent is None or not consent.publication:
+            continue
+        assignment = latest_assignment(session, profile.id)
+        if assignment is None:
+            continue
+        rows.append((profile, consent, assignment))
+    return rows
+
+
 def _profile_matches(
     session: Session,
     profile: Profile,
     assignment: StoredCategory,
     need: Need,
+    *,
+    mention_achievements: bool = True,
 ) -> tuple[NeedFit, list[str], list[FspAchievement], str]:
     labels = json.loads(profile.stack_json or "[]")
     achievements: list[FspAchievement] = []
@@ -182,6 +197,7 @@ def _profile_matches(
         haystack=haystack,
         need=need,
         rank_key=assignment.rank_key,
+        mention_achievements=mention_achievements,
     )
     return fit, labels, achievements, rank
 
@@ -266,14 +282,7 @@ def employer_candidates(
         ).all()
     )
     ranked: list[tuple[tuple[int, int, int, int, int, int, str], dict, int]] = []
-    profiles = session.scalars(select(Profile)).all()
-    for profile in profiles:
-        consent = session.scalar(select(Consent).where(Consent.profile_id == profile.id))
-        if consent is None or not consent.publication:
-            continue
-        assignment = latest_assignment(session, profile.id)
-        if assignment is None:
-            continue
+    for profile, consent, assignment in published_rows(session):
         spec_of, _sep, grade_of = assignment.category_id.partition(":")
         if (specialization and spec_of != specialization) or (grade and grade_of != grade):
             continue
@@ -287,7 +296,13 @@ def employer_candidates(
             has_fsp=has_fsp,
             q=q,
         )
-        fit, labels, achievements, rank = _profile_matches(session, profile, assignment, need)
+        fit, labels, achievements, rank = _profile_matches(
+            session,
+            profile,
+            assignment,
+            need,
+            mention_achievements=bool(consent.show_achievements),
+        )
         if not fit.matched:
             continue
         card = _card(profile, assignment, labels, achievements, rank, consent, reason=fit.reason)
@@ -301,11 +316,9 @@ def employer_candidates(
     cards = []
     for index, (key, card, show_achievements) in enumerate(ranked):
         nxt = ranked[index + 1][0] if index + 1 < len(ranked) else None
-        phrase = neighbor_phrase(key, nxt)
+        phrase = neighbor_phrase(key, nxt, mention_achievements=bool(show_achievements))
         if phrase:
             card["list_reason"] = f"{card['list_reason']} {phrase}".strip()
-        if not show_achievements:
-            card["list_reason"] = _without_hidden_achievements(card["list_reason"])
         cards.append(card)
     return cards
 
@@ -335,19 +348,6 @@ def _test_view(session: Session, attempt_id: int | None) -> dict:
         "test_confidence": None if confidence is None else round(100 * confidence),
         "test_position": result.get("position"),
     }
-
-
-def _without_hidden_achievements(reason: str) -> str:
-    # Число в причине выдаёт скрытый список: пустой список и «нет» неразличимы.
-    kept: list[str] = []
-    for sentence in re.split(r"(?<=\.)\s+", reason.strip()):
-        sentence = re.sub(r", число достижений \d+ против \d+", "", sentence)
-        sentence = sentence.replace(", число достижений и ", " и ")
-        sentence = re.sub(r"\s{2,}", " ", sentence).strip()
-        if not sentence or "достижен" in sentence:
-            continue
-        kept.append(sentence)
-    return " ".join(kept)
 
 
 def _card(

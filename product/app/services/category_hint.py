@@ -6,11 +6,9 @@
 
 from __future__ import annotations
 
-from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from product.app.db.models import Consent, Profile
-from product.app.services.categories import latest_assignment
+from product.app.services.categories import published_rows
 from product.matching.rules import load_rules
 
 # Ключи — specializations/grades из правил. Значения в v1.json не лежат.
@@ -56,16 +54,9 @@ def _tokens(q: str) -> set[str]:
 
 
 def _published_counts(session: Session) -> dict[str, int]:
-    """Тот же обход, что у выдачи: все профили, согласие publication, последнее назначение."""
+    """Счётчик опубликованных. Обход — published_rows, тот же, что у выдачи."""
     counts: dict[str, int] = {}
-    profiles = session.scalars(select(Profile)).all()
-    for profile in profiles:
-        consent = session.scalar(select(Consent).where(Consent.profile_id == profile.id))
-        if consent is None or not consent.publication:
-            continue
-        assignment = latest_assignment(session, profile.id)
-        if assignment is None:
-            continue
+    for _profile, _consent, assignment in published_rows(session):
         counts[assignment.category_id] = counts.get(assignment.category_id, 0) + 1
     return counts
 

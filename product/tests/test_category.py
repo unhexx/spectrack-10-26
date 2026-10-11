@@ -491,6 +491,21 @@ def test_neighbor_phrase_names_the_rank_field_that_puts_the_card_above():
         (0, 0, 0, 0, 0, "1-040-0001-0-00000003"),
     )
     assert tied == "С соседней карточкой совпадают подтверждён, балл, число достижений и приз."
+    hidden = neighbor_phrase(
+        (0, 0, 0, 0, 0, "1-040-0005-0-00000002"),
+        (0, 0, 0, 0, 0, "1-040-0001-0-00000003"),
+        mention_achievements=False,
+    )
+    assert hidden == "Выше соседней карточки."
+    assert "достижен" not in hidden
+    assert "5" not in hidden
+    score_only = neighbor_phrase(
+        (0, 0, 0, 0, 0, "1-067-0005-1-00000002"),
+        (0, 0, 0, 0, 0, "1-033-0001-0-00000001"),
+        mention_achievements=False,
+    )
+    assert score_only == "Выше соседней карточки по полю балл: 67 против 33."
+    assert "достижен" not in score_only
 
 
 def test_neighbor_phrase_does_not_pretend_rank_when_need_is_ahead():
@@ -516,6 +531,33 @@ def test_neighbor_phrase_does_not_pretend_rank_when_need_is_ahead():
     )
     assert untouched.sort_key == (2, 0, 0, 0, 0, "1-040-0000-0-00000002")
     assert "Выше соседней" not in untouched.reason
+    quiet = evaluate_need(
+        assigned_category_id="backend:middle",
+        test_score=40,
+        stack=["python"],
+        team_role="разработчик",
+        work_format="удалённо",
+        fsp_count=5,
+        haystack="backend middle python",
+        need=Need(category_id="backend:middle", has_fsp=True),
+        rank_key="1-040-0005-0-00000002",
+        mention_achievements=False,
+    )
+    assert quiet.matched
+    assert quiet.sort_key[3] == 1
+    assert "достижен" not in quiet.reason
+    spoken = evaluate_need(
+        assigned_category_id="backend:middle",
+        test_score=40,
+        stack=["python"],
+        team_role="разработчик",
+        work_format="удалённо",
+        fsp_count=5,
+        haystack="backend middle python",
+        need=Need(category_id="backend:middle", has_fsp=True),
+        rank_key="1-040-0005-0-00000002",
+    )
+    assert "в профиле 5 достижений ФСП" in spoken.reason
 
 
 def test_snowballstemmer_module_is_pure_python():
