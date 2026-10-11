@@ -9,6 +9,8 @@
 
 from __future__ import annotations
 
+from snowballstemmer import stemmer
+
 from product.matching.types import Need, NeedFit
 
 
@@ -33,24 +35,42 @@ def haystack_text(
     ).casefold()
 
 
+def _stem_token(token: str, ru, en) -> str:
+    if any("\u0400" <= ch <= "\u04ff" for ch in token):
+        return ru.stemWord(token)
+    return en.stemWord(token)
+
+
 def need_tokens(query: str) -> list[str]:
-    tokens = []
-    seen: set[str] = set()
+    # Пара на вызов: у 3.1.1 курсор слова на объекте, а sync-ручки идут в threadpool.
+    ru = stemmer("russian")
+    en = stemmer("english")
+    stems: list[str] = []
+    seen_raw: set[str] = set()
+    seen_stem: set[str] = set()
     for raw in str(query or "").split():
         token = raw.strip().casefold()
-        if len(token) < 3 or token in seen:
+        if len(token) < 3 or token in seen_raw:
             continue
-        seen.add(token)
-        tokens.append(token)
-    return tokens
+        seen_raw.add(token)
+        stem = _stem_token(token, ru, en)
+        if stem in seen_stem:
+            continue
+        seen_stem.add(stem)
+        stems.append(stem)
+    return stems
 
 
-def _needles(query: str) -> list[str]:
-    tokens = need_tokens(query)
-    if tokens:
-        return tokens
-    folded = str(query or "").strip().casefold()
-    return [folded] if folded else []
+def _stem_set(haystack: str) -> set[str]:
+    ru = stemmer("russian")
+    en = stemmer("english")
+    stems: set[str] = set()
+    for raw in str(haystack or "").split():
+        token = raw.strip().casefold()
+        if len(token) < 3:
+            continue
+        stems.add(_stem_token(token, ru, en))
+    return stems
 
 
 def _as_need(need: Need | dict) -> Need:
@@ -90,8 +110,9 @@ def evaluate_need(
         return NeedFit(False, empty, "")
     if spec.has_fsp is False and fsp_count > 0:
         return NeedFit(False, empty, "")
-    needles = _needles(spec.q)
-    hit = [token for token in needles if token in haystack]
+    needles = need_tokens(spec.q)
+    stem_set = _stem_set(haystack)
+    hit = [token for token in needles if token in stem_set]
     if needles and len(hit) != len(needles):
         return NeedFit(False, empty, "")
     role_hit = 1 if spec.team_role and team_role == spec.team_role else 0

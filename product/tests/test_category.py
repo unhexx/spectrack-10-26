@@ -9,7 +9,7 @@ from product.app.db.session import open_session
 from product.app.services.categories import recompute
 from product.app.services.clock import utc_now
 from product.matching.category import assign_category, has_prize_place, rank_key
-from product.matching.need import evaluate_need, neighbor_phrase
+from product.matching.need import evaluate_need, need_tokens, neighbor_phrase
 from product.matching.types import CategoryError, Need, ProfileView
 from product.tests.conftest import register_and_confirm
 
@@ -516,3 +516,62 @@ def test_neighbor_phrase_does_not_pretend_rank_when_need_is_ahead():
     )
     assert untouched.sort_key == (2, 0, 0, 0, 0, "1-040-0000-0-00000002")
     assert "Выше соседней" not in untouched.reason
+
+
+def test_snowballstemmer_module_is_pure_python():
+    from snowballstemmer import stemmer
+
+    assert type(stemmer("russian")).__module__ == "snowballstemmer.russian_stemmer"
+    assert type(stemmer("english")).__module__ == "snowballstemmer.english_stemmer"
+
+
+def test_need_matches_stems_not_substrings():
+    def fit(q: str, haystack: str):
+        return evaluate_need(
+            assigned_category_id="backend:middle",
+            test_score=90,
+            stack=["python"],
+            team_role="разработчик",
+            work_format="удалённо",
+            fsp_count=0,
+            haystack=haystack,
+            need=Need(category_id="backend:middle", q=q),
+            rank_key="1-090-0000-0-00000001",
+        )
+
+    same = fit("данных", "данными")
+    assert same.matched
+    assert same.sort_key == (0, 0, 0, 0, 1, "1-090-0000-0-00000001")
+    assert "в тексте профиля: дан" in same.reason
+    assert not fit("дан", "задание").matched
+    assert not fit("дан", "издание").matched
+    assert not fit("разработка", "разработчик").matched
+    assert not fit("бэкенд", "backend").matched
+    empty = fit("", "данными")
+    assert empty.matched
+    assert empty.sort_key == (0, 0, 0, 0, 0, "1-090-0000-0-00000001")
+    short = fit("go js", "golang javascript")
+    assert short.matched
+    assert short.sort_key[4] == 0
+
+
+def test_need_tokens_do_not_share_a_stemmer_between_threads():
+    import threading
+
+    barrier = threading.Barrier(2)
+    found: dict[str, list[str]] = {}
+
+    def run(key: str, word: str) -> None:
+        barrier.wait()
+        found[key] = need_tokens(word)
+
+    threads = [
+        threading.Thread(target=run, args=("ru", "данных")),
+        threading.Thread(target=run, args=("en", "developers")),
+    ]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    assert found["ru"] == ["дан"]
+    assert found["en"] == ["develop"]
