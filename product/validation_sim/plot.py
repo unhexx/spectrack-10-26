@@ -165,8 +165,8 @@ def plot(results: dict, out_dir: Path = OUT_DIR) -> Path:
     handles = [plt.Rectangle((0, 0), 1, 1, color=c) for c in (OLD, NEW, LIVE, V2)]
     fig.legend(handles, ["Единый набор: 3 вопроса, общий ключ",
                          "Банк без доборов: 12 вопросов, IRT",
-                         "Платформа: 216 вопросов, «оцените каждый вариант»",
-                         "Платформа + форматы multi / order / numeric"],
+                         "Платформа: кабинет, judge и число",
+                         "Платформа + форматы: полный банк"],
                loc="upper left", bbox_to_anchor=(0.01, 0.995), ncol=4, frameon=False, fontsize=9.5)
     fig.suptitle(f"{results['candidates']} синтетических кандидатов, seed {results['seed']}; "
                  f"«Платформа» — среднее 5 прогонов", x=0.99, y=0.962, ha="right", fontsize=9, color=MUTED)
