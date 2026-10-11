@@ -5,6 +5,9 @@
 
 from __future__ import annotations
 
+import sqlite3
+
+from product.app.services.errors import explain
 from product.tests.conftest import register_and_confirm
 
 _PROFILE = {
@@ -258,3 +261,179 @@ def test_vacancy_form_double_minus_is_rejected_not_crashed(client):
     )
     assert bad.status_code == 422
     assert "целыми числами" in bad.text
+
+
+def _stamp(client, vacancy_id: int, stamp: str) -> None:
+    with sqlite3.connect(client.db_path) as db:
+        db.execute("update vacancies set updated_at = ? where id = ?", (stamp, vacancy_id))
+
+
+def _stored_application(client, application_id: int):
+    with sqlite3.connect(client.db_path) as db:
+        return db.execute(
+            "select vacancy_id, task_answer from applications where id = ?",
+            (application_id,),
+        ).fetchone()
+
+
+def _stored_task(client, vacancy_id: int):
+    with sqlite3.connect(client.db_path) as db:
+        return db.execute(
+            "select prompt from employer_tasks where vacancy_id = ?",
+            (vacancy_id,),
+        ).fetchone()
+
+
+def test_update_own_vacancy_keeps_id_applications_and_status(client):
+    _employer(client, email="edit-boss@example.com")
+    created = client.post("/api/employer/vacancies", json=_vacancy())
+    assert created.status_code == 201, created.text
+    vacancy_id = created.json()["id"]
+    created_at = created.json()["created_at"]
+    _candidate(client, "edit-seeker@example.com")
+    applied = client.post(
+        f"/api/vacancies/{vacancy_id}/apply",
+        json={"message": "Готов обсудить платежи", "task_answer": "Idempotency-Key"},
+    )
+    assert applied.status_code == 201, applied.text
+    application_id = applied.json()["id"]
+    _login(client, "edit-boss@example.com")
+    old = "2000-01-01T00:00:00Z"
+    _stamp(client, vacancy_id, old)
+    changed = _vacancy(
+        title="Backend middle правка",
+        description="Платежи, дневная смена",
+        salary_max=260000,
+        task_prompt="Назовите второй заголовок.",
+    )
+    updated = client.post(f"/api/employer/vacancies/{vacancy_id}", json=changed)
+    assert updated.status_code == 200, updated.text
+    saved = updated.json()
+    assert saved["id"] == vacancy_id
+    assert saved["title"] == "Backend middle правка"
+    assert saved["description"] == "Платежи, дневная смена"
+    assert saved["salary_max"] == 260000
+    assert saved["task_prompt"] == "Назовите второй заголовок."
+    assert saved["status"] == "published"
+    assert saved["created_at"] == created_at
+    assert saved["updated_at"] != old
+    assert _stored_task(client, vacancy_id) == ("Назовите второй заголовок.",)
+    assert _stored_application(client, application_id) == (vacancy_id, "Idempotency-Key")
+    with sqlite3.connect(client.db_path) as db:
+        stored = db.execute(
+            "select status, created_at from vacancies where id = ?",
+            (vacancy_id,),
+        ).fetchone()
+        count = db.execute("select count(*) from vacancies").fetchone()[0]
+    assert stored == ("published", created_at)
+    assert count == 1
+    _stamp(client, vacancy_id, old)
+    same = client.post(f"/api/employer/vacancies/{vacancy_id}", json=changed)
+    assert same.status_code == 200, same.text
+    assert same.json()["updated_at"] != old
+    assert same.json()["created_at"] == created_at
+    assert same.json()["title"] == "Backend middle правка"
+    assert same.json()["status"] == "published"
+    cleared = dict(changed)
+    del cleared["task_prompt"]
+    gone = client.post(f"/api/employer/vacancies/{vacancy_id}", json=cleared)
+    assert gone.status_code == 200, gone.text
+    assert gone.json()["id"] == vacancy_id
+    assert gone.json()["task_prompt"] == ""
+    assert gone.json()["status"] == "published"
+    assert _stored_task(client, vacancy_id) is None
+    assert _stored_application(client, application_id) == (vacancy_id, "Idempotency-Key")
+    restored = client.post(
+        f"/api/employer/vacancies/{vacancy_id}",
+        json={**cleared, "task_prompt": "Назовите третий заголовок."},
+    )
+    assert restored.status_code == 200, restored.text
+    assert restored.json()["task_prompt"] == "Назовите третий заголовок."
+    assert restored.json()["status"] == "published"
+    assert _stored_task(client, vacancy_id) == ("Назовите третий заголовок.",)
+    assert _stored_application(client, application_id) == (vacancy_id, "Idempotency-Key")
+    extra = client.post(f"/api/employer/vacancies/{vacancy_id}", json={**cleared, "note": "лишнее"})
+    assert extra.status_code == 422
+    assert extra.json()["error"] == "extra_forbidden"
+    status_field = client.post(
+        f"/api/employer/vacancies/{vacancy_id}",
+        json={**cleared, "status": "draft"},
+    )
+    assert status_field.status_code == 422
+    assert status_field.json()["error"] == "extra_forbidden"
+    with sqlite3.connect(client.db_path) as db:
+        status = db.execute("select status from vacancies where id = ?", (vacancy_id,)).fetchone()[0]
+    assert status == "published"
+    own_missing = explain("not_found_own_vacancy")
+    assert own_missing != explain("not_found_vacancy")
+    assert "откликн" not in own_missing.casefold()
+    _employer(client, email="edit-other@example.com")
+    foreign = client.post(f"/api/employer/vacancies/{vacancy_id}", json=cleared)
+    assert foreign.status_code == 404
+    assert foreign.json()["error"] == "not_found"
+    assert foreign.json()["message"] == own_missing
+    missing = client.post("/api/employer/vacancies/999999", json=cleared)
+    assert missing.status_code == 404
+    assert missing.json()["error"] == "not_found"
+    assert missing.json()["message"] == own_missing
+    huge = client.post(f"/api/employer/vacancies/{10**30}", json=cleared)
+    assert huge.status_code == 404
+    assert huge.json()["error"] == "not_found"
+    assert huge.json()["message"] == own_missing
+
+
+def test_edit_page_fills_the_same_form_and_saves(client):
+    _employer(client, email="page-edit-boss@example.com")
+    empty = client.get("/employer/vacancies")
+    assert 'method="post" action="/employer/vacancies"' in empty.text
+    assert ">Опубликовать вакансию<" in empty.text
+    assert 'id="title" name="title" type="text" required>' in empty.text
+    created = client.post("/api/employer/vacancies", json=_vacancy())
+    assert created.status_code == 201, created.text
+    vacancy_id = created.json()["id"]
+    board = client.get("/employer/vacancies")
+    assert 'method="post" action="/employer/vacancies"' in board.text
+    assert 'method="post" action="/employer/vacancies/' not in board.text
+    assert ">Опубликовать вакансию<" in board.text
+    assert f'href="/employer/vacancies/{vacancy_id}"' in board.text
+    assert "Править" in board.text
+    edit = client.get(f"/employer/vacancies/{vacancy_id}")
+    assert edit.status_code == 200
+    assert f'method="post" action="/employer/vacancies/{vacancy_id}"' in edit.text
+    assert ">Сохранить<" in edit.text
+    assert "Опубликовать вакансию" not in edit.text
+    assert 'value="Backend middle"' in edit.text
+    assert "Платежи, без дежурств" in edit.text
+    saved = client.post(
+        f"/employer/vacancies/{vacancy_id}",
+        data={
+            "csrf": _csrf(edit.text),
+            "title": "Backend middle правка",
+            "description": "Платежи, дневная смена",
+            "category_id": "backend:middle",
+            "company_name": "Синтетика",
+            "contact_channel": "telegram: @sintetika",
+            "salary_min": "180000",
+            "salary_max": "260000",
+            "salary_currency": "RUB",
+            "task_prompt": "Один заголовок",
+        },
+        follow_redirects=False,
+    )
+    assert saved.status_code == 303
+    assert saved.headers["location"].endswith(f"/employer/vacancies/{vacancy_id}")
+    again = client.get(f"/employer/vacancies/{vacancy_id}")
+    assert again.status_code == 200
+    assert 'value="Backend middle правка"' in again.text
+    assert ">Сохранить<" in again.text
+    listed = client.get("/api/employer/vacancies")
+    assert len(listed.json()) == 1
+    assert listed.json()[0]["id"] == vacancy_id
+    assert listed.json()[0]["title"] == "Backend middle правка"
+    assert listed.json()[0]["status"] == "published"
+    _employer(client, email="page-edit-other@example.com")
+    foreign = client.get(f"/employer/vacancies/{vacancy_id}")
+    assert foreign.status_code == 404
+    assert ">Сохранить<" not in foreign.text
+    missing = client.get(f"/employer/vacancies/{10**30}")
+    assert missing.status_code == 404

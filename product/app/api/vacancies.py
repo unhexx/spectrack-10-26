@@ -21,6 +21,7 @@ from product.app.services.vacancies import (
     list_published,
     open_application,
     set_employer_application_status,
+    update_vacancy,
 )
 
 router = APIRouter(tags=["vacancies"])
@@ -74,6 +75,7 @@ _FORBIDDEN = example("forbidden", "forbidden_employer")
 _SEEKER_FORBIDDEN = example("forbidden", "forbidden_candidate")
 _RANGE = example("salary_range")
 _MISSING = example("not_found", "not_found_vacancy")
+_MISSING_OWN = example("not_found", "not_found_own_vacancy")
 _MISSING_APP = example("not_found", "not_found_application")
 
 
@@ -93,6 +95,25 @@ def publish_vacancy(
     db: Session = Depends(db_session),
 ):
     return create_vacancy(db, user, payload)
+
+
+@router.post(
+    "/employer/vacancies/{vacancy_id}",
+    responses={
+        200: {"content": {"application/json": {"example": _VACANCY}}},
+        401: {"content": {"application/json": {"example": _DENIED}}},
+        403: {"content": {"application/json": {"example": _FORBIDDEN}}},
+        404: {"content": {"application/json": {"example": _MISSING_OWN}}},
+        422: response_example(422, _RANGE),
+    },
+)
+def save_vacancy(
+    vacancy_id: int,
+    payload: dict = Body(..., examples={"vacancy": {"value": _BODY}}),
+    user: User = Depends(require_employer),
+    db: Session = Depends(db_session),
+):
+    return update_vacancy(db, user, vacancy_id, payload)
 
 
 @router.get(

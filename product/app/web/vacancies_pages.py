@@ -16,12 +16,14 @@ from product.app.services.vacancies import (
     apply_to_vacancy,
     create_vacancy,
     decline_application,
+    get_own_vacancy,
     list_candidate_applications,
     list_employer_applications,
     list_employer_vacancies,
     list_published,
     open_application,
     set_employer_application_status,
+    update_vacancy,
 )
 from product.app.web.forms import form_int
 from product.app.web.guards import page_user, same_site_navigation
@@ -70,6 +72,32 @@ def employer_vacancies(request: Request, db: Session = Depends(db_session)):
     return render(request, "employer/vacancy.html", _employer_context(request, db, user))
 
 
+def _form_payload(
+    title: str,
+    description: str,
+    category_id: str,
+    company_name: str,
+    contact_channel: str,
+    salary_min: str,
+    salary_max: str,
+    salary_currency: str,
+    task_prompt: str,
+) -> dict:
+    payload = {
+        "title": title,
+        "description": description,
+        "category_id": category_id,
+        "company_name": company_name,
+        "contact_channel": contact_channel,
+        "salary_min": form_int(salary_min),
+        "salary_max": form_int(salary_max),
+        "salary_currency": salary_currency,
+    }
+    if task_prompt.strip():
+        payload["task_prompt"] = task_prompt
+    return payload
+
+
 @router.post("/employer/vacancies")
 def publish_page(
     request: Request,
@@ -88,24 +116,80 @@ def publish_page(
     user, denial = page_user(request, db, "employer")
     if denial is not None:
         return denial
-    payload = {
-        "title": title,
-        "description": description,
-        "category_id": category_id,
-        "company_name": company_name,
-        "contact_channel": contact_channel,
-        "salary_min": form_int(salary_min),
-        "salary_max": form_int(salary_max),
-        "salary_currency": salary_currency,
-    }
-    if task_prompt.strip():
-        payload["task_prompt"] = task_prompt
+    payload = _form_payload(
+        title,
+        description,
+        category_id,
+        company_name,
+        contact_channel,
+        salary_min,
+        salary_max,
+        salary_currency,
+        task_prompt,
+    )
     try:
         assert_csrf(request, csrf)
         create_vacancy(db, user, payload)
     except ApiError as exc:
         return page_error(request, "employer/vacancy.html", _employer_context(request, db, user), exc)
     return RedirectResponse("/employer/vacancies", status_code=303)
+
+
+@router.get("/employer/vacancies/{vacancy_id}")
+def edit_vacancy_page(vacancy_id: int, request: Request, db: Session = Depends(db_session)):
+    user, denial = page_user(request, db, "employer")
+    if denial is not None:
+        return denial
+    context = _employer_context(request, db, user)
+    try:
+        context["vacancy"] = get_own_vacancy(db, user, vacancy_id)
+    except ApiError as exc:
+        return page_error(request, "employer/vacancy.html", context, exc)
+    return render(request, "employer/vacancy.html", context)
+
+
+@router.post("/employer/vacancies/{vacancy_id}")
+def update_vacancy_page(
+    vacancy_id: int,
+    request: Request,
+    csrf: str = Form(""),
+    title: str = Form(""),
+    description: str = Form(""),
+    category_id: str = Form(""),
+    company_name: str = Form(""),
+    contact_channel: str = Form(""),
+    salary_min: str = Form(""),
+    salary_max: str = Form(""),
+    salary_currency: str = Form("RUB"),
+    task_prompt: str = Form(""),
+    db: Session = Depends(db_session),
+):
+    user, denial = page_user(request, db, "employer")
+    if denial is not None:
+        return denial
+    payload = _form_payload(
+        title,
+        description,
+        category_id,
+        company_name,
+        contact_channel,
+        salary_min,
+        salary_max,
+        salary_currency,
+        task_prompt,
+    )
+    try:
+        assert_csrf(request, csrf)
+        update_vacancy(db, user, vacancy_id, payload)
+    except ApiError as exc:
+        context = _employer_context(request, db, user)
+        if exc.error != "csrf":
+            try:
+                context["vacancy"] = get_own_vacancy(db, user, vacancy_id)
+            except ApiError:
+                pass
+        return page_error(request, "employer/vacancy.html", context, exc)
+    return RedirectResponse(f"/employer/vacancies/{vacancy_id}", status_code=303)
 
 
 @router.get("/employer/applications/{application_id}")

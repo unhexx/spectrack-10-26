@@ -2014,6 +2014,127 @@
         ]
       }
     },
+    "/api/employer/vacancies/{vacancy_id}": {
+      "post": {
+        "tags": [
+          "vacancies"
+        ],
+        "summary": "Save Vacancy",
+        "operationId": "save_vacancy_api_employer_vacancies__vacancy_id__post",
+        "parameters": [
+          {
+            "name": "vacancy_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Vacancy Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "examples": {
+                  "vacancy": {
+                    "value": {
+                      "title": "Backend middle",
+                      "description": "Платежи, без дежурств",
+                      "category_id": "backend:middle",
+                      "company_name": "Синтетика",
+                      "contact_channel": "telegram: @sintetika",
+                      "salary_min": 180000,
+                      "salary_max": 250000,
+                      "salary_currency": "RUB",
+                      "task_prompt": "Назовите один заголовок идемпотентного POST."
+                    }
+                  }
+                },
+                "title": "Payload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {},
+                "example": {
+                  "id": 1,
+                  "category_id": "backend:middle",
+                  "title": "Backend middle",
+                  "description": "Платежи, без дежурств",
+                  "company_name": "Синтетика",
+                  "contact_channel": "telegram: @sintetika",
+                  "salary_min": 180000,
+                  "salary_max": 250000,
+                  "salary_currency": "RUB",
+                  "task_prompt": "Назовите один заголовок идемпотентного POST.",
+                  "status": "published",
+                  "created_at": "2026-10-07T12:00:00Z",
+                  "updated_at": "2026-10-07T12:00:00Z"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "unauthorized",
+                  "message": "Что случилось. Нужен вход.\nПочему. Запрос без cookie сессии product_session. Гостю кабинет и API не открывают.\nЧто сделать. Откройте /auth/login, войдите почтой и паролем и повторите действие."
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "forbidden",
+                  "message": "Что случилось. Это кабинет работодателя.\nПочему. Учётка соискателя не читает карточку компании, подборку и отправку приглашений.\nЧто сделать. Выйдите и войдите почтой работодателя либо зарегистрируйте отдельную учётку с ролью employer."
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "not_found",
+                  "message": "Что случилось. Своя вакансия не найдена.\nПочему. Номера нет или строка чужая. Чужую вакансию стенд не отличает от отсутствующей.\nЧто сделать. Откройте /employer/vacancies и нажмите «Править» у своей строки. Чужой номер не подставляйте."
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "salary_range",
+                  "message": "Что случилось. Вилка зарплаты не принята.\nПочему. Нужны две целые границы в рублях, и верхняя строго больше нижней. Одна сумма и формулировка «по договорённости» не подходят.\nЧто сделать. Введите целые числа, например от 180000 до 250000. Валюта всегда RUB."
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "product_session": []
+          }
+        ]
+      }
+    },
     "/api/employer/applications": {
       "get": {
         "tags": [

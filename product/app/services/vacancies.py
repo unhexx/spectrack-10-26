@@ -92,7 +92,16 @@ def application_payload(db: Session, row: Application, *, viewer: str) -> dict:
     return body
 
 
-def create_vacancy(db: Session, user: User, payload: dict) -> dict:
+def _own_vacancy(db: Session, user: User, vacancy_id: int) -> Vacancy:
+    number = sqlite_int(vacancy_id)
+    row = db.get(Vacancy, number) if number is not None else None
+    if row is None or row.employer_id != user.id:
+        fail(404, "not_found", "not_found_own_vacancy")
+    return row
+
+
+def _parsed_vacancy(db: Session, user: User, payload: dict) -> dict:
+    """Общий разбор полей создания и правки. Нет ключа task_prompt — в словаре None."""
     extra = set(payload) - _VACANCY_FIELDS
     if extra:
         _fail(422, "extra_forbidden")
@@ -107,21 +116,35 @@ def create_vacancy(db: Session, user: User, payload: dict) -> dict:
     salary_min, salary_max = parse_fork(payload.get("salary_min"), payload.get("salary_max"), _fail)
     if payload.get("salary_currency") != "RUB":
         _fail(422, "currency")
-    prompt = ""
+    prompt = None
     if "task_prompt" in payload:
         prompt = _text(payload.get("task_prompt"), "task_prompt")
         if len(prompt) > 2000:
             _fail(422, "task_prompt")
+    return {
+        "company": company,
+        "title": title,
+        "description": description,
+        "category_id": category_id,
+        "salary_min": salary_min,
+        "salary_max": salary_max,
+        "task_prompt": prompt,
+    }
+
+
+def create_vacancy(db: Session, user: User, payload: dict) -> dict:
+    fields = _parsed_vacancy(db, user, payload)
+    company = fields["company"]
     now = utc_now()
     row = Vacancy(
         employer_id=user.id,
-        category_id=category_id,
-        title=title,
-        description=description,
+        category_id=fields["category_id"],
+        title=fields["title"],
+        description=fields["description"],
         company_name=company.name,
         contact_channel=company.contact,
-        salary_min=salary_min,
-        salary_max=salary_max,
+        salary_min=fields["salary_min"],
+        salary_max=fields["salary_max"],
         salary_currency="RUB",
         status="published",
         created_at=now,
@@ -129,8 +152,45 @@ def create_vacancy(db: Session, user: User, payload: dict) -> dict:
     )
     db.add(row)
     db.flush()
-    if prompt:
+    if fields["task_prompt"]:
+        db.add(EmployerTask(vacancy_id=row.id, prompt=fields["task_prompt"], created_at=now))
+    try:
+        db.commit()
+    except IntegrityError:
+        db.rollback()
+        _fail(409, "conflict")
+    db.refresh(row)
+    return vacancy_payload(db, row)
+
+
+def get_own_vacancy(db: Session, user: User, vacancy_id: int) -> dict:
+    return vacancy_payload(db, _own_vacancy(db, user, vacancy_id))
+
+
+def update_vacancy(db: Session, user: User, vacancy_id: int, payload: dict) -> dict:
+    row = _own_vacancy(db, user, vacancy_id)
+    fields = _parsed_vacancy(db, user, payload)
+    company = fields["company"]
+    now = utc_now()
+    row.category_id = fields["category_id"]
+    row.title = fields["title"]
+    row.description = fields["description"]
+    row.company_name = company.name
+    row.contact_channel = company.contact
+    row.salary_min = fields["salary_min"]
+    row.salary_max = fields["salary_max"]
+    row.salary_currency = "RUB"
+    row.updated_at = now
+    prompt = fields["task_prompt"]
+    task = db.scalar(select(EmployerTask).where(EmployerTask.vacancy_id == row.id))
+    # Ключа нет — снять задание. Текст ответа и vacancy_id отклика не трогать.
+    if prompt is None:
+        if task is not None:
+            db.delete(task)
+    elif task is None:
         db.add(EmployerTask(vacancy_id=row.id, prompt=prompt, created_at=now))
+    else:
+        task.prompt = prompt
     try:
         db.commit()
     except IntegrityError:
